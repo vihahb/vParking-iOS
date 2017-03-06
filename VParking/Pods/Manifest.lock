@@ -1,0 +1,70 @@
+PODS:
+  - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - EVReflection/Alamofire (4.3.0):
+    - Alamofire (~> 4.2)
+    - EVReflection/Core
+  - EVReflection/Core (4.3.0)
+  - EVReflection/Moya (4.3.0):
+    - EVReflection/Alamofire
+    - Moya (~> 8.0)
+  - EVReflection/MoyaRxSwift (4.3.0):
+    - EVReflection/Moya
+    - Moya/RxSwift
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GoogleMapsDirections (1.1.1):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
+  - ImageSlideshow (1.0.0):
+    - ImageSlideshow/Core (= 1.0.0)
+  - ImageSlideshow/Alamofire (1.0.0):
+    - AlamofireImage (~> 3.0)
+    - ImageSlideshow/Core
+  - ImageSlideshow/Core (1.0.0)
+  - Moya (8.0.2):
+    - Moya/Core (= 8.0.2)
+  - Moya/Core (8.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.2):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - ObjectMapper (2.2.3)
+  - Result (3.1.0)
+  - RxSwift (3.2.0)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.3)
+  - EVReflection/MoyaRxSwift
+  - GoogleMaps
+  - GoogleMapsDirections (~> 1.1)
+  - GooglePlaces
+  - ImageSlideshow
+  - ImageSlideshow/Alamofire
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  EVReflection: dd090a20cddb7a133bc640ad61809159b5647aa6
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GoogleMapsDirections: 2e78306b53e2e7918b1eae147ca67871a09456e5
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  ImageSlideshow: 2787e10e202b79ecf5348a205c539fcc5bb8e62b
+  Moya: 47f61da5b634aa71f676431b64ee0f81e976296d
+  ObjectMapper: d3b3de11267f5d971f390eb8d63dd509116a4329
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: e017f1643cf8c07a9e1407e1a348c95f28cb4b51
+
+COCOAPODS: 1.2.0

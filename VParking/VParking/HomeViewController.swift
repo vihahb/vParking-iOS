@@ -1,0 +1,273 @@
+//
+//  HomeViewController.swift
+//  VParking
+//
+//  Created by TD on 2/16/17.
+//  Copyright © 2017 xtel. All rights reserved.
+//
+
+import UIKit
+import GoogleMaps
+import GooglePlaces
+import SVProgressHUD
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var mapView: GMSMapView!
+    var presenter:HomePresenter?
+    var locationManager = CLLocationManager()
+    
+    var didFindMyLocation = false
+    
+    // place complated view
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    var isLoadData:Bool  = true
+    
+    @IBOutlet weak var searchView: UIView!
+    
+    // save parking location
+    var parkingDictionary = [Int:FindParkingEntity]()
+    
+    // Bottomsheet
+    var bottomSheet:ParkingInfoBottomsheetViewController?
+    
+    // my location
+    var myLocation:CLLocationCoordinate2D?
+    var isDirection:Bool = false
+    
+    // bar status
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Initialization()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // add bottom sheet
+        self.addBottomSheet()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
+    
+    override func loadView() {
+        super.loadView()
+    }
+    
+    func Initialization() {
+        presenter = HomePresenter(view: self)
+
+        // init navigation bar
+        navigationController?.navigationBar.barTintColor = ColorUtils.hexStringToUIColor(hex: "#5555ab")
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        // init google map
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 14.0)
+        self.mapView.camera = camera
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.delegate = self
+        
+        // init location manager
+        locationManager.distanceFilter = 10
+        locationManager.delegate = self
+        if CLLocationManager.authorizationStatus() == .denied{
+            locationManager.requestWhenInUseAuthorization()
+        }else{
+            locationManager.startUpdatingLocation()
+        }
+        
+        //
+        
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
+        searchView.addSubview((searchController?.searchBar)!)
+        definesPresentationContext = true
+        
+    }
+    
+    func addBottomSheet() {
+        if self.bottomSheet == nil{
+            self.bottomSheet = storyboard?.instantiateViewController(withIdentifier: "ParkingDetail") as? ParkingInfoBottomsheetViewController
+            self.addChildViewController(bottomSheet!)
+            self.view.addSubview(bottomSheet!.view)
+            bottomSheet!.view.frame = CGRect(x: CGFloat(0), y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height)
+            self.bottomSheet!.didMove(toParentViewController: self)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+             locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        mapView.camera = GMSCameraPosition.camera(withTarget: locations[0].coordinate, zoom: 14.0)
+        myLocation = locations[0].coordinate
+    }
+    
+    
+    
+}
+
+extension HomeViewController:IHomeView{
+    func findParking(didError error: NIPError?, didLoaded result: [FindParkingEntity]?) {
+        if error != nil {
+            print("\(error)")
+        }
+        
+        if result != nil{
+            result?.forEach({ p in
+                if parkingDictionary[p.id] == nil {
+                    let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
+                    let m = GMSMarker(position: position)
+                    
+                    if p.owner == 0 {
+                        m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+                    }else{
+                        m.icon = #imageLiteral(resourceName: "ic_marker_red")
+                    }
+                    m.map = mapView
+                    m.userData = p.id
+                    parkingDictionary[p.id] = p
+                }
+            })
+        }
+    }
+    
+    func retParkingDetails(didError error: NIPError?, didLoaded result: ParkingInfoEntity?) {
+        if error != nil {
+            self.view.makeToast("\(error?.message)")
+            return
+        }
+        bottomSheet?.setInfo(parking: result)
+        bottomSheet?.showPartialView(duration: 0.3)
+        
+    }
+    
+    func getMyLocation() -> CLLocationCoordinate2D? {
+        return self.myLocation
+    }
+    
+    func drawbleDirection(_ pathEncode: String, id: Int) {
+        isDirection = true
+        mapView.clear()
+        if let p = parkingDictionary[id] {
+            let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
+            let m = GMSMarker(position: position)
+            
+            if p.owner == 0 {
+                m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+            }else{
+                m.icon = #imageLiteral(resourceName: "ic_marker_red")
+            }
+            m.map = mapView
+            m.userData = p.id
+        }
+        
+        let pl:GMSPolyline  = GMSPolyline(path: GMSPath(fromEncodedPath: pathEncode))
+        pl.strokeWidth = 8
+        pl.strokeColor = ColorUtils.hexStringToUIColor(hex: "#62B1F6")
+        pl.map = mapView
+        
+    }
+    
+    func clearDirection() {
+        if isDirection {
+            isDirection = false
+            mapView.clear()
+            for (key,p) in parkingDictionary {
+                let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
+                let m = GMSMarker(position: position)
+                
+                if p.owner == 0 {
+                    m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+                }else{
+                    m.icon = #imageLiteral(resourceName: "ic_marker_red")
+                }
+                m.map = mapView
+                m.userData = p.id
+            }
+        }
+    }
+
+}
+
+extension HomeViewController: GMSMapViewDelegate{
+    
+    func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
+        locationManager.startUpdatingLocation()
+        return true
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        if !isDirection {
+            let lat:Double = position.target.latitude
+            let lng:Double = position.target.longitude
+            if isLoadData {
+                presenter?.findParking(lat: lat, lng: lng)
+            }
+        
+            isLoadData = true
+        }
+    }
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        if !isDirection {
+            self.bottomSheet?.hiddenBottomSheet()
+        }
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if !isDirection {
+            isLoadData = false
+            mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 14.0)
+            self.presenter?.retParkingDetails(id: marker.userData as! Int)
+        }
+        return true
+    }
+}
+
+extension HomeViewController: GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        mapView.camera = GMSCameraPosition.camera(withTarget: place.coordinate, zoom: 14.0)
+        
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error){
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+
+
+
