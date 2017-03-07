@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DropDown.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EVReflection.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0889D73C1E3095BF6A5A5D5CF85B12CF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1FB06C0FBC7FCBC6D7CDCF2BC3FF879B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5658E324EE5BA03B968323FC6977DCAF</key>
+		<key>214BBD8031BA9DF7D9366324ABF692BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5168099F2EBFC99A707C03C9EADE01A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>567DC18D6BEB8C19F6B55E8223F7F1DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

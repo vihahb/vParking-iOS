@@ -8,10 +8,15 @@
 
 import UIKit
 import AVFoundation
-
+import DropDown
 class QRCodeScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    
+    @IBOutlet weak var vContent: UIView!
+    @IBOutlet weak var vArrow: UIView!
+    @IBOutlet weak var vCamera: UIView!
+    let dropDown:DropDown = DropDown()
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
@@ -75,11 +80,15 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
             failed()
             return
         }
-        
+        dropDown.anchorView = vContent
+        dropDown.dataSource = ["A","B","C"]
+        dropDown.width = 200
+        dropDown.show()
+        vArrow.layer.zPosition = 1
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
+        previewLayer.frame = vCamera.layer.bounds
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        view.layer.addSublayer(previewLayer)
+        vCamera.layer.addSublayer(previewLayer)
         captureSession.startRunning()
     }
 }
