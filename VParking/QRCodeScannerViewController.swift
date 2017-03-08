@@ -8,10 +8,17 @@
 
 import UIKit
 import AVFoundation
-
+import DropDown
 class QRCodeScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    
+    @IBOutlet weak var vCamera: UIView!
+    @IBOutlet weak var vCapture: UIView!
+    let dropDown:DropDown = DropDown()
+    @IBOutlet weak var imgDropdown: UIImageView!
+    @IBOutlet weak var lblDropdown: UILabel!
+    @IBOutlet weak var vDropdown: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
@@ -46,6 +53,10 @@ class QRCodeScannerViewController: UIViewController,AVCaptureMetadataOutputObjec
         notFound()
         
     }
+   
+    @IBAction func verhicleTap(_ sender: Any) {
+        dropDown.show()
+    }
 }
 
 extension QRCodeScannerViewController : IQRCodeScannerView{
@@ -76,10 +87,33 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
             return
         }
         
+        vCapture.layer.zPosition = 1
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
+        previewLayer.frame = vCamera.layer.bounds
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        view.layer.addSublayer(previewLayer)
+        vCamera.layer.addSublayer(previewLayer)
+        setUpDropDown()
         captureSession.startRunning()
+    }
+    
+    func setUpDropDown(){
+        dropDown.anchorView = vDropdown
+        dropDown.dataSource = ["ThangNM","DuyenPK"]
+        dropDown.width = 200
+        dropDown.direction = .any
+        dropDown.dismissMode = .onTap
+        dropDown.cancelAction = {() in
+            self.imgDropdown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
+        }
+        dropDown.willShowAction = { () in
+            self.imgDropdown.image = #imageLiteral(resourceName: "ic_action_arrow_up")
+        }
+        dropDown.selectionAction = {(index,item) in
+            self.imgDropdown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
+            self.lblDropdown.text = item
+        }
+        
+        dropDown.selectRow(at: 0)
+        
     }
 }

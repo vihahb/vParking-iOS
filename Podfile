@@ -10,6 +10,7 @@ target 'VParking' do
     pod "ImageSlideshow/Alamofire"
     pod 'SVProgressHUD'
     pod 'GoogleMapsDirections', '~> 1.1'
+    pod 'DropDown'
 end
 
 pod 'EVReflection/MoyaRxSwift'
