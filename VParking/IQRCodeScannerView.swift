@@ -8,4 +8,8 @@
 
 import Foundation
 protocol IQRCodeScannerView:IViewBase {
+    func verhicle(didResult verhicles:[VerhicleEntity]?, error:NIPError?)
+    func showCheckInError(message:String)
+    func showCheckInErrorAndReCheckIn(message:String)
+    func checkInSuccess()
 }

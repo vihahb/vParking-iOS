@@ -55,7 +55,18 @@ class ParkingManager {
         HttpRequestManager.post(url: url, headers: getHeader(),data: request.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
         
     }
+    
+    
+    func getVerhicle(completion:@escaping (String?,NIPError?)->Void) {
+        let url = "\(baseUrl)user/verhicle"
+        HttpRequestManager.get(url: url, headers: getHeader(),completion: completion)
+    }
 
+    func checkIn(_ request:CheckInEntity,completion:@escaping (String?,NIPError?)->Void) {
+        let url = "\(baseUrl)user/checkin"
+        HttpRequestManager.post(url: url, headers: getHeader(),data: request.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
+        
+    }
     
     func getHeader() -> HTTPHeaders?{
         var session:String = ""
