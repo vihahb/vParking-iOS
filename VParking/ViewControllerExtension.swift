@@ -27,4 +27,16 @@ extension UIViewController{
         let loginForm:LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(loginForm, animated: true, completion: nil)
     }
+    
+    func close(completion:(()->Void)? = nil){
+        
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+            if let c = completion {
+                c()
+            }
+        }else{
+            self.dismiss(animated: true, completion: completion)
+        }
+    }
 }

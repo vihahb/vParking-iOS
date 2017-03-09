@@ -68,6 +68,18 @@ class ParkingManager {
         
     }
     
+    func getCheckInList(completion:@escaping (String?,NIPError?)->Void) {
+        let url = "\(baseUrl)user/checkin"
+        HttpRequestManager.get(url: url, headers: getHeader(),completion: completion)
+    }
+    
+    func checkOut(_ request:CheckOutReq,completion:@escaping (String?,NIPError?)->Void) {
+        let url = "\(baseUrl)user/checkout"
+        HttpRequestManager.post
+        (url: url, headers: getHeader(),data: request.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
+        
+    }
+    
     func getHeader() -> HTTPHeaders?{
         var session:String = ""
         if SessionManager.getCurrentSession() != nil {

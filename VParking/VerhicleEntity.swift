@@ -7,3 +7,9 @@
 //
 
 import Foundation
+class VerhicleEntity: ResultBase {
+    var id:Int = 0
+    var name:String?
+    var type:Int = 0
+    var plate_number:String?
+}

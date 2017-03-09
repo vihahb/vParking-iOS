@@ -1,5 +1,5 @@
 //
-//  VerhicleSortResult.swift
+//  TicketViewDelegate.swift
 //  VParking
 //
 //  Created by TD on 3/9/17.
@@ -7,6 +7,3 @@
 //
 
 import Foundation
-class VerhicleSortResult: ResultBase {
-    var data = [VerhicleEntity]()
-}

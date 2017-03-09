@@ -12,6 +12,10 @@ import DropDown
 class QRCodeScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var dataVerhicles = [VerhicleEntity]()
+    var dataSource = [String]()
+    var presenter:QRCodeScannerPresenter!
+    var index:Int = 0
     
     @IBOutlet weak var vCamera: UIView!
     @IBOutlet weak var vCapture: UIView!
@@ -35,7 +39,8 @@ class QRCodeScannerViewController: UIViewController,AVCaptureMetadataOutputObjec
     }
     
     func found(_ code:String){
-        view.makeToast("code is \(code)")
+        let v:VerhicleEntity = self.dataVerhicles[index]
+        presenter.checkIn(code: code, verhicle_id: v.id, verhicle_type: v.type, name: v.name!)
     }
     
     func notFound(){
@@ -61,6 +66,8 @@ class QRCodeScannerViewController: UIViewController,AVCaptureMetadataOutputObjec
 
 extension QRCodeScannerViewController : IQRCodeScannerView{
     func Initialization() {
+        presenter = QRCodeScannerPresenter(view:self)
+        
         captureSession = AVCaptureSession()
         let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         let videoInput: AVCaptureDeviceInput
@@ -93,12 +100,62 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         vCamera.layer.addSublayer(previewLayer)
         setUpDropDown()
-        captureSession.startRunning()
+        presenter.getVerhicle()
     }
     
+    func verhicle(didResult verhicles: [VerhicleEntity]?, error: NIPError?) {
+        if let e = error {
+            self.view.makeToast("Không lấy được dữ liệu xe cá nhân vui long thử lại \(e.type).")
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        if let d = verhicles {
+            if d.count <= 0 {
+                self.view.makeToast("Bạn chưa tạo phương tiện cá nhân. Vui lòng tạo phương tiện cá nhân để checkin.")
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+        }
+        dataVerhicles = verhicles!
+        dataSource.removeAll()
+        dataVerhicles.forEach { (v) in
+            dataSource.append(v.name!)
+        }
+        dropDown.dataSource = dataSource
+        dropDown.selectRow(at: 0)
+        captureSession.startRunning()
+    }
+    func showCheckInError(message: String) {
+        self.view.makeToast(message)
+        close()
+    }
+    func showCheckInErrorAndReCheckIn(message: String) {
+        let alert = UIAlertController(title: "Thông báo", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Thử lại", style: .default) { (ac) in
+                    if (!(self.captureSession?.isRunning)!){
+                        self.captureSession.startRunning()
+                    }
+        }
+        let cancle = UIAlertAction(title: "Thoát", style: .destructive) { (ac) in
+            self.close()
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancle)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    func checkInSuccess() {
+        let alert = UIAlertController(title: "Thông báo", message: "Bạn đã checkin thành công tại bãi gửi xe \(dataVerhicles[index].name!)", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (ac) in
+            self.close()
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     func setUpDropDown(){
         dropDown.anchorView = vDropdown
-        dropDown.dataSource = ["ThangNM","DuyenPK"]
+        dropDown.dataSource = dataSource
         dropDown.width = 200
         dropDown.direction = .any
         dropDown.dismissMode = .onTap
@@ -111,9 +168,9 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
         dropDown.selectionAction = {(index,item) in
             self.imgDropdown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
             self.lblDropdown.text = item
+            self.index = index
         }
         
-        dropDown.selectRow(at: 0)
-        
     }
+    
 }
