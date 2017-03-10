@@ -7,3 +7,7 @@
 //
 
 import Foundation
+protocol ICheckInView : IViewBase {
+    func checkIn(didResult data:[CheckInInfo]?)
+    func showError(_ message:String)
+}

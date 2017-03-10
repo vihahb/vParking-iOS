@@ -10,6 +10,12 @@ import UIKit
 
 class CheckInTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var imgVehicleType: UIImageView!
+    @IBOutlet weak var lblParkingName: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblPlateNumber: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -75,8 +75,7 @@ class ParkingManager {
     
     func checkOut(_ request:CheckOutReq,completion:@escaping (String?,NIPError?)->Void) {
         let url = "\(baseUrl)user/checkout"
-        HttpRequestManager.post
-        (url: url, headers: getHeader(),data: request.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
+        HttpRequestManager.post(url: url, headers: getHeader(),data: request.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
         
     }
     

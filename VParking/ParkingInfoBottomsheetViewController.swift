@@ -110,7 +110,7 @@ class ParkingInfoBottomsheetViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let frame = self.view.frame
-        fullView = (self.parent?.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
+        fullView = 0//(self.parent?.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
         fullViewHeight = frame.height - fullView
         sortViewHeight = self.patiralView.frame.height
         scrollView.scrollsToTop = false
@@ -335,7 +335,7 @@ class ParkingInfoBottomsheetViewController: UIViewController {
             }
         }
         print("contentSize:\(contentSize)")
-        self.scrollView.contentSize = CGSize(width: self.width, height: contentSize + 40)
+        self.scrollView.contentSize = CGSize(width: self.width, height: contentSize + 10)
     }
     
     func makePriceView(data:[PriceEntity]?,empty:String?){
@@ -567,7 +567,7 @@ class ParkingInfoBottomsheetViewController: UIViewController {
         case 3:
             return "Xe ôtô"
         default:
-            return "khácå"
+            return "Khác"
         }
     }
 

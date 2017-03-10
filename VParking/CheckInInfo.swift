@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import EVReflection
+class CheckInInfo : EVObject{
+    var transaction:String?
+    var checkin_time:String?
+    var checkin_type:Int = 0
+    var ticket_code:String?
+    var parking:ParkingInfoEntity = ParkingInfoEntity()
+    var vehicle:VerhicleEntity  =
+        VerhicleEntity()
+}

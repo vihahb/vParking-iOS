@@ -7,3 +7,6 @@
 //
 
 import Foundation
+protocol TicketViewDelegate {
+    func reloadCheckList()
+}

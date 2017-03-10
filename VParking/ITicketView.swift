@@ -7,3 +7,8 @@
 //
 
 import Foundation
+protocol ITicketView : IViewBase {
+    func showError(message:String)
+    func ticket(didResult p:ParkingInfoEntity)
+    func checkOutSuccess()
+}

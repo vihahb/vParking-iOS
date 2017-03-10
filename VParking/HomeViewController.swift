@@ -10,6 +10,13 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import SVProgressHUD
+
+enum HOME_MODE{
+    case HOME
+    case TICKET
+    case FAVORITE
+}
+
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: GMSMapView!
     var presenter:HomePresenter?
@@ -35,9 +42,27 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var myLocation:CLLocationCoordinate2D?
     var isDirection:Bool = false
     
+    var mode:HOME_MODE = .HOME
+    
     // bar status
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
+    }
+    
+    
+    // fixed Parking
+    private var _parking:FindParkingEntity?
+    
+    var FixedParking:FindParkingEntity?{
+        get{
+            return _parking
+        }
+        set{
+            _parking = newValue
+            if let p = newValue {
+                parkingDictionary[p.id] = p
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -48,7 +73,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         // add bottom sheet
         self.addBottomSheet()
+        if let p = _parking, mode != HOME_MODE.HOME {
+            let position:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
+            mapView.camera = GMSCameraPosition.camera(withTarget: position, zoom: 14.0)
+            pinParkingOnMap(p: p)
+            self.presenter?.retParkingDetails(id: p.id)
+        }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,7 +89,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
     }
     
     override func loadView() {
@@ -65,13 +98,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func Initialization() {
         presenter = HomePresenter(view: self)
-
-        // init navigation bar
-        navigationController?.navigationBar.barTintColor = ColorUtils.hexStringToUIColor(hex: "#5555ab")
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         // init google map
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 14.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 21.025905, longitude: 105.779800, zoom: 14.0)
         self.mapView.camera = camera
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
@@ -83,7 +111,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .denied{
             locationManager.requestWhenInUseAuthorization()
         }else{
+            
             locationManager.startUpdatingLocation()
+
         }
         
         //
@@ -118,7 +148,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
-        mapView.camera = GMSCameraPosition.camera(withTarget: locations[0].coordinate, zoom: 14.0)
+        if mode == .HOME {
+            mapView.camera = GMSCameraPosition.camera(withTarget: locations[0].coordinate, zoom: 14.0)
+        }
         myLocation = locations[0].coordinate
     }
     
@@ -135,20 +167,24 @@ extension HomeViewController:IHomeView{
         if result != nil{
             result?.forEach({ p in
                 if parkingDictionary[p.id] == nil {
-                    let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
-                    let m = GMSMarker(position: position)
-                    
-                    if p.owner == 0 {
-                        m.icon = #imageLiteral(resourceName: "ic_marker_blue")
-                    }else{
-                        m.icon = #imageLiteral(resourceName: "ic_marker_red")
-                    }
-                    m.map = mapView
-                    m.userData = p.id
-                    parkingDictionary[p.id] = p
+                    pinParkingOnMap(p: p)
                 }
             })
         }
+    }
+    
+    func pinParkingOnMap(p:FindParkingEntity){
+        let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
+        let m = GMSMarker(position: position)
+        
+        if p.owner == 0 {
+            m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+        }else{
+            m.icon = #imageLiteral(resourceName: "ic_marker_red")
+        }
+        m.map = mapView
+        m.userData = p.id
+        parkingDictionary[p.id] = p
     }
     
     func retParkingDetails(didError error: NIPError?, didLoaded result: ParkingInfoEntity?) {
@@ -189,22 +225,22 @@ extension HomeViewController:IHomeView{
     }
     
     func clearDirection() {
-        if isDirection {
-            isDirection = false
-            mapView.clear()
-            for (key,p) in parkingDictionary {
-                let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
-                let m = GMSMarker(position: position)
+            if isDirection {
+                isDirection = false
+                mapView.clear()
+                for (_,p) in parkingDictionary {
+                    let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
+                    let m = GMSMarker(position: position)
                 
-                if p.owner == 0 {
-                    m.icon = #imageLiteral(resourceName: "ic_marker_blue")
-                }else{
-                    m.icon = #imageLiteral(resourceName: "ic_marker_red")
+                    if p.owner == 0 {
+                        m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+                    }else{
+                        m.icon = #imageLiteral(resourceName: "ic_marker_red")
+                    }
+                    m.map = mapView
+                    m.userData = p.id
                 }
-                m.map = mapView
-                m.userData = p.id
             }
-        }
     }
 
 }
@@ -218,20 +254,24 @@ extension HomeViewController: GMSMapViewDelegate{
     
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        if !isDirection {
-            let lat:Double = position.target.latitude
-            let lng:Double = position.target.longitude
-            if isLoadData {
-                presenter?.findParking(lat: lat, lng: lng)
-            }
+        if mode == .HOME {
+            if !isDirection {
+                let lat:Double = position.target.latitude
+                let lng:Double = position.target.longitude
+                if isLoadData {
+                    presenter?.findParking(lat: lat, lng: lng)
+                }
         
-            isLoadData = true
+                isLoadData = true
+            }
         }
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
-        if !isDirection {
-            self.bottomSheet?.hiddenBottomSheet()
+        if mode == .HOME { // thuc hien tac vu nay khi no la man hinh home
+            if !isDirection {
+                self.bottomSheet?.hiddenBottomSheet()
+            }
         }
     }
     

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+import EVReflection
+class CheckOutReq: EVObject {
+    var transaction:String?
+}
