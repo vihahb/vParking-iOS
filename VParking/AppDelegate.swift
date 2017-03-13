@@ -11,6 +11,8 @@ import FBSDKCoreKit
 import GoogleMaps
 import GooglePlaces
 import GoogleMapsDirections
+import Fabric
+import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,7 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyBfHvCXe5HLee8ChgtQpC1mjQr9iZNrej4")
         GoogleMapsDirections.provide(apiKey: "AIzaSyCuJwaRqJJIXQrnGSij6hNGv4IF4IVJYjc")
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        Fabric.with([Crashlytics.self])
+        self.loginFabric()
         return true
+    }
+    
+    func loginFabric(){
+
+            Crashlytics.sharedInstance().setUserEmail("thangnm.uet@gmail.com")
+            Crashlytics.sharedInstance().setUserIdentifier("thang1991@")
+            Crashlytics.sharedInstance().setUserName("ThangNM")
+
     }
     
     @available(iOS 9.0,*)

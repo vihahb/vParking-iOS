@@ -141,7 +141,8 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     @IBAction func showProfile(_ sender: Any) {
         if let profileVC:ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
             profileVC.User = self.user
-            if let nav = self.navigationController {
+            if let nav = self.revealViewController().frontViewController as? UINavigationController {
+                self.revealViewController().revealToggle(animated: true)
                 nav.pushViewController(profileVC, animated: true)
             }
         }

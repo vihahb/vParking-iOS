@@ -506,6 +506,7 @@
 				73D38D041E55505E005B9E9F /* Resources */,
 				F93F9430D151C908811517F0 /* [CP] Embed Pods Frameworks */,
 				547660334527267490789DCD /* [CP] Copy Pods Resources */,
+				7338A8471E76E56A004C9030 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -646,6 +647,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VParking/Pods-VParking-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7338A8471E76E56A004C9030 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5765ba05cf4f36a9301d3a8eb9fe7c9e53ecb745 b9f10ee03af30b1850ba5bb4e655c0a762bef3cc5718900aa1b7b5230e46d8e7";
 		};
 		73D29AB1D35CD2A84242FA36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

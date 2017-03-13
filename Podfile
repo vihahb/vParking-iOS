@@ -11,6 +11,8 @@ target 'VParking' do
     pod 'SVProgressHUD'
     pod 'GoogleMapsDirections', '~> 1.1'
     pod 'DropDown'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 pod 'EVReflection/MoyaRxSwift'
