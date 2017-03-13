@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCE_NAME) camera use</string>
 	<key>AccountKitClientToken</key>
 	<string>d974e9a5107da65ba2263cc5857a49f1</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -48,6 +46,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCE_NAME) camera use</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allowing access to your location, you can spot your position on the map.</string>
 	<key>UILaunchStoryboardName</key>
@@ -63,8 +63,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
