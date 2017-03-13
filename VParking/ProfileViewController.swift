@@ -18,7 +18,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var imageActionUpload: UIImageView!
-    
+    private var _user:UserProfileEntity?
+    var User:UserProfileEntity?{
+        get{return _user}
+        set{
+            self._user = newValue
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()

@@ -23,6 +23,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     var presenter:SideMenuPresenter?
     var menuData = [MenuData]()
     var selectedIndex:Int = 0
+    var user:UserProfileEntity?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,6 +72,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     }
     
     func onLoadProfileSuccess(info: UserProfileEntity) {
+        self.user = info
         if info.fullname != nil {
             lblName.text = info.fullname
         }else{
@@ -137,6 +139,12 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     }
     
     @IBAction func showProfile(_ sender: Any) {
+        if let profileVC:ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController {
+            profileVC.User = self.user
+            if let nav = self.navigationController {
+                nav.pushViewController(profileVC, animated: true)
+            }
+        }
     }
     
 }

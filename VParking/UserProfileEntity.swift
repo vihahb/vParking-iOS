@@ -10,7 +10,7 @@ import Foundation
 class UserProfileEntity: ResultBase{
     
     var fullname:String?
-    var gender:Int?
+    var gender:Int=0
     var birthday:String?
     var email:String?
     var phone:String?

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2C8BAC84360897F563B6D4A5 /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1A9A3FF82C33C2B7343EDC /* Pods_VParking.framework */; };
+		730A716B1E719EBC00BA099A /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A716A1E719EBC00BA099A /* TicketViewController.swift */; };
+		730A716D1E719FB800BA099A /* ITicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A716C1E719FB800BA099A /* ITicketView.swift */; };
+		730A716F1E71AC3900BA099A /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A716E1E71AC3900BA099A /* TicketPresenter.swift */; };
+		730A71711E71B04000BA099A /* CheckOutReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A71701E71B04000BA099A /* CheckOutReq.swift */; };
+		730A71741E71B84900BA099A /* TicketViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A71731E71B84900BA099A /* TicketViewDelegate.swift */; };
 		7318665C1E63E15100427153 /* ParkingInfoBottomsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7318665B1E63E15100427153 /* ParkingInfoBottomsheetViewController.swift */; };
 		7318665E1E64162500427153 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7318665D1E64162500427153 /* TestViewController.swift */; };
 		731866641E64824B00427153 /* ParkingInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731866631E64824B00427153 /* ParkingInfoEntity.swift */; };
@@ -22,8 +27,25 @@
 		7321F84A1E6D607300519B15 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F8491E6D607300519B15 /* CheckInViewController.swift */; };
 		7321F84C1E6DB03F00519B15 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */; };
 		7321F84E1E6DB08000519B15 /* IQRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F84D1E6DB08000519B15 /* IQRCodeScannerView.swift */; };
+		7338A8441E763949004C9030 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7338A8431E763949004C9030 /* ProfileViewController.swift */; };
+		7338A8461E7650E5004C9030 /* IProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7338A8451E7650E5004C9030 /* IProfileView.swift */; };
 		733A26C11E6D14A10091AF73 /* AuthenticateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A26C01E6D14A10091AF73 /* AuthenticateEntity.swift */; };
 		73677A9D1E60180C001D37F8 /* FindCodition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73677A9C1E60180C001D37F8 /* FindCodition.swift */; };
+		737A5BB41E6FF50F00E9E76C /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BAF1E6FF50F00E9E76C /* AccountKit.framework */; };
+		737A5BB51E6FF50F00E9E76C /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 737A5BB01E6FF50F00E9E76C /* AccountKitStrings.bundle */; };
+		737A5BB61E6FF50F00E9E76C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB11E6FF50F00E9E76C /* Bolts.framework */; };
+		737A5BB71E6FF50F00E9E76C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB21E6FF50F00E9E76C /* FBSDKCoreKit.framework */; };
+		737A5BB81E6FF50F00E9E76C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB31E6FF50F00E9E76C /* FBSDKLoginKit.framework */; };
+		739D40D21E70E7800046CD60 /* VerhicleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D11E70E7800046CD60 /* VerhicleEntity.swift */; };
+		739D40D41E70E8340046CD60 /* QRCodeScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D31E70E8340046CD60 /* QRCodeScannerPresenter.swift */; };
+		739D40D61E70E9880046CD60 /* VerhicleSortResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D51E70E9880046CD60 /* VerhicleSortResult.swift */; };
+		739D40D81E70F8CC0046CD60 /* CheckInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D71E70F8CC0046CD60 /* CheckInEntity.swift */; };
+		739D40DB1E7131880046CD60 /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D91E7131880046CD60 /* CheckInTableViewCell.swift */; };
+		739D40DC1E7131880046CD60 /* CheckInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739D40DA1E7131880046CD60 /* CheckInTableViewCell.xib */; };
+		739D40E01E713AC90046CD60 /* CheckInInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40DF1E713AC90046CD60 /* CheckInInfo.swift */; };
+		739D40E21E713DBA0046CD60 /* CheckInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40E11E713DBA0046CD60 /* CheckInList.swift */; };
+		739D40E41E713F230046CD60 /* CheckInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40E31E713F230046CD60 /* CheckInPresenter.swift */; };
+		739D40E61E713F440046CD60 /* ICheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40E51E713F440046CD60 /* ICheckInView.swift */; };
 		73A9A4AF1E6A708B007EC581 /* ParkingInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9A4AE1E6A708B007EC581 /* ParkingInfoPresenter.swift */; };
 		73A9A4B11E6A7236007EC581 /* ParkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A9A4B01E6A7236007EC581 /* ParkingRequest.swift */; };
 		73ADC89E1E56E1E1001D6B4F /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ADC89D1E56E1E1001D6B4F /* UIDevice.swift */; };
@@ -68,17 +90,11 @@
 		73D38DA11E55E598005B9E9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D38DA01E55E598005B9E9F /* LoginViewController.swift */; };
 		73D38DA41E55ED4F005B9E9F /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D38DA31E55ED4F005B9E9F /* ColorUtils.swift */; };
 		73D38DA61E55F2D7005B9E9F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D38DA51E55F2D7005B9E9F /* Toast.swift */; };
-		73D38DAC1E56081B005B9E9F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D38DA81E56081A005B9E9F /* Bolts.framework */; };
-		73D38DAD1E56081B005B9E9F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D38DA91E56081B005B9E9F /* FBSDKCoreKit.framework */; };
-		73D38DAE1E56081B005B9E9F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D38DAA1E56081B005B9E9F /* FBSDKLoginKit.framework */; };
-		73D38DAF1E56081B005B9E9F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D38DAB1E56081B005B9E9F /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		73D38DB11E560CB7005B9E9F /* DemoFacebokViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D38DB01E560CB7005B9E9F /* DemoFacebokViewController.swift */; };
 		73DC70CB1E6813E600AEBBA5 /* GoogleMapApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CA1E6813E600AEBBA5 /* GoogleMapApi.swift */; };
 		73DC70CD1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */; };
 		73DC70CF1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */; };
 		73DC70D11E6874DF00AEBBA5 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */; };
-		73E3E34A1E569A290098204B /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E3E3481E569A290098204B /* AccountKit.framework */; };
-		73E3E34B1E569A290098204B /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73E3E3491E569A290098204B /* AccountKitStrings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +116,11 @@
 
 /* Begin PBXFileReference section */
 		3C4EF982E65819EA497ECE97 /* Pods-VParking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VParking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VParking/Pods-VParking.debug.xcconfig"; sourceTree = "<group>"; };
+		730A716A1E719EBC00BA099A /* TicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		730A716C1E719FB800BA099A /* ITicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITicketView.swift; sourceTree = "<group>"; };
+		730A716E1E71AC3900BA099A /* TicketPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketPresenter.swift; sourceTree = "<group>"; };
+		730A71701E71B04000BA099A /* CheckOutReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutReq.swift; sourceTree = "<group>"; };
+		730A71731E71B84900BA099A /* TicketViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketViewDelegate.swift; sourceTree = "<group>"; };
 		7318665B1E63E15100427153 /* ParkingInfoBottomsheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoBottomsheetViewController.swift; sourceTree = "<group>"; };
 		7318665D1E64162500427153 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		731866631E64824B00427153 /* ParkingInfoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoEntity.swift; sourceTree = "<group>"; };
@@ -114,8 +135,25 @@
 		7321F8491E6D607300519B15 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		7321F84D1E6DB08000519B15 /* IQRCodeScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQRCodeScannerView.swift; sourceTree = "<group>"; };
+		7338A8431E763949004C9030 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7338A8451E7650E5004C9030 /* IProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IProfileView.swift; sourceTree = "<group>"; };
 		733A26C01E6D14A10091AF73 /* AuthenticateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateEntity.swift; sourceTree = "<group>"; };
 		73677A9C1E60180C001D37F8 /* FindCodition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCodition.swift; sourceTree = "<group>"; };
+		737A5BAF1E6FF50F00E9E76C /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = ../../../../FACEBOOKSDK/AccountKit.framework; sourceTree = "<group>"; };
+		737A5BB01E6FF50F00E9E76C /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AccountKitStrings.bundle; path = ../../../../FACEBOOKSDK/AccountKitStrings.bundle; sourceTree = "<group>"; };
+		737A5BB11E6FF50F00E9E76C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../FACEBOOKSDK/Bolts.framework; sourceTree = "<group>"; };
+		737A5BB21E6FF50F00E9E76C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../FACEBOOKSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		737A5BB31E6FF50F00E9E76C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../FACEBOOKSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		739D40D11E70E7800046CD60 /* VerhicleEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleEntity.swift; sourceTree = "<group>"; };
+		739D40D31E70E8340046CD60 /* QRCodeScannerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerPresenter.swift; sourceTree = "<group>"; };
+		739D40D51E70E9880046CD60 /* VerhicleSortResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleSortResult.swift; sourceTree = "<group>"; };
+		739D40D71E70F8CC0046CD60 /* CheckInEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInEntity.swift; sourceTree = "<group>"; };
+		739D40D91E7131880046CD60 /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
+		739D40DA1E7131880046CD60 /* CheckInTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInTableViewCell.xib; sourceTree = "<group>"; };
+		739D40DF1E713AC90046CD60 /* CheckInInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInInfo.swift; sourceTree = "<group>"; };
+		739D40E11E713DBA0046CD60 /* CheckInList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInList.swift; sourceTree = "<group>"; };
+		739D40E31E713F230046CD60 /* CheckInPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInPresenter.swift; sourceTree = "<group>"; };
+		739D40E51E713F440046CD60 /* ICheckInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICheckInView.swift; sourceTree = "<group>"; };
 		73A9A4AE1E6A708B007EC581 /* ParkingInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoPresenter.swift; sourceTree = "<group>"; };
 		73A9A4B01E6A7236007EC581 /* ParkingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingRequest.swift; sourceTree = "<group>"; };
 		73ADC89D1E56E1E1001D6B4F /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
@@ -168,17 +206,11 @@
 		73D38DA01E55E598005B9E9F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		73D38DA31E55ED4F005B9E9F /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		73D38DA51E55F2D7005B9E9F /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		73D38DA81E56081A005B9E9F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../../FACEBOOKSDK/Bolts.framework; sourceTree = "<group>"; };
-		73D38DA91E56081B005B9E9F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../FACEBOOKSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		73D38DAA1E56081B005B9E9F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../FACEBOOKSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		73D38DAB1E56081B005B9E9F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../FACEBOOKSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		73D38DB01E560CB7005B9E9F /* DemoFacebokViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoFacebokViewController.swift; sourceTree = "<group>"; };
 		73DC70CA1E6813E600AEBBA5 /* GoogleMapApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapApi.swift; sourceTree = "<group>"; };
 		73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IParkingInfoBottomSheet.swift; sourceTree = "<group>"; };
 		73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoBottomSheetExtensionView.swift; sourceTree = "<group>"; };
 		73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		73E3E3481E569A290098204B /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = ../../../../../FACEBOOKSDK/AccountKit.framework; sourceTree = "<group>"; };
-		73E3E3491E569A290098204B /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AccountKitStrings.bundle; path = ../../../../../FACEBOOKSDK/AccountKitStrings.bundle; sourceTree = "<group>"; };
 		DBAD8365917799AEE4C6A400 /* Pods-VParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-VParking/Pods-VParking.release.xcconfig"; sourceTree = "<group>"; };
 		FE1A9A3FF82C33C2B7343EDC /* Pods_VParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,12 +220,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73D38DAC1E56081B005B9E9F /* Bolts.framework in Frameworks */,
-				73D38DAD1E56081B005B9E9F /* FBSDKCoreKit.framework in Frameworks */,
-				73E3E34A1E569A290098204B /* AccountKit.framework in Frameworks */,
-				73D38DAE1E56081B005B9E9F /* FBSDKLoginKit.framework in Frameworks */,
-				73D38DAF1E56081B005B9E9F /* FBSDKShareKit.framework in Frameworks */,
+				737A5BB61E6FF50F00E9E76C /* Bolts.framework in Frameworks */,
+				737A5BB71E6FF50F00E9E76C /* FBSDKCoreKit.framework in Frameworks */,
+				737A5BB81E6FF50F00E9E76C /* FBSDKLoginKit.framework in Frameworks */,
 				2C8BAC84360897F563B6D4A5 /* Pods_VParking.framework in Frameworks */,
+				737A5BB41E6FF50F00E9E76C /* AccountKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +252,14 @@
 				DBAD8365917799AEE4C6A400 /* Pods-VParking.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		730A71721E71B7AF00BA099A /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				730A71731E71B84900BA099A /* TicketViewDelegate.swift */,
+			);
+			name = delegate;
 			sourceTree = "<group>";
 		};
 		731866551E63C48C00427153 /* bottomsheet */ = {
@@ -251,6 +290,12 @@
 				731866691E64840C00427153 /* ParkingPictureEntity.swift */,
 				73A9A4B01E6A7236007EC581 /* ParkingRequest.swift */,
 				733A26C01E6D14A10091AF73 /* AuthenticateEntity.swift */,
+				739D40D11E70E7800046CD60 /* VerhicleEntity.swift */,
+				739D40D51E70E9880046CD60 /* VerhicleSortResult.swift */,
+				739D40D71E70F8CC0046CD60 /* CheckInEntity.swift */,
+				739D40DF1E713AC90046CD60 /* CheckInInfo.swift */,
+				739D40E11E713DBA0046CD60 /* CheckInList.swift */,
+				730A71701E71B04000BA099A /* CheckOutReq.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -270,6 +315,8 @@
 				73C87FE61E5A038F00EAA842 /* MenuTableViewCell.swift */,
 				73C87FE71E5A038F00EAA842 /* MenuTableViewCell.xib */,
 				73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */,
+				739D40D91E7131880046CD60 /* CheckInTableViewCell.swift */,
+				739D40DA1E7131880046CD60 /* CheckInTableViewCell.xib */,
 			);
 			name = custom;
 			sourceTree = "<group>";
@@ -342,6 +389,9 @@
 				73C87FDD1E59F31900EAA842 /* SideMenuPrecenter.swift */,
 				73D05FF41E5B3FD100D8E371 /* LaunchScreenPresenter.swift */,
 				73A9A4AE1E6A708B007EC581 /* ParkingInfoPresenter.swift */,
+				739D40D31E70E8340046CD60 /* QRCodeScannerPresenter.swift */,
+				739D40E31E713F230046CD60 /* CheckInPresenter.swift */,
+				730A716E1E71AC3900BA099A /* TicketPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -362,6 +412,7 @@
 		73D38D871E5586BB005B9E9F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				730A71721E71B7AF00BA099A /* delegate */,
 				73C6EDBF1E65566A0008A91D /* Test */,
 				731866551E63C48C00427153 /* bottomsheet */,
 				73C87FE51E5A036400EAA842 /* custom */,
@@ -379,6 +430,8 @@
 				7321F8471E6D606600519B15 /* VerhicleViewController.swift */,
 				7321F8491E6D607300519B15 /* CheckInViewController.swift */,
 				7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */,
+				730A716A1E719EBC00BA099A /* TicketViewController.swift */,
+				7338A8431E763949004C9030 /* ProfileViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -394,6 +447,9 @@
 				73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */,
 				7321F8411E6D533600519B15 /* IMasterView.swift */,
 				7321F84D1E6DB08000519B15 /* IQRCodeScannerView.swift */,
+				739D40E51E713F440046CD60 /* ICheckInView.swift */,
+				730A716C1E719FB800BA099A /* ITicketView.swift */,
+				7338A8451E7650E5004C9030 /* IProfileView.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -420,12 +476,11 @@
 		73E3E3471E568E070098204B /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				73E3E3481E569A290098204B /* AccountKit.framework */,
-				73E3E3491E569A290098204B /* AccountKitStrings.bundle */,
-				73D38DA81E56081A005B9E9F /* Bolts.framework */,
-				73D38DA91E56081B005B9E9F /* FBSDKCoreKit.framework */,
-				73D38DAA1E56081B005B9E9F /* FBSDKLoginKit.framework */,
-				73D38DAB1E56081B005B9E9F /* FBSDKShareKit.framework */,
+				737A5BAF1E6FF50F00E9E76C /* AccountKit.framework */,
+				737A5BB01E6FF50F00E9E76C /* AccountKitStrings.bundle */,
+				737A5BB11E6FF50F00E9E76C /* Bolts.framework */,
+				737A5BB21E6FF50F00E9E76C /* FBSDKCoreKit.framework */,
+				737A5BB31E6FF50F00E9E76C /* FBSDKLoginKit.framework */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -553,9 +608,10 @@
 				73D38D141E55505E005B9E9F /* LaunchScreen.storyboard in Resources */,
 				73D38D111E55505E005B9E9F /* Assets.xcassets in Resources */,
 				7321F83E1E6D3A9E00519B15 /* Images.xcassets in Resources */,
+				737A5BB51E6FF50F00E9E76C /* AccountKitStrings.bundle in Resources */,
 				7321F8441E6D54DC00519B15 /* Main.storyboard in Resources */,
+				739D40DC1E7131880046CD60 /* CheckInTableViewCell.xib in Resources */,
 				73C87FE91E5A038F00EAA842 /* MenuTableViewCell.xib in Resources */,
-				73E3E34B1E569A290098204B /* AccountKitStrings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +697,9 @@
 				7318666A1E64840C00427153 /* ParkingPictureEntity.swift in Sources */,
 				73D38D921E5591B2005B9E9F /* LoginPresenter.swift in Sources */,
 				73D38DA41E55ED4F005B9E9F /* ColorUtils.swift in Sources */,
+				739D40E01E713AC90046CD60 /* CheckInInfo.swift in Sources */,
 				7321F8401E6D52FA00519B15 /* MasterViewController.swift in Sources */,
+				739D40D21E70E7800046CD60 /* VerhicleEntity.swift in Sources */,
 				73D38D0A1E55505E005B9E9F /* AppDelegate.swift in Sources */,
 				73677A9D1E60180C001D37F8 /* FindCodition.swift in Sources */,
 				73DC70CB1E6813E600AEBBA5 /* GoogleMapApi.swift in Sources */,
@@ -649,8 +707,13 @@
 				7318665E1E64162500427153 /* TestViewController.swift in Sources */,
 				73ADC8AA1E56EBB4001D6B4F /* HttpRequestManager.swift in Sources */,
 				73C87FE81E5A038F00EAA842 /* MenuTableViewCell.swift in Sources */,
+				739D40E21E713DBA0046CD60 /* CheckInList.swift in Sources */,
+				730A716B1E719EBC00BA099A /* TicketViewController.swift in Sources */,
 				73D38D941E5591F3005B9E9F /* IHomeView.swift in Sources */,
+				730A716F1E71AC3900BA099A /* TicketPresenter.swift in Sources */,
 				7321F8461E6D605700519B15 /* FavoriteViewController.swift in Sources */,
+				739D40E41E713F230046CD60 /* CheckInPresenter.swift in Sources */,
+				730A716D1E719FB800BA099A /* ITicketView.swift in Sources */,
 				7321F84E1E6DB08000519B15 /* IQRCodeScannerView.swift in Sources */,
 				73ADC8A61E56E93F001D6B4F /* IRestFulResult.swift in Sources */,
 				73ADC8B61E583175001D6B4F /* AKLoginEntity.swift in Sources */,
@@ -662,28 +725,37 @@
 				73C87FE41E59FB7A00EAA842 /* UIImageView.swift in Sources */,
 				731866641E64824B00427153 /* ParkingInfoEntity.swift in Sources */,
 				7321F8481E6D606600519B15 /* VerhicleViewController.swift in Sources */,
+				739D40D41E70E8340046CD60 /* QRCodeScannerPresenter.swift in Sources */,
 				73B338DC1E6020B400135688 /* FindParkingResult.swift in Sources */,
 				73A9A4B11E6A7236007EC581 /* ParkingRequest.swift in Sources */,
 				7321F84A1E6D607300519B15 /* CheckInViewController.swift in Sources */,
+				730A71741E71B84900BA099A /* TicketViewDelegate.swift in Sources */,
 				73ADC8AE1E56FB5F001D6B4F /* NIPUMBaseRequest.swift in Sources */,
 				73D38D3C1E55514D005B9E9F /* SWRevealViewController.m in Sources */,
+				7338A8461E7650E5004C9030 /* IProfileView.swift in Sources */,
 				73D38D3F1E5554DB005B9E9F /* HomeViewController.swift in Sources */,
 				73D05FF51E5B3FD100D8E371 /* LaunchScreenPresenter.swift in Sources */,
 				73C87FE21E59F67500EAA842 /* UserProfileEntity.swift in Sources */,
 				73C87FDE1E59F31900EAA842 /* SideMenuPrecenter.swift in Sources */,
 				73D38DB11E560CB7005B9E9F /* DemoFacebokViewController.swift in Sources */,
 				73ADC89E1E56E1E1001D6B4F /* UIDevice.swift in Sources */,
+				739D40E61E713F440046CD60 /* ICheckInView.swift in Sources */,
 				73D38D891E558730005B9E9F /* SideMenuViewController.swift in Sources */,
+				739D40DB1E7131880046CD60 /* CheckInTableViewCell.swift in Sources */,
 				73D38D441E55590A005B9E9F /* ILoginView.swift in Sources */,
+				730A71711E71B04000BA099A /* CheckOutReq.swift in Sources */,
 				73D05FF31E5B3EDC00D8E371 /* ILaunchScreenView.swift in Sources */,
+				739D40D81E70F8CC0046CD60 /* CheckInEntity.swift in Sources */,
 				73ADC8B21E5706A6001D6B4F /* DeviceEntity.swift in Sources */,
 				73DC70CD1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift in Sources */,
 				73D38D961E55922E005B9E9F /* HomePresenter.swift in Sources */,
+				7338A8441E763949004C9030 /* ProfileViewController.swift in Sources */,
 				73ADC8B41E5707BC001D6B4F /* NIPLoginResult.swift in Sources */,
 				73ADC8AC1E56EF87001D6B4F /* ResultBase.swift in Sources */,
 				73B338DE1E6028FC00135688 /* FindParkingEntity.swift in Sources */,
 				73D38DA11E55E598005B9E9F /* LoginViewController.swift in Sources */,
 				73ADC8A41E56E545001D6B4F /* SessionManager.swift in Sources */,
+				739D40D61E70E9880046CD60 /* VerhicleSortResult.swift in Sources */,
 				73D05FF11E5B3DB300D8E371 /* LaunchScreenViewController.swift in Sources */,
 				73ADC8A81E56E980001D6B4F /* NIPError.swift in Sources */,
 			);
