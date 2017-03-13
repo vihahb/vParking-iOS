@@ -242,6 +242,10 @@ extension HomeViewController:IHomeView{
                 }
             }
     }
+    
+    func showToast(_ message: String) {
+        self.view.makeToast(message)
+    }
 
 }
 

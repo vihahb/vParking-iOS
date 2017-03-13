@@ -14,4 +14,5 @@ protocol IHomeView : IViewBase {
     func getMyLocation() -> CLLocationCoordinate2D?
     func drawbleDirection(_ pathEncode:String,id:Int)
     func clearDirection()
+    func showToast(_ message:String)
 }

@@ -104,16 +104,24 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
     }
     
     func verhicle(didResult verhicles: [VerhicleEntity]?, error: NIPError?) {
-        if let e = error {
-            self.view.makeToast("Không lấy được dữ liệu xe cá nhân vui long thử lại \(e.type).")
-            self.dismiss(animated: true, completion: nil)
+        if let _ = error {
+            let alert = UIAlertController(title: "Thông báo", message: "Không lấy được dữ liệu xe cá nhân vui long thử lại.", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (ac) in
+                self.close()
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
         if let d = verhicles {
             if d.count <= 0 {
-                self.view.makeToast("Bạn chưa tạo phương tiện cá nhân. Vui lòng tạo phương tiện cá nhân để checkin.")
-                self.dismiss(animated: true, completion: nil)
+                let alert = UIAlertController(title: "Thông báo", message: "Bạn chưa tạo phương tiện cá nhân. Vui lòng tạo phương tiện cá nhân để checkin.", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (ac) in
+                    self.close()
+                }
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
                 return
             }
         }

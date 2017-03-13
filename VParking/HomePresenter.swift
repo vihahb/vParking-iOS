@@ -24,10 +24,9 @@ class HomePresenter: PresenterBase {
     
     func findParking(lat:Double,lng:Double){
         let codition:FindCondition = getCondition(lat:lat,lng:lng)
-        self.view.showProgress(title: "Đang tìm bãi đỗ xe...!")
+        self.view.showToast("Đang tìm kiếm bãi đỗ xe...!")
         ParkingManager.instance.findParking(condition: codition){
             (result,error) in
-            self.view.closeProgress()
             if result != nil && error == nil{
                 let r:FindParkingResult = FindParkingResult(json: result)
                 
