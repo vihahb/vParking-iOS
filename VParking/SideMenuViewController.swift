@@ -136,4 +136,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
         self.present(loginForm, animated: true, completion: nil)
     }
     
+    @IBAction func showProfile(_ sender: Any) {
+    }
+    
 }
