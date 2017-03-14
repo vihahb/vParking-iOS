@@ -38,12 +38,16 @@ class ProfileViewController: UIViewController {
         
     }
     
+    @IBAction func touchDownBirthday(_ sender: Any) {
+        print("txtBirthDay Click")
+    }
 }
 
 extension ProfileViewController:IProfileView {
     func Initialization() {
         self.imageAvatar.layer.cornerRadius = self.imageAvatar.frame.height/2
         self.imageActionUpload.layer.cornerRadius = self.imageActionUpload.frame.height/2
+        self.txtBirthday.delegate = self
         fillInfo()
     }
     
@@ -62,5 +66,11 @@ extension ProfileViewController:IProfileView {
             txtUserName.text = u.fullname
             txtPhoneNumber.text = u.phone
         }
+    }
+}
+
+extension ProfileViewController : UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return false
     }
 }

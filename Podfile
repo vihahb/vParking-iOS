@@ -13,6 +13,7 @@ target 'VParking' do
     pod 'DropDown'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'DatePickerDialog'
 end
 
 pod 'EVReflection/MoyaRxSwift'

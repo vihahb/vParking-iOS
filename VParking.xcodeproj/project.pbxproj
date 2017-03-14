@@ -18,7 +18,6 @@
 		731866641E64824B00427153 /* ParkingInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731866631E64824B00427153 /* ParkingInfoEntity.swift */; };
 		731866661E6482FD00427153 /* PriceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731866651E6482FD00427153 /* PriceEntity.swift */; };
 		7318666A1E64840C00427153 /* ParkingPictureEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731866691E64840C00427153 /* ParkingPictureEntity.swift */; };
-		7321F83E1E6D3A9E00519B15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7321F83D1E6D3A9E00519B15 /* Images.xcassets */; };
 		7321F8401E6D52FA00519B15 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F83F1E6D52FA00519B15 /* MasterViewController.swift */; };
 		7321F8421E6D533600519B15 /* IMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F8411E6D533600519B15 /* IMasterView.swift */; };
 		7321F8441E6D54DC00519B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7321F8431E6D54DC00519B15 /* Main.storyboard */; };
@@ -126,7 +125,6 @@
 		731866631E64824B00427153 /* ParkingInfoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoEntity.swift; sourceTree = "<group>"; };
 		731866651E6482FD00427153 /* PriceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceEntity.swift; sourceTree = "<group>"; };
 		731866691E64840C00427153 /* ParkingPictureEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingPictureEntity.swift; sourceTree = "<group>"; };
-		7321F83D1E6D3A9E00519B15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7321F83F1E6D52FA00519B15 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		7321F8411E6D533600519B15 /* IMasterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMasterView.swift; sourceTree = "<group>"; };
 		7321F8431E6D54DC00519B15 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 				7321F8431E6D54DC00519B15 /* Main.storyboard */,
 				73D38D121E55505E005B9E9F /* LaunchScreen.storyboard */,
 				73D38D151E55505E005B9E9F /* Info.plist */,
-				7321F83D1E6D3A9E00519B15 /* Images.xcassets */,
 			);
 			path = VParking;
 			sourceTree = "<group>";
@@ -608,7 +605,6 @@
 			files = (
 				73D38D141E55505E005B9E9F /* LaunchScreen.storyboard in Resources */,
 				73D38D111E55505E005B9E9F /* Assets.xcassets in Resources */,
-				7321F83E1E6D3A9E00519B15 /* Images.xcassets in Resources */,
 				737A5BB51E6FF50F00E9E76C /* AccountKitStrings.bundle in Resources */,
 				7321F8441E6D54DC00519B15 /* Main.storyboard in Resources */,
 				739D40DC1E7131880046CD60 /* CheckInTableViewCell.xib in Resources */,
