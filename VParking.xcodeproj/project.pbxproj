@@ -31,7 +31,6 @@
 		733A26C11E6D14A10091AF73 /* AuthenticateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A26C01E6D14A10091AF73 /* AuthenticateEntity.swift */; };
 		73677A9D1E60180C001D37F8 /* FindCodition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73677A9C1E60180C001D37F8 /* FindCodition.swift */; };
 		737A5BB41E6FF50F00E9E76C /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BAF1E6FF50F00E9E76C /* AccountKit.framework */; };
-		737A5BB51E6FF50F00E9E76C /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 737A5BB01E6FF50F00E9E76C /* AccountKitStrings.bundle */; };
 		737A5BB61E6FF50F00E9E76C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB11E6FF50F00E9E76C /* Bolts.framework */; };
 		737A5BB71E6FF50F00E9E76C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB21E6FF50F00E9E76C /* FBSDKCoreKit.framework */; };
 		737A5BB81E6FF50F00E9E76C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB31E6FF50F00E9E76C /* FBSDKLoginKit.framework */; };
@@ -94,6 +93,20 @@
 		73DC70CD1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */; };
 		73DC70CF1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */; };
 		73DC70D11E6874DF00AEBBA5 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */; };
+		AA1312601E7A450B0088ACD7 /* IAddVerhicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */; };
+		AA1312621E7A45710088ACD7 /* AddVerhiclePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */; };
+		AA21FF721E78E7EB002D5A82 /* VerhicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */; };
+		AA21FF741E78E985002D5A82 /* VerhicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF731E78E985002D5A82 /* VerhicleTableViewCell.swift */; };
+		AA21FF761E78EC62002D5A82 /* BrandNameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF751E78EC62002D5A82 /* BrandNameEntity.swift */; };
+		AA21FF781E79266A002D5A82 /* IVerhicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF771E79266A002D5A82 /* IVerhicleView.swift */; };
+		AA21FF7A1E792778002D5A82 /* VerhiclePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF791E792778002D5A82 /* VerhiclePresenter.swift */; };
+		AA21FF7C1E793AF8002D5A82 /* AddVerhicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */; };
+		AA7BFD701E7B8098009C97D0 /* VerhicleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */; };
+		AAB334111E779BBE00571FFA /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */; };
+		AAB334131E779D8700571FFA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334121E779D8700571FFA /* FavoriteTableViewCell.swift */; };
+		AAB334151E779EFA00571FFA /* FavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334141E779EFA00571FFA /* FavoriteEntity.swift */; };
+		AAB334171E77A0C300571FFA /* IFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334161E77A0C300571FFA /* IFavoriteView.swift */; };
+		AAB334191E77A15600571FFA /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334181E77A15600571FFA /* FavoritePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +222,20 @@
 		73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IParkingInfoBottomSheet.swift; sourceTree = "<group>"; };
 		73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoBottomSheetExtensionView.swift; sourceTree = "<group>"; };
 		73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAddVerhicleView.swift; sourceTree = "<group>"; };
+		AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerhiclePresenter.swift; sourceTree = "<group>"; };
+		AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerhicleTableViewCell.xib; sourceTree = "<group>"; };
+		AA21FF731E78E985002D5A82 /* VerhicleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleTableViewCell.swift; sourceTree = "<group>"; };
+		AA21FF751E78EC62002D5A82 /* BrandNameEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandNameEntity.swift; sourceTree = "<group>"; };
+		AA21FF771E79266A002D5A82 /* IVerhicleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IVerhicleView.swift; sourceTree = "<group>"; };
+		AA21FF791E792778002D5A82 /* VerhiclePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhiclePresenter.swift; sourceTree = "<group>"; };
+		AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerhicleViewController.swift; sourceTree = "<group>"; };
+		AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleRequest.swift; sourceTree = "<group>"; };
+		AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
+		AAB334121E779D8700571FFA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		AAB334141E779EFA00571FFA /* FavoriteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEntity.swift; sourceTree = "<group>"; };
+		AAB334161E77A0C300571FFA /* IFavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFavoriteView.swift; sourceTree = "<group>"; };
+		AAB334181E77A15600571FFA /* FavoritePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		DBAD8365917799AEE4C6A400 /* Pods-VParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-VParking/Pods-VParking.release.xcconfig"; sourceTree = "<group>"; };
 		FE1A9A3FF82C33C2B7343EDC /* Pods_VParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -294,6 +321,9 @@
 				739D40DF1E713AC90046CD60 /* CheckInInfo.swift */,
 				739D40E11E713DBA0046CD60 /* CheckInList.swift */,
 				730A71701E71B04000BA099A /* CheckOutReq.swift */,
+				AAB334141E779EFA00571FFA /* FavoriteEntity.swift */,
+				AA21FF751E78EC62002D5A82 /* BrandNameEntity.swift */,
+				AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -315,6 +345,10 @@
 				73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */,
 				739D40D91E7131880046CD60 /* CheckInTableViewCell.swift */,
 				739D40DA1E7131880046CD60 /* CheckInTableViewCell.xib */,
+				AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */,
+				AAB334121E779D8700571FFA /* FavoriteTableViewCell.swift */,
+				AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */,
+				AA21FF731E78E985002D5A82 /* VerhicleTableViewCell.swift */,
 			);
 			name = custom;
 			sourceTree = "<group>";
@@ -389,6 +423,9 @@
 				739D40D31E70E8340046CD60 /* QRCodeScannerPresenter.swift */,
 				739D40E31E713F230046CD60 /* CheckInPresenter.swift */,
 				730A716E1E71AC3900BA099A /* TicketPresenter.swift */,
+				AAB334181E77A15600571FFA /* FavoritePresenter.swift */,
+				AA21FF791E792778002D5A82 /* VerhiclePresenter.swift */,
+				AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -421,14 +458,15 @@
 				73D38D391E55514C005B9E9F /* VParking-Bridging-Header.h */,
 				73D38D881E558730005B9E9F /* SideMenuViewController.swift */,
 				73D38DB01E560CB7005B9E9F /* DemoFacebokViewController.swift */,
+				7321F8451E6D605700519B15 /* FavoriteViewController.swift */,
 				73D05FF01E5B3DB300D8E371 /* LaunchScreenViewController.swift */,
 				7321F83F1E6D52FA00519B15 /* MasterViewController.swift */,
-				7321F8451E6D605700519B15 /* FavoriteViewController.swift */,
 				7321F8471E6D606600519B15 /* VerhicleViewController.swift */,
 				7321F8491E6D607300519B15 /* CheckInViewController.swift */,
 				7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */,
 				730A716A1E719EBC00BA099A /* TicketViewController.swift */,
 				7338A8431E763949004C9030 /* ProfileViewController.swift */,
+				AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -447,6 +485,9 @@
 				739D40E51E713F440046CD60 /* ICheckInView.swift */,
 				730A716C1E719FB800BA099A /* ITicketView.swift */,
 				7338A8451E7650E5004C9030 /* IProfileView.swift */,
+				AAB334161E77A0C300571FFA /* IFavoriteView.swift */,
+				AA21FF771E79266A002D5A82 /* IVerhicleView.swift */,
+				AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -562,7 +603,7 @@
 				TargetAttributes = {
 					73D38D051E55505E005B9E9F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = YZ69Y28WQ6;
+						DevelopmentTeam = PXSCCME364;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -605,10 +646,11 @@
 			files = (
 				73D38D141E55505E005B9E9F /* LaunchScreen.storyboard in Resources */,
 				73D38D111E55505E005B9E9F /* Assets.xcassets in Resources */,
-				737A5BB51E6FF50F00E9E76C /* AccountKitStrings.bundle in Resources */,
 				7321F8441E6D54DC00519B15 /* Main.storyboard in Resources */,
 				739D40DC1E7131880046CD60 /* CheckInTableViewCell.xib in Resources */,
 				73C87FE91E5A038F00EAA842 /* MenuTableViewCell.xib in Resources */,
+				AAB334111E779BBE00571FFA /* FavoriteTableViewCell.xib in Resources */,
+				AA21FF721E78E7EB002D5A82 /* VerhicleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,11 +740,13 @@
 				73DC70CF1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift in Sources */,
 				73D38DA61E55F2D7005B9E9F /* Toast.swift in Sources */,
 				73A9A4AF1E6A708B007EC581 /* ParkingInfoPresenter.swift in Sources */,
+				AA21FF781E79266A002D5A82 /* IVerhicleView.swift in Sources */,
 				731866661E6482FD00427153 /* PriceEntity.swift in Sources */,
 				7321F8421E6D533600519B15 /* IMasterView.swift in Sources */,
 				73D38D901E55918E005B9E9F /* PresenterBase.swift in Sources */,
 				73C87FDC1E59F21900EAA842 /* ISideMenuView.swift in Sources */,
 				733A26C11E6D14A10091AF73 /* AuthenticateEntity.swift in Sources */,
+				AA21FF741E78E985002D5A82 /* VerhicleTableViewCell.swift in Sources */,
 				73D38D461E555968005B9E9F /* IViewBase.swift in Sources */,
 				7318666A1E64840C00427153 /* ParkingPictureEntity.swift in Sources */,
 				73D38D921E5591B2005B9E9F /* LoginPresenter.swift in Sources */,
@@ -710,13 +754,17 @@
 				739D40E01E713AC90046CD60 /* CheckInInfo.swift in Sources */,
 				7321F8401E6D52FA00519B15 /* MasterViewController.swift in Sources */,
 				739D40D21E70E7800046CD60 /* VerhicleEntity.swift in Sources */,
+				AA21FF7A1E792778002D5A82 /* VerhiclePresenter.swift in Sources */,
 				73D38D0A1E55505E005B9E9F /* AppDelegate.swift in Sources */,
 				73677A9D1E60180C001D37F8 /* FindCodition.swift in Sources */,
 				73DC70CB1E6813E600AEBBA5 /* GoogleMapApi.swift in Sources */,
+				AAB334131E779D8700571FFA /* FavoriteTableViewCell.swift in Sources */,
 				73ADC8A11E56E4DB001D6B4F /* UserManager.swift in Sources */,
 				7318665E1E64162500427153 /* TestViewController.swift in Sources */,
 				73ADC8AA1E56EBB4001D6B4F /* HttpRequestManager.swift in Sources */,
 				73C87FE81E5A038F00EAA842 /* MenuTableViewCell.swift in Sources */,
+				AAB334191E77A15600571FFA /* FavoritePresenter.swift in Sources */,
+				AA1312601E7A450B0088ACD7 /* IAddVerhicleView.swift in Sources */,
 				739D40E21E713DBA0046CD60 /* CheckInList.swift in Sources */,
 				730A716B1E719EBC00BA099A /* TicketViewController.swift in Sources */,
 				73D38D941E5591F3005B9E9F /* IHomeView.swift in Sources */,
@@ -728,7 +776,9 @@
 				73ADC8A61E56E93F001D6B4F /* IRestFulResult.swift in Sources */,
 				73ADC8B61E583175001D6B4F /* AKLoginEntity.swift in Sources */,
 				73DC70D11E6874DF00AEBBA5 /* ViewControllerExtension.swift in Sources */,
+				AA1312621E7A45710088ACD7 /* AddVerhiclePresenter.swift in Sources */,
 				7321F84C1E6DB03F00519B15 /* QRCodeScannerViewController.swift in Sources */,
+				AA21FF7C1E793AF8002D5A82 /* AddVerhicleViewController.swift in Sources */,
 				7318665C1E63E15100427153 /* ParkingInfoBottomsheetViewController.swift in Sources */,
 				73C6EDC11E6556850008A91D /* UIBottomSheetTestViewController.swift in Sources */,
 				73ADC8B01E56FC35001D6B4F /* FBLoginEntity.swift in Sources */,
@@ -737,12 +787,14 @@
 				7321F8481E6D606600519B15 /* VerhicleViewController.swift in Sources */,
 				739D40D41E70E8340046CD60 /* QRCodeScannerPresenter.swift in Sources */,
 				73B338DC1E6020B400135688 /* FindParkingResult.swift in Sources */,
+				AAB334151E779EFA00571FFA /* FavoriteEntity.swift in Sources */,
 				73A9A4B11E6A7236007EC581 /* ParkingRequest.swift in Sources */,
 				7321F84A1E6D607300519B15 /* CheckInViewController.swift in Sources */,
 				730A71741E71B84900BA099A /* TicketViewDelegate.swift in Sources */,
 				73ADC8AE1E56FB5F001D6B4F /* NIPUMBaseRequest.swift in Sources */,
 				73D38D3C1E55514D005B9E9F /* SWRevealViewController.m in Sources */,
 				7338A8461E7650E5004C9030 /* IProfileView.swift in Sources */,
+				AA21FF761E78EC62002D5A82 /* BrandNameEntity.swift in Sources */,
 				73D38D3F1E5554DB005B9E9F /* HomeViewController.swift in Sources */,
 				73D05FF51E5B3FD100D8E371 /* LaunchScreenPresenter.swift in Sources */,
 				73C87FE21E59F67500EAA842 /* UserProfileEntity.swift in Sources */,
@@ -757,6 +809,7 @@
 				73D05FF31E5B3EDC00D8E371 /* ILaunchScreenView.swift in Sources */,
 				739D40D81E70F8CC0046CD60 /* CheckInEntity.swift in Sources */,
 				73ADC8B21E5706A6001D6B4F /* DeviceEntity.swift in Sources */,
+				AA7BFD701E7B8098009C97D0 /* VerhicleRequest.swift in Sources */,
 				73DC70CD1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift in Sources */,
 				73D38D961E55922E005B9E9F /* HomePresenter.swift in Sources */,
 				7338A8441E763949004C9030 /* ProfileViewController.swift in Sources */,
@@ -766,6 +819,7 @@
 				73D38DA11E55E598005B9E9F /* LoginViewController.swift in Sources */,
 				73ADC8A41E56E545001D6B4F /* SessionManager.swift in Sources */,
 				739D40D61E70E9880046CD60 /* VerhicleSortResult.swift in Sources */,
+				AAB334171E77A0C300571FFA /* IFavoriteView.swift in Sources */,
 				73D05FF11E5B3DB300D8E371 /* LaunchScreenViewController.swift in Sources */,
 				73ADC8A81E56E980001D6B4F /* NIPError.swift in Sources */,
 			);
@@ -914,10 +968,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YZ69Y28WQ6;
+				DEVELOPMENT_TEAM = PXSCCME364;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
+					/Users/Main/Documents/FacebookSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -927,9 +981,9 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = VParking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VParking/VParking-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -945,10 +999,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = YZ69Y28WQ6;
+				DEVELOPMENT_TEAM = PXSCCME364;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
+					/Users/Main/Documents/FacebookSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -958,9 +1012,9 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = VParking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "VParking/VParking-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

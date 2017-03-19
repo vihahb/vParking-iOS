@@ -12,4 +12,13 @@ class VerhicleEntity: ResultBase {
     var name:String?
     var type:Int = 0
     var plate_number:String?
+    var flag_default:Int = 0
+    var brandname:BrandNameEntity = BrandNameEntity()
+    
 }
+
+class VerhicleResult: ResultBase {
+    var data:[VerhicleEntity]?
+}
+
+

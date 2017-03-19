@@ -113,18 +113,22 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
         case 0:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.HOME_VIEW)
+                mView.updateAcionButton(false)
             }
         case 1:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.FAVORITE_VIEW)
+                mView.updateAcionButton(false)
             }
         case 2:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.VERHICLE_VIEW)
+                mView.updateAcionButton(true)
             }
         case 3:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.CHECKIN_VIEW)
+                mView.updateAcionButton(false)
             }
         case 4:
             presenter?.logout()

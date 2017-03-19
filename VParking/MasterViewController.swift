@@ -20,14 +20,18 @@ class MasterViewController: UIPageViewController {
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var btnCheckIn: UIBarButtonItem!
 
+
     var index:Int = 0
     
     var _VIEWS = [PARKING_VIEW:UIViewController]()
+    
+    var isAdd:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Initialization()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +50,28 @@ class MasterViewController: UIPageViewController {
     }
 
     @IBAction func checkInClicked(_ sender: Any) {
-        let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "QRCodeScannerViewController")
-        self.present(qrVC!, animated: true, completion: nil)
+        if !isAdd {
+            let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "QRCodeScannerViewController")
+            if let nav = self.navigationController {
+                nav.pushViewController(qrVC!, animated: true)
+            }
+        }else{
+            let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController")
+            if let nav = self.navigationController {
+                nav.pushViewController(qrVC!, animated: true)
+            }
+        }
+    }
+    
+    func updateAcionButton(_ isAdd:Bool){
+        self.isAdd = isAdd
+        if isAdd {
+            self.btnCheckIn.image = #imageLiteral(resourceName: "ic_action_add")
+            self.btnCheckIn.title = nil
+        }else{
+           self.btnCheckIn.image = nil
+            self.btnCheckIn.title = "CHECKIN"
+        }
     }
 }
 
