@@ -10,6 +10,7 @@ import UIKit
 import DropDown
 
 class AddVerhicleViewController: UIViewController {
+    let localData:UserDefaults = UserDefaults.init()
     
     var presenter:AddVerhiclePresenter?
     var dropDown:DropDown = DropDown()
@@ -20,6 +21,17 @@ class AddVerhicleViewController: UIViewController {
     var index:Int = 0
     var fdDefault:Int = 0
     var isDefault:Bool = true
+    var isUpdate:Bool = false
+    var id:Int = 0
+    private var _verhicle:VerhicleEntity?
+    var Verhicle:VerhicleEntity?{
+        set{
+            self._verhicle = newValue
+        }
+        get{
+            return self._verhicle
+        }
+    }
     
     @IBOutlet weak var segVerhicleType: UISegmentedControl!
     @IBOutlet weak var dropDownView: UIView!
@@ -30,7 +42,7 @@ class AddVerhicleViewController: UIViewController {
     @IBOutlet weak var txtFDesc: UITextField!
     @IBOutlet weak var imgDefault: UIImageView!
     
-    var type:Int = 0
+    var type:Int = 1
     @IBAction func segAVerhicleType(_ sender: Any) {
         switch segVerhicleType.selectedSegmentIndex {
         case 0:
@@ -43,7 +55,7 @@ class AddVerhicleViewController: UIViewController {
     }
 
     @IBAction func defaultTap(_ sender: Any) {
-        verhicles()
+verhicles()
     }
     
     @IBAction func AddVerhicle(_ sender: Any) {
@@ -61,10 +73,27 @@ class AddVerhicleViewController: UIViewController {
         dt.plate_number = txtFVerhiclePlate.text
         dt.type = type
         print(dt)
-        presenter?.verhicle(dt)
+//        presenter?.verhicle(dt)
         
-                
     }
+    
+    @IBAction func UpdateVerhicle(_ sender: Any) {
+        
+        var dt:VerhicleRequest = VerhicleRequest()
+        dt.brandname = brandRe
+        dt.name = txtFVerhicleName.text
+        dt.desc = txtFDesc.text
+        dt.flag_default = fdDefault
+        dt.plate_number = txtFVerhiclePlate.text
+        dt.type = type
+        dt.id = id
+        print(dt)
+        presenter?.putVerhicle(dt)
+   
+    }
+  
+    @IBOutlet weak var btnAddVerhicle: UIButton!
+    @IBOutlet weak var btnUpdateVerhicle: UIButton!
     
     
     
@@ -77,23 +106,55 @@ class AddVerhicleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
-        dropDownView.layer.cornerRadius = 5
-        dropDownView.layer.borderWidth = 1
-        dropDownView.layer.borderColor = UIColor.darkGray.cgColor
 
-        // Do any additional setup after loading the view.
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        Initialization()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
 }
 
-
 extension AddVerhicleViewController:IAddVerhicleView{
     func Initialization() {
+        dropDownView.layer.cornerRadius = 5
+        dropDownView.layer.borderWidth = 1
+        dropDownView.layer.borderColor = UIColor.darkGray.cgColor
+        
+        
+        if isUpdate == true {
+            self.btnAddVerhicle.isHidden = true
+            self.btnUpdateVerhicle.isHidden = false
+            
+            txtFVerhicleName.text = Verhicle?.name
+            type = (Verhicle?.type)!
+                if type == 1{
+                    segVerhicleType.selectedSegmentIndex = 0
+                }else {
+                    segVerhicleType.selectedSegmentIndex = 1
+                }
+            txtFVerhiclePlate.text = Verhicle?.plate_number
+            txtFDesc.text = Verhicle?.desc
+            fdDefault = (Verhicle?.flag_default)!
+                if fdDefault == 0 {
+                    imgDefault.image = #imageLiteral(resourceName: "ic_action_gray_dot")
+                } else {
+                    imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
+                }
+                id = (Verhicle?.id)!
+            brandRe = Verhicle?.brandname
+            
+            
+        }else {
+            self.btnUpdateVerhicle.isHidden = true
+            self.btnAddVerhicle.isHidden = false
+        }
+
         presenter = AddVerhiclePresenter(self)
         setupDropDown()
         presenter?.loadBrandName()
@@ -104,8 +165,6 @@ extension AddVerhicleViewController:IAddVerhicleView{
             for i in b {
                 self.brandName.append(i.name!)
                 self.brandObj.append(i)
-                self.brandRe = i
-                
                 dropDown.dataSource = self.brandName
                 dropDown.selectRow(at: 0)
             }
@@ -129,10 +188,9 @@ extension AddVerhicleViewController:IAddVerhicleView{
         self.imgDropDown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
         self.lblBrandName.text = item
         self.index = index
-        
-            var i:Int = Int(index)
-            self.brand = [self.brandObj[i]]
-            
+        var i:Int = Int(index)
+        self.brandRe = self.brandObj[i]
+
         }
     }
     func verhicle(error: NIPError){
@@ -149,6 +207,5 @@ extension AddVerhicleViewController:IAddVerhicleView{
             fdDefault = 1
         }
     }
-    
    
 }

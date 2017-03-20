@@ -461,11 +461,11 @@
 				7321F8451E6D605700519B15 /* FavoriteViewController.swift */,
 				73D05FF01E5B3DB300D8E371 /* LaunchScreenViewController.swift */,
 				7321F83F1E6D52FA00519B15 /* MasterViewController.swift */,
-				7321F8471E6D606600519B15 /* VerhicleViewController.swift */,
 				7321F8491E6D607300519B15 /* CheckInViewController.swift */,
 				7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */,
 				730A716A1E719EBC00BA099A /* TicketViewController.swift */,
 				7338A8431E763949004C9030 /* ProfileViewController.swift */,
+				7321F8471E6D606600519B15 /* VerhicleViewController.swift */,
 				AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */,
 			);
 			name = View;

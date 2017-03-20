@@ -964,6 +964,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duK-6P-3Ro">
                                                 <rect key="frame" x="37" y="0.0" width="80" height="80"/>
                                                 <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4iU-oV-G7y">
+                                                        <rect key="frame" x="-151" y="-70" width="381" height="234"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_account" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-5m-aAX">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                         <constraints>
@@ -1233,6 +1237,7 @@
                     <connections>
                         <outlet property="imageActionUpload" destination="R5r-hH-VK2" id="Vdz-B3-zwR"/>
                         <outlet property="imageAvatar" destination="gYt-5m-aAX" id="pJ6-Hf-vIJ"/>
+                        <outlet property="imgCover" destination="4iU-oV-G7y" id="vjH-GT-ECr"/>
                         <outlet property="lblUserName" destination="D5b-ks-43q" id="ZZs-KT-VxD"/>
                         <outlet property="txtBirthday" destination="m02-Ps-bTo" id="int-VS-KLP"/>
                         <outlet property="txtEmail" destination="CWn-1M-RL3" id="aOu-9a-XAS"/>
@@ -1248,7 +1253,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="279.375" y="-1115.4929577464789"/>
+            <point key="canvasLocation" x="368.80000000000001" y="-1124.8875562218891"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="juZ-PR-lZT">
@@ -1265,6 +1270,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-BD-dfl">
                                 <rect key="frame" x="0.0" y="0.0" width="319" height="160"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLd-lM-Tha">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_account" translatesAutoresizingMaskIntoConstraints="NO" id="8sg-CW-gog">
                                         <rect key="frame" x="125" y="40" width="70" height="70"/>
                                         <gestureRecognizers/>
@@ -1283,7 +1293,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70129555463790894" green="0.51534956693649292" blue="0.75084501504898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qJj-pT-P50" secondAttribute="trailing" constant="16" id="AC0-yQ-8Dx"/>
                                     <constraint firstItem="qJj-pT-P50" firstAttribute="leading" secondItem="DTt-BD-dfl" secondAttribute="leading" constant="16" id="OpO-hc-huE"/>
@@ -1322,6 +1331,7 @@
                     </view>
                     <connections>
                         <outlet property="imgAvatar" destination="8sg-CW-gog" id="44D-Fe-Kre"/>
+                        <outlet property="imgCover" destination="PLd-lM-Tha" id="Jn4-MP-n9Q"/>
                         <outlet property="lblName" destination="qJj-pT-P50" id="AfV-cE-1wB"/>
                         <outlet property="tableMenu" destination="RTb-9O-7iy" id="kVq-bs-I4M"/>
                     </connections>
@@ -1333,7 +1343,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="279.375" y="-457.3943661971831"/>
+            <point key="canvasLocation" x="279.19999999999999" y="-457.42128935532236"/>
         </scene>
         <!--Code Scanner View Controller-->
         <scene sceneID="BPQ-QJ-0gd">
@@ -1348,10 +1358,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mkc-CV-Wwa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="402"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="431.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Smh-KW-7Ob">
-                                        <rect key="frame" x="75" y="89" width="225" height="225"/>
+                                        <rect key="frame" x="75" y="103.5" width="225" height="225"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-nn-tMx">
                                                 <rect key="frame" x="0.0" y="158" width="2" height="67"/>
@@ -1447,19 +1457,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-Cr-xbw">
-                                <rect key="frame" x="0.0" y="466" width="375" height="201"/>
+                                <rect key="frame" x="0.0" y="451.5" width="375" height="215.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập mã giảm giá" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seE-6O-ZiV">
-                                        <rect key="frame" x="8" y="155" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="169.5" width="359" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4v-kX-G1X">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-ii-WRU">
-                                                <rect key="frame" x="8" y="63" width="359" height="30"/>
+                                                <rect key="frame" x="8" y="70" width="359" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng chọn xe " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feK-Y5-B9M">
                                                         <rect key="frame" x="4" y="4" width="131" height="21"/>
@@ -1640,11 +1650,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gXu-AK-gpx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="gXu-AK-gpx">
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXu-AK-gpx" id="4T8-0e-bsW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1782,10 +1792,24 @@
                                 </subviews>
                                 <gestureRecognizers/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJT-Qi-h4B">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83664458990000001" green="0.49983531240000001" blue="0.93510621790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="CẬP NHẬP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UpdateVerhicle:" destination="rXg-nS-ad7" eventType="touchUpInside" id="dJB-uK-aXJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GyG-KC-e8q"/>
                     <connections>
+                        <outlet property="btnAddVerhicle" destination="iNm-oY-QXw" id="0sP-eV-cEz"/>
+                        <outlet property="btnUpdateVerhicle" destination="VJT-Qi-h4B" id="d7B-If-Xfu"/>
                         <outlet property="dropDownView" destination="EXz-yf-W7L" id="Leg-iD-pyJ"/>
                         <outlet property="imgDefault" destination="8Vv-sP-e4V" id="OSv-fm-3E9"/>
                         <outlet property="imgDropDown" destination="tGk-Bo-8HC" id="H4H-Ei-hN3"/>
@@ -1808,7 +1832,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1596" y="968"/>
+            <point key="canvasLocation" x="3489" y="653"/>
         </scene>
         <!--Check In View Controller-->
         <scene sceneID="qUn-u5-3Ia">

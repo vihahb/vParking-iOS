@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var imgCover: UIImageView!
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var txtUserName: UITextField!
@@ -55,6 +56,8 @@ extension ProfileViewController:IProfileView {
         if let u = self.User {
             if let av = u.avatar {
                 imageAvatar.downloadedFrom(link: av)
+                imgCover.downloadedFrom(link: av)
+                imgCover.contentMode = .scaleToFill
             }
             if let fName = u.fullname {
                 lblUserName.text = fName

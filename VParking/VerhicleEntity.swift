@@ -14,6 +14,7 @@ class VerhicleEntity: ResultBase {
     var plate_number:String?
     var flag_default:Int = 0
     var brandname:BrandNameEntity = BrandNameEntity()
+    var desc:String?
     
 }
 

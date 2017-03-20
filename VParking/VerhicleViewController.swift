@@ -9,6 +9,7 @@
 import UIKit
 
 class VerhicleViewController: UIViewController {
+    let localData:UserDefaults = UserDefaults.init()
     @IBOutlet weak var verhicleTableView: UITableView!
     var lblSections: [String] = ["Ô Tô", "Xe Máy"]
     var imgSections: [UIImage] = [#imageLiteral(resourceName: "ic_action_car"), #imageLiteral(resourceName: "ic_action_moto-1")]
@@ -17,6 +18,8 @@ class VerhicleViewController: UIViewController {
     var carBrandName = [BrandNameEntity]()
     var bikeDictionary = [VerhicleEntity]()
     var bikeBrandName = [BrandNameEntity]()
+    var vehicleSelected:VerhicleEntity?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,9 @@ class VerhicleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func getVehicleSelected() -> VerhicleEntity?{
+        return self.vehicleSelected;
+    }
 }
 
 extension VerhicleViewController: IVerhicleView{
@@ -124,16 +129,24 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0{
-            print(carDictionary[indexPath.row].id)
-            let addForm:AddVerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+
+            vehicleSelected = carDictionary[indexPath.row]
+            
+            let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+            addForm.Verhicle = vehicleSelected
             let navi = self.navigationController
             navi?.pushViewController(addForm, animated: true)
+            addForm.isUpdate = true
             
         }else{
-            print(bikeDictionary[indexPath.row].id)
-            let addForm:AddVerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+            vehicleSelected = bikeDictionary[indexPath.row]
+
+            let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+            addForm.Verhicle = vehicleSelected
             let navi = self.navigationController
             navi?.pushViewController(addForm, animated: true)
+            addForm.isUpdate = true
+
         }
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import EVReflection
 class VerhicleRequest:EVObject{
+    var id:Int = 0
     var plate_number:String?
     var type:Int = 0
     var name:String?

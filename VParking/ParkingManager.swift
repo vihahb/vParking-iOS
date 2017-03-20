@@ -17,6 +17,12 @@ class ParkingManager {
         HttpRequestManager.get(url: "\(baseUrl)user", headers: getHeader(), completion: completion)
     }
     
+    func editProfile(data: UserProfileEntity,completion:@escaping (String?,NIPError?) -> Void ){
+        let url = "\(baseUrl)user"
+        HttpRequestManager.put(url: url, headers: getHeader(), data: data.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
+        
+    }
+    
     func findParking(condition:FindCondition,completion:@escaping (String?,NIPError?) -> Void) {
         var url = "\(baseUrl)find?lat=\(condition.lat!)&lng=\(condition.lng!)"
         

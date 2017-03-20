@@ -66,7 +66,7 @@ class MasterViewController: UIPageViewController {
     func updateAcionButton(_ isAdd:Bool){
         self.isAdd = isAdd
         if isAdd {
-            self.btnCheckIn.image = #imageLiteral(resourceName: "ic_action_add")
+            self.btnCheckIn.image = #imageLiteral(resourceName: "ic_action_plus")
             self.btnCheckIn.title = nil
         }else{
            self.btnCheckIn.image = nil
