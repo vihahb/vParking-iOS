@@ -15,8 +15,6 @@ class AddVerhiclePresenter: PresenterBase {
     }
     
     func verhicle(_ data: VerhicleRequest){
-        
-//        var dt:VerhicleRequest = VerhicleRequest()
     
         self.view?.showProgress(title: "Đang xử lý thao tác...")
         ParkingManager.instance.verhicle(data: data) { (result, error) in

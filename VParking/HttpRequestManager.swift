@@ -61,7 +61,7 @@ class HttpRequestManager{
     }
     
     static func put(url:String ,headers:HTTPHeaders?,data:Dictionary<String,AnyObject>?, completion:@escaping (String?,NIPError?)->Void){
-        Alamofire.request(url, method: .put, parameters: data, encoding: URLEncoding.default, headers: headers)
+        Alamofire.request(url, method: .put, parameters: data, encoding: JSONEncoding(), headers: headers)
             .responseString(completionHandler: {
                 response in
                 if let err:Error = response.error {
@@ -75,6 +75,16 @@ class HttpRequestManager{
             })
         
     }
+    
+//    static func upload(url:String, multipartFormData: (MultipartFormData) -> Void, completion:@escaping (String?,NIPError?)->Void){
+//        Alamofire.upload(multipartFormData: multipartFormData, to: url) { encodingResult in
+//            switch encodingResult {
+//            case.success(let upload, _, _):
+//                upload.response(completionHandler: completion())  }
+//            
+//        }
+//        
+//    }
     
     
     

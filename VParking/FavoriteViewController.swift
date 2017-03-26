@@ -41,6 +41,7 @@ extension FavoriteViewController:IFavoriteView {
         
         favoriteTableView.delegate = self
         favoriteTableView.dataSource = self
+        favoriteTableView.tableFooterView = UIView()
         presenter?.loadFavorite()
         
     }

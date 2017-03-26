@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>$(PRODUCT_NAME) uses photos</string>
 	<key>AccountKitClientToken</key>
 	<string>d974e9a5107da65ba2263cc5857a49f1</string>
 	<key>CFBundleDevelopmentRegion</key>

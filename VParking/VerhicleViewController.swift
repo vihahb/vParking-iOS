@@ -23,14 +23,8 @@ class VerhicleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(VerhicleViewController.addTapped))
-        self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem,rightAddBarButtonItem], animated: true)
-
         Initialization()
         
-    }
-    func addTapped (sender:UIButton) {
-        print("add pressed")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +42,7 @@ extension VerhicleViewController: IVerhicleView{
         presenter = VerhiclePresenter(self)
         verhicleTableView.dataSource = self
         verhicleTableView.delegate = self
+        verhicleTableView.tableFooterView = UIView()
         presenter?.loadVerhicle()
     }
     func getVerhicle(didResult data: [VerhicleEntity]?, error: NIPError?) {
@@ -81,7 +76,7 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.lightGray
         let image = UIImageView(image: imgSections[section])
         image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
         view.addSubview(image)

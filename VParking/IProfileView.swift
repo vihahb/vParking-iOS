@@ -8,5 +8,7 @@
 
 import Foundation
 protocol IProfileView:IViewBase {
+    func profile()
+    func profile(error : NIPError?)
 
 }

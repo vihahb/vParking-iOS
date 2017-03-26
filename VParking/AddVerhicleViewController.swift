@@ -10,19 +10,18 @@ import UIKit
 import DropDown
 
 class AddVerhicleViewController: UIViewController {
-    let localData:UserDefaults = UserDefaults.init()
     
     var presenter:AddVerhiclePresenter?
     var dropDown:DropDown = DropDown()
     var brandName = [String]()
     var brandObj = [BrandNameEntity]()
-    var brand = [BrandNameEntity]()
     var brandRe:BrandNameEntity?
     var index:Int = 0
     var fdDefault:Int = 0
     var isDefault:Bool = true
     var isUpdate:Bool = false
     var id:Int = 0
+    var type:Int = 1
     private var _verhicle:VerhicleEntity?
     var Verhicle:VerhicleEntity?{
         set{
@@ -41,8 +40,7 @@ class AddVerhicleViewController: UIViewController {
     @IBOutlet weak var txtFVerhiclePlate: UITextField!
     @IBOutlet weak var txtFDesc: UITextField!
     @IBOutlet weak var imgDefault: UIImageView!
-    
-    var type:Int = 1
+
     @IBAction func segAVerhicleType(_ sender: Any) {
         switch segVerhicleType.selectedSegmentIndex {
         case 0:
@@ -55,25 +53,23 @@ class AddVerhicleViewController: UIViewController {
     }
 
     @IBAction func defaultTap(_ sender: Any) {
-verhicles()
+        verhicles()
     }
     
     @IBAction func AddVerhicle(_ sender: Any) {
-        
-//        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
-//        let navi = self.navigationController
-//        navi?.pushViewController(addForm, animated: true)
-        
+
         var dt:VerhicleRequest = VerhicleRequest()
-        
         dt.brandname = brandRe
         dt.name = txtFVerhicleName.text
         dt.desc = txtFDesc.text
         dt.flag_default = fdDefault
         dt.plate_number = txtFVerhiclePlate.text
         dt.type = type
-        print(dt)
 //        presenter?.verhicle(dt)
+        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
+        let navi = self.navigationController
+        navi?.pushViewController(addForm, animated: true)
+        
         
     }
     
@@ -88,29 +84,25 @@ verhicles()
         dt.type = type
         dt.id = id
         print(dt)
-        presenter?.putVerhicle(dt)
+//        presenter?.putVerhicle(dt)
+        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
+        let navi = self.navigationController
+        
+        navi?.pushViewController(addForm, animated: true)
    
     }
   
     @IBOutlet weak var btnAddVerhicle: UIButton!
     @IBOutlet weak var btnUpdateVerhicle: UIButton!
-    
-    
-    
+
     @IBAction func brandTap(_ sender: Any) {
         dropDown.show()
     }
-  
-
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
 
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        Initialization()
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,9 +114,6 @@ verhicles()
 
 extension AddVerhicleViewController:IAddVerhicleView{
     func Initialization() {
-        dropDownView.layer.cornerRadius = 5
-        dropDownView.layer.borderWidth = 1
-        dropDownView.layer.borderColor = UIColor.darkGray.cgColor
         
         
         if isUpdate == true {
@@ -148,8 +137,6 @@ extension AddVerhicleViewController:IAddVerhicleView{
                 }
                 id = (Verhicle?.id)!
             brandRe = Verhicle?.brandname
-            
-            
         }else {
             self.btnUpdateVerhicle.isHidden = true
             self.btnAddVerhicle.isHidden = false
@@ -158,6 +145,8 @@ extension AddVerhicleViewController:IAddVerhicleView{
         presenter = AddVerhiclePresenter(self)
         setupDropDown()
         presenter?.loadBrandName()
+        
+        
     }
     
     func getBrandName(didResult data: [BrandNameEntity]?) {
@@ -171,8 +160,10 @@ extension AddVerhicleViewController:IAddVerhicleView{
         }
     }
 
-    
     func setupDropDown(){
+        dropDownView.layer.cornerRadius = 5
+        dropDownView.layer.borderWidth = 1
+        dropDownView.layer.borderColor = UIColor.init(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
         dropDown.anchorView = dropDownView
         dropDown.dataSource = self.brandName
         dropDown.width = 100
@@ -193,9 +184,11 @@ extension AddVerhicleViewController:IAddVerhicleView{
 
         }
     }
+    
     func verhicle(error: NIPError){
         view.makeToast(error.type!)
     }
+    
     func verhicles(){
         if isDefault {
             isDefault = false
