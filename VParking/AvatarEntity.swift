@@ -14,6 +14,6 @@ class AvatarEntity: EVObject {
     var uri:String?
 }
 
-class AvatarResult: ResultBase {
-    var data = [AvatarEntity]()
-}
+//class AvatarResult: ResultBase {
+//    var data = [AvatarEntity]()
+//}

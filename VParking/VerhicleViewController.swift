@@ -69,7 +69,6 @@ extension VerhicleViewController: IVerhicleView{
     
 }
 
-
 extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

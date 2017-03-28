@@ -19,7 +19,7 @@ class ParkingManager {
     
     func editProfile(data: ProfileRequest,completion:@escaping (String?,NIPError?) -> Void ){
         let url = "\(baseUrl)user"
-        HttpRequestManager.put(url: url, headers: getHeader(), data: data.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
+        HttpRequestManager.post(url: url, headers: getHeader(), data: data.toDictionary() as? Dictionary<String, AnyObject>, completion: completion)
         
     }
     

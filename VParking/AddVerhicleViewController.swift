@@ -65,7 +65,7 @@ class AddVerhicleViewController: UIViewController {
         dt.flag_default = fdDefault
         dt.plate_number = txtFVerhiclePlate.text
         dt.type = type
-//        presenter?.verhicle(dt)
+        presenter?.verhicle(dt)
         let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
         let navi = self.navigationController
         navi?.pushViewController(addForm, animated: true)
@@ -84,11 +84,17 @@ class AddVerhicleViewController: UIViewController {
         dt.type = type
         dt.id = id
         print(dt)
-//        presenter?.putVerhicle(dt)
-        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
-        let navi = self.navigationController
+        presenter?.putVerhicle(dt)
+        let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController
+            mView?.setViewController(PARKING_VIEW.VERHICLE_VIEW)
+            mView?.updateAcionButton(true)
         
-        navi?.pushViewController(addForm, animated: true)
+        
+        
+//        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
+//        let navi = self.navigationController
+//        
+//        navi?.pushViewController(addForm, animated: true)
    
     }
   

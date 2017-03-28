@@ -37,6 +37,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     
+    
     //Update Avatar
     
     @IBAction func btnChangeAvatar(_ sender: Any) {
@@ -109,8 +110,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseString(completionHandler: { (response) in
-                        let a:AvatarResult = AvatarResult(json: response.value)
-                        print(a)
+//                        print(response.value)
+                        let a = [AvatarEntity](json: response.value)
+                       self.urlAvatar =  a[0].uri
+                        print("a:\(self.urlAvatar)")
+                    
                         
                         
                     })
@@ -152,7 +156,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     func doneClick() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-//        dateFormatter.dateStyle = .long
         txtFBirthday.text = dateFormatter.string(from: datePiker.date)
         txtFBirthday.resignFirstResponder()
     }
@@ -209,10 +212,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         dt.email = txtEmail.text
         dt.fullname = txtUserName.text
         dt.gender = typeGender
+        dt.avatar = self.urlAvatar
         print(dt)
         presenter?.putProfile(dt)
         
     }
+    
+    
  
 }
 
@@ -226,6 +232,8 @@ extension ProfileViewController:IProfileView {
         fillInfo()
         setupDatePicker()
         setupDropDown()
+//        self.txtUserName.delegate = self
+//        self.txtEmail.delegate = self
     }
     
     func fillInfo(){
@@ -267,6 +275,19 @@ extension ProfileViewController:IProfileView {
 
 extension ProfileViewController : UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return false
+        return true
     }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
+    
 }
+
+
