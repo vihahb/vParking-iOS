@@ -35,11 +35,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
        
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        Initialization()
-    }
     
-    
+ 
     
     //Update Avatar
     

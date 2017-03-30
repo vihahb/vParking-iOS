@@ -26,6 +26,11 @@ class VerhicleViewController: UIViewController {
         Initialization()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.verhicleTableView.reloadData()
+        Initialization()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

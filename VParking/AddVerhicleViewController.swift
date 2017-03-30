@@ -66,10 +66,10 @@ class AddVerhicleViewController: UIViewController {
         dt.flag_default = fdDefault
         dt.plate_number = txtFVerhiclePlate.text
         dt.type = type
-//        presenter?.verhicle(dt)
-        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
+        presenter?.verhicle(dt)
+        
         let navi = self.navigationController
-        navi?.pushViewController(addForm, animated: true)
+        navi?.popToRootViewController(animated: true)
         
         
     }
@@ -84,9 +84,10 @@ class AddVerhicleViewController: UIViewController {
         dt.plate_number = txtFVerhiclePlate.text
         dt.type = type
         dt.id = id
-        print(dt)
-//        presenter?.putVerhicle(dt)
         
+        presenter?.putVerhicle(dt)
+        let navi = self.navigationController
+        navi?.popToRootViewController(animated: true)
        
         
         
