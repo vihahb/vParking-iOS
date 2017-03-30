@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    
     func loginFabric(){
 
             Crashlytics.sharedInstance().setUserEmail("thangnm.uet@gmail.com")
@@ -77,7 +78,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
 
-
+}
+extension NSURLRequest {
+    
+    static func allowsAnyHTTPSCertificate(forHost host: String) -> Bool {
+        return true
+    }
+    
 }
 

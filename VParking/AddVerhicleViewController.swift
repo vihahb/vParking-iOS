@@ -22,6 +22,7 @@ class AddVerhicleViewController: UIViewController {
     var isUpdate:Bool = false
     var id:Int = 0
     var type:Int = 1
+    var z:Int = 0
     private var _verhicle:VerhicleEntity?
     var Verhicle:VerhicleEntity?{
         set{
@@ -65,7 +66,7 @@ class AddVerhicleViewController: UIViewController {
         dt.flag_default = fdDefault
         dt.plate_number = txtFVerhiclePlate.text
         dt.type = type
-        presenter?.verhicle(dt)
+//        presenter?.verhicle(dt)
         let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
         let navi = self.navigationController
         navi?.pushViewController(addForm, animated: true)
@@ -84,17 +85,13 @@ class AddVerhicleViewController: UIViewController {
         dt.type = type
         dt.id = id
         print(dt)
-        presenter?.putVerhicle(dt)
-        let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController
-            mView?.setViewController(PARKING_VIEW.VERHICLE_VIEW)
-            mView?.updateAcionButton(true)
+//        presenter?.putVerhicle(dt)
+        
+       
         
         
         
-//        let addForm:VerhicleViewController = self.storyboard?.instantiateViewController(withIdentifier: "VerhicleViewController") as! VerhicleViewController
-//        let navi = self.navigationController
-//        
-//        navi?.pushViewController(addForm, animated: true)
+
    
     }
   
@@ -107,6 +104,8 @@ class AddVerhicleViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         Initialization()
 
     }
@@ -120,12 +119,10 @@ class AddVerhicleViewController: UIViewController {
 
 extension AddVerhicleViewController:IAddVerhicleView{
     func Initialization() {
-        
-        
+ 
         if isUpdate == true {
             self.btnAddVerhicle.isHidden = true
             self.btnUpdateVerhicle.isHidden = false
-            
             txtFVerhicleName.text = Verhicle?.name
             type = (Verhicle?.type)!
                 if type == 1{
@@ -142,17 +139,16 @@ extension AddVerhicleViewController:IAddVerhicleView{
                     imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
                 }
                 id = (Verhicle?.id)!
-            brandRe = Verhicle?.brandname
         }else {
             self.btnUpdateVerhicle.isHidden = true
             self.btnAddVerhicle.isHidden = false
         }
 
+        
         presenter = AddVerhiclePresenter(self)
-        setupDropDown()
         presenter?.loadBrandName()
-        
-        
+        setupDropDown()
+ 
     }
     
     func getBrandName(didResult data: [BrandNameEntity]?) {
@@ -161,9 +157,16 @@ extension AddVerhicleViewController:IAddVerhicleView{
                 self.brandName.append(i.name!)
                 self.brandObj.append(i)
                 dropDown.dataSource = self.brandName
-                dropDown.selectRow(at: 0)
             }
         }
+        
+        for j in 0...(self.brandName.count - 1) {
+            if self.brandName[j] == Verhicle?.brandname.name {
+                z = j
+            }
+        }
+        
+        dropDown.selectRow(at: z)
     }
 
     func setupDropDown(){
@@ -181,13 +184,14 @@ extension AddVerhicleViewController:IAddVerhicleView{
         dropDown.willShowAction = {() in
             self.imgDropDown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
         }
+       
         dropDown.selectionAction = {(index, item) in
-        self.imgDropDown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
-        self.lblBrandName.text = item
-        self.index = index
-        var i:Int = Int(index)
-        self.brandRe = self.brandObj[i]
-
+            self.imgDropDown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
+            self.lblBrandName.text = item
+            self.index = index
+            var i:Int = Int(index)
+            self.brandRe = self.brandObj[i]
+                
         }
     }
     

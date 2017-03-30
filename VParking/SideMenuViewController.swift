@@ -83,6 +83,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
             imgAvatar.downloadedFrom(link: info.avatar!)
             imgCover.downloadedFrom(link: info.avatar!)
             imgCover.contentMode = .scaleToFill
+            imgAvatar.contentMode = .scaleToFill
         }
     }
     

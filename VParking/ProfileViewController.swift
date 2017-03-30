@@ -35,6 +35,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
        
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        Initialization()
+    }
     
     
     
@@ -110,14 +113,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseString(completionHandler: { (response) in
-//                        print(response.value)
                         let a = [AvatarEntity](json: response.value)
                        self.urlAvatar =  a[0].uri
-                        print("a:\(self.urlAvatar)")
-                    
-                        
-                        
-                    })
+                                            })
                    
                 case .failure(let encodingError):
                     print(encodingError)
@@ -213,7 +211,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         dt.fullname = txtUserName.text
         dt.gender = typeGender
         dt.avatar = self.urlAvatar
-        print(dt)
         presenter?.putProfile(dt)
         
     }
@@ -232,8 +229,6 @@ extension ProfileViewController:IProfileView {
         fillInfo()
         setupDatePicker()
         setupDropDown()
-//        self.txtUserName.delegate = self
-//        self.txtEmail.delegate = self
     }
     
     func fillInfo(){
@@ -242,6 +237,8 @@ extension ProfileViewController:IProfileView {
                 imageAvatar.downloadedFrom(link: av)
                 imgCover.downloadedFrom(link: av)
                 imgCover.contentMode = .scaleToFill
+                imageAvatar.contentMode = .scaleToFill
+                
             }
             if let fName = u.fullname {
                 lblUserName.text = fName
