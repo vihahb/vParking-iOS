@@ -18,8 +18,8 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
-        favoriteTableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(FavoriteViewController.refreshData(sender:)), for: .valueChanged)
+//        favoriteTableView.refreshControl = refreshControl
+//        refreshControl.addTarget(self, action: #selector(FavoriteViewController.refreshData(sender:)), for: .valueChanged)
         
         
     }
@@ -29,10 +29,10 @@ class FavoriteViewController: UIViewController {
         self.favoriteTableView.reloadData()
     }
     
-    func refreshData(sender: UIRefreshControl) {
-        refreshControl.endRefreshing()
-        Initialization()
-    }
+//    func refreshData(sender: UIRefreshControl) {
+//        refreshControl.endRefreshing()
+//        Initialization()
+//    }
 }
 
 extension FavoriteViewController:IFavoriteView {
