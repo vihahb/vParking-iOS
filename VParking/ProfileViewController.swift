@@ -32,6 +32,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
+        self.txtEmail.delegate = self
+        self.txtUserName.delegate = self
+        self.txtPhoneNumber.delegate = self
        
         
     }
@@ -276,7 +279,7 @@ extension ProfileViewController : UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true
+        return false
     }
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        self.view.endEditing(true)

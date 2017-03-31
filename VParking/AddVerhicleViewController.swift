@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class AddVerhicleViewController: UIViewController {
+class AddVerhicleViewController: UIViewController, UITextFieldDelegate {
     
     var presenter:AddVerhiclePresenter?
     var dropDown:DropDown = DropDown()
@@ -108,8 +108,17 @@ class AddVerhicleViewController: UIViewController {
         
         
         Initialization()
+        self.txtFDesc.delegate = self
+        self.txtFVerhicleName.delegate = self
+        self.txtFVerhiclePlate.delegate = self
 
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
