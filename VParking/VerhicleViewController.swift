@@ -23,13 +23,17 @@ class VerhicleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Initialization()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.verhicleTableView.reloadData()
+        
         Initialization()
+        self.verhicleTableView.reloadData()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +55,8 @@ extension VerhicleViewController: IVerhicleView{
         presenter?.loadVerhicle()
     }
     func getVerhicle(didResult data: [VerhicleEntity]?, error: NIPError?) {
+        self.carDictionary.removeAll()
+        self.bikeDictionary.removeAll()
         if let v = data {
             
             for i in v {
@@ -62,6 +68,7 @@ extension VerhicleViewController: IVerhicleView{
                     self.bikeBrandName.append(i.brandname)
                 }
             }
+            
             DispatchQueue.main.async {
                 self.verhicleTableView.reloadData()
             }
@@ -80,7 +87,7 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.init(red: 230/255, green: 231/255, blue: 232/255, alpha: 1)
         let image = UIImageView(image: imgSections[section])
         image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
         view.addSubview(image)
