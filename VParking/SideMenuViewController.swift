@@ -123,16 +123,19 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.FAVORITE_VIEW)
                 mView.updateAcionButton(false)
+                mView.setTitleNavi("Bãi đỗ yêu thích")
             }
         case 2:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.VERHICLE_VIEW)
                 mView.updateAcionButton(true)
+                mView.setTitleNavi("Phương tiện")
             }
         case 3:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.CHECKIN_VIEW)
                 mView.updateAcionButton(false)
+                mView.setTitleNavi("Xe đang đỗ")
             }
         case 4:
             presenter?.logout()

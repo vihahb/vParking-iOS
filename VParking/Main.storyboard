@@ -1574,7 +1574,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83574347790000003" green="0.50049311490000004" blue="0.93354358199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.36132276058197021" blue="0.65363401174545288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="A4v-kX-G1X" firstAttribute="leading" secondItem="U8a-Cr-xbw" secondAttribute="leading" id="B6v-oh-CTw"/>
                                     <constraint firstItem="A4v-kX-G1X" firstAttribute="top" secondItem="U8a-Cr-xbw" secondAttribute="top" id="Buq-Iv-kq5"/>
@@ -2170,7 +2170,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.83574347790000003" green="0.50049311490000004" blue="0.93354358199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.36132276060000001" blue="0.65363401170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="ZBm-7O-wRY" firstAttribute="width" secondItem="tvC-by-nrE" secondAttribute="width" multiplier="1.2" id="9cP-jF-tBM"/>
                                             <constraint firstItem="tvC-by-nrE" firstAttribute="width" secondItem="ILp-Fu-K5C" secondAttribute="width" multiplier="0.5" id="9i1-Ne-qIK"/>
