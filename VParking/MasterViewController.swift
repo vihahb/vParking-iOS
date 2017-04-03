@@ -70,7 +70,8 @@ class MasterViewController: UIPageViewController {
             self.btnCheckIn.title = nil
         }else{
            self.btnCheckIn.image = nil
-            self.btnCheckIn.title = "CHECKIN"
+            self.btnCheckIn.title = "Check-In"
+            
         }
     }
     
@@ -81,6 +82,8 @@ class MasterViewController: UIPageViewController {
 
 extension MasterViewController:IMasterView{
     func Initialization() {
+        
+
         btnMenu.target = revealViewController()
         btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         

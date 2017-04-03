@@ -98,7 +98,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Tìm Bãi Đỗ Xe" id="oEX-it-eKE">
                         <barButtonItem key="leftBarButtonItem" image="menu-button-blue" id="vSI-Dw-arn"/>
-                        <barButtonItem key="rightBarButtonItem" title="CHECKIN" id="ga7-a9-OE2">
+                        <barButtonItem key="rightBarButtonItem" title="Check-In" id="ga7-a9-OE2">
                             <connections>
                                 <action selector="checkInClicked:" destination="sqp-GM-OcU" id="91s-66-0Td"/>
                             </connections>
