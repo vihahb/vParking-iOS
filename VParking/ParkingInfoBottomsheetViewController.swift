@@ -137,37 +137,47 @@ class ParkingInfoBottomsheetViewController: UIViewController {
     }
     
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
-        
-        let translation = recognizer.translation(in: self.view)
-        let velocity = recognizer.velocity(in: self.view)
-        let y = self.view.frame.minY
-        let translationY = translation.y * self.sortViewHeight / (self.fullViewHeight - self.sortViewHeight)
-        if recognizer.state == .changed {
-            if ( y + translation.y >= fullView) && (y + translation.y <= self.height) {
-                self.detailsView.frame = CGRect(x: 0, y: self.detailsView.frame.minY + translationY, width: view.frame.width, height: fullViewHeight)
-                self.view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height: self.height)
-                recognizer.setTranslation(CGPoint.zero, in: self.view)
+        if !isDirection{
+            let translation = recognizer.translation(in: self.view)
+            let velocity = recognizer.velocity(in: self.view)
+            let y = self.view.frame.minY
+            let translationY = translation.y * self.sortViewHeight / (self.fullViewHeight - self.sortViewHeight)
+            if recognizer.state == .changed {
+                if ( y + translation.y >= fullView) && (y + translation.y <= self.height) {
+                    self.detailsView.frame = CGRect(x: 0, y: self.detailsView.frame.minY + translationY, width: view.frame.width, height: fullViewHeight)
+                    self.view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height: self.height)
+                    recognizer.setTranslation(CGPoint.zero, in: self.view)
+                }
+                
             }
-        }
-        
-        
-        if recognizer.state == .ended {
-            var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((sortViewHeight - y) / velocity.y )
             
-            duration = duration > 1.3 ? 1 : duration
             
+            if recognizer.state == .ended {
+                var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((sortViewHeight - y) / velocity.y )
+                
+                duration = duration > 1.3 ? 1 : duration
+                
                 if  velocity.y > 0 {
                     if (y + translation.y) > (self.view.frame.height - self.sortViewHeight) {
                         self.hiddenBottomSheet()
                         
                     }else{
-                         self.showPartialView(duration: duration)
+                        self.showPartialView(duration: duration)
                     }
-                   
+                    
                 } else {
-                   self.showFullView(duration: duration)
+                    self.showFullView(duration: duration)
                 }
+            }
+
+        }else {
+            if let vc = self.parent as? HomeViewController {
+                vc.clearDirection()
+            }
+            hiddenBottomSheet()
         }
+        
+        
     }
     
     func hiddenBottomSheet() {
