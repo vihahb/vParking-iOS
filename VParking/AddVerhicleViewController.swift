@@ -88,12 +88,6 @@ class AddVerhicleViewController: UIViewController, UITextFieldDelegate {
         presenter?.putVerhicle(dt)
         let navi = self.navigationController
         navi?.popToRootViewController(animated: true)
-       
-        
-        
-        
-
-   
     }
   
     @IBOutlet weak var btnAddVerhicle: UIButton!

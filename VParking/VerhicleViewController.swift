@@ -35,6 +35,10 @@ class VerhicleViewController: UIViewController {
         
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        Initialization()
+        self.verhicleTableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,8 +53,8 @@ class VerhicleViewController: UIViewController {
 extension VerhicleViewController: IVerhicleView{
     func Initialization() {
         presenter = VerhiclePresenter(self)
-        verhicleTableView.dataSource = self
-        verhicleTableView.delegate = self
+        self.verhicleTableView.dataSource = self
+        self.verhicleTableView.delegate = self
         verhicleTableView.tableFooterView = UIView()
         presenter?.loadVerhicle()
     }
