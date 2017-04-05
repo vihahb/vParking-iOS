@@ -11,6 +11,10 @@ import UIKit
 class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteTableView: UITableView!
     private let refreshControl = UIRefreshControl()
+    
+    @IBOutlet weak var imgWhenEmpty: UIImageView!
+    @IBOutlet weak var lblWhenEmpty: UILabel!
+    
     var presenter:FavoritePresenter?
     var favoriteDictonary = [FavoriteEntity]()
 
@@ -33,16 +37,29 @@ class FavoriteViewController: UIViewController {
 //        refreshControl.endRefreshing()
 //        Initialization()
 //    }
+    
+    func whenDicEmpty(){
+        if self.favoriteDictonary.count != 0 {
+            imgWhenEmpty.isHidden = true
+            lblWhenEmpty.isHidden = true
+        }else {
+            imgWhenEmpty.isHidden = false
+            lblWhenEmpty.isHidden = false
+        }
+    }
 }
+
 
 extension FavoriteViewController:IFavoriteView {
     func Initialization() {
+       
         presenter = FavoritePresenter(self)
-        
         favoriteTableView.delegate = self
         favoriteTableView.dataSource = self
         favoriteTableView.tableFooterView = UIView()
         presenter?.loadFavorite()
+        
+        
         
     }
     func infoParking(didResult p: ParkingInfoEntity) {
@@ -58,6 +75,7 @@ extension FavoriteViewController:IFavoriteView {
                 self.favoriteTableView.reloadData()
             }
         }
+        whenDicEmpty()
     }
     func showError(_ message: String) {
         print(message)

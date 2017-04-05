@@ -20,6 +20,8 @@ class VerhicleViewController: UIViewController {
     var bikeBrandName = [BrandNameEntity]()
     var vehicleSelected:VerhicleEntity?
     
+    @IBOutlet weak var imgWhenEmpty: UIImageView!
+    @IBOutlet weak var lblWhenEmpty: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,21 @@ class VerhicleViewController: UIViewController {
         Initialization()
         
     }
+    
+    func whenDicEmpty(){
+        
+        if self.carDictionary.count != 0 || bikeDictionary.count != 0{
+            self.verhicleTableView.isHidden = false
+            imgWhenEmpty.isHidden = true
+            lblWhenEmpty.isHidden = true
+        }else {
+            self.verhicleTableView.isHidden = true
+            imgWhenEmpty.isHidden = false
+            lblWhenEmpty.isHidden = false
+        }
+        
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -57,6 +74,7 @@ extension VerhicleViewController: IVerhicleView{
         self.verhicleTableView.delegate = self
         verhicleTableView.tableFooterView = UIView()
         presenter?.loadVerhicle()
+        
     }
     func getVerhicle(didResult data: [VerhicleEntity]?, error: NIPError?) {
         self.carDictionary.removeAll()
@@ -77,6 +95,7 @@ extension VerhicleViewController: IVerhicleView{
                 self.verhicleTableView.reloadData()
             }
         }
+       whenDicEmpty()
         
     }
     func showError(_ message: String) {
@@ -87,47 +106,63 @@ extension VerhicleViewController: IVerhicleView{
 
 extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if carDictionary.count == 0 || bikeDictionary.count == 0{
+            return 1
+        }else {
+            return 2
+        }
+        
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        var sec:Int?
+        if carDictionary.count == 0 {
+            sec = 1
+        }else if bikeDictionary.count == 0 {
+            sec = 0
+        }else{
+            sec = section
+        }
+        
+        
         let view = UIView()
         view.backgroundColor = UIColor.init(red: 230/255, green: 231/255, blue: 232/255, alpha: 1)
-        let image = UIImageView(image: imgSections[section])
+        let image = UIImageView(image: imgSections[sec!])
         image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
         view.addSubview(image)
-        
         let label = UILabel()
-        label.text = lblSections[section]
+        label.text = lblSections[sec!]
         label.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
         view.addSubview(label)
+        
         return view
+        
+       
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if section == 0{
-            return self.carDictionary.count
-            
-        }else {
+        if carDictionary.count == 0{
             return self.bikeDictionary.count
+        }else if bikeDictionary.count == 0{
+            return self.carDictionary.count
+        }else {
+            if section == 0{
+                return self.carDictionary.count
+            }else {
+                return self.bikeDictionary.count
+            }
         }
+        
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell:VerhicleTableViewCell = Bundle.main.loadNibNamed("VerhicleTableViewCell", owner: self, options: nil)?.first as! VerhicleTableViewCell
         
-        if indexPath.section == 0{
-            cell.lblVerhicleName.text = carDictionary[indexPath.row].name
-            cell.lblPlate.text = carDictionary[indexPath.row].plate_number
-            cell.lblBrandName.text = carBrandName[indexPath.row].name
-            if carDictionary[indexPath.row].flag_default == 1{
-                cell.imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
-            }
-            return cell
-        } else{
+        if carDictionary.count == 0{
             cell.lblVerhicleName.text = bikeDictionary[indexPath.row].name
             cell.lblPlate.text = bikeDictionary[indexPath.row].plate_number
             cell.lblBrandName.text = bikeBrandName[indexPath.row].name
@@ -135,13 +170,39 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
             }
             return cell
+        }else if bikeDictionary.count == 0 {
+            cell.lblVerhicleName.text = carDictionary[indexPath.row].name
+            cell.lblPlate.text = carDictionary[indexPath.row].plate_number
+            cell.lblBrandName.text = carBrandName[indexPath.row].name
+            if carDictionary[indexPath.row].flag_default == 1{
+                cell.imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
+            }
+            return cell
+        }else {
+            if indexPath.section == 0{
+                cell.lblVerhicleName.text = carDictionary[indexPath.row].name
+                cell.lblPlate.text = carDictionary[indexPath.row].plate_number
+                cell.lblBrandName.text = carBrandName[indexPath.row].name
+                if carDictionary[indexPath.row].flag_default == 1{
+                    cell.imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
+                }
+                return cell
+            } else{
+                cell.lblVerhicleName.text = bikeDictionary[indexPath.row].name
+                cell.lblPlate.text = bikeDictionary[indexPath.row].plate_number
+                cell.lblBrandName.text = bikeBrandName[indexPath.row].name
+                if bikeDictionary[indexPath.row].flag_default == 1{
+                    cell.imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
+                }
+                return cell
+            }
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0{
 
             vehicleSelected = carDictionary[indexPath.row]
-            
+    
             let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
             addForm.Verhicle = vehicleSelected
             let navi = self.navigationController
