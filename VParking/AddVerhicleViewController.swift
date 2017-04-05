@@ -32,7 +32,15 @@ class AddVerhicleViewController: UIViewController, UITextFieldDelegate {
             return self._verhicle
         }
     }
-    
+    private var _delegate:VerhicleViewDelegate?
+    var delegate:VerhicleViewDelegate?{
+        set{
+            _delegate = newValue
+        }
+        get{
+            return _delegate
+        }
+    }
     @IBOutlet weak var segVerhicleType: UISegmentedControl!
     @IBOutlet weak var dropDownView: UIView!
     @IBOutlet weak var imgDropDown: UIImageView!
@@ -88,6 +96,9 @@ class AddVerhicleViewController: UIViewController, UITextFieldDelegate {
         presenter?.putVerhicle(dt)
         let navi = self.navigationController
         navi?.popToRootViewController(animated: true)
+        if let d = self.delegate {
+            d.reloadCellList()
+        }
     }
   
     @IBOutlet weak var btnAddVerhicle: UIButton!

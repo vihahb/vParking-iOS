@@ -10,3 +10,7 @@ import Foundation
 protocol TicketViewDelegate {
     func reloadCheckList()
 }
+
+protocol VerhicleViewDelegate {
+    func reloadCellList()
+}

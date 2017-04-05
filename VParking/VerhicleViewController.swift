@@ -20,6 +20,8 @@ class VerhicleViewController: UIViewController {
     var bikeBrandName = [BrandNameEntity]()
     var vehicleSelected:VerhicleEntity?
     
+    
+    
     @IBOutlet weak var imgWhenEmpty: UIImageView!
     @IBOutlet weak var lblWhenEmpty: UILabel!
 
@@ -46,16 +48,13 @@ class VerhicleViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
         Initialization()
         self.verhicleTableView.reloadData()
         
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        Initialization()
-        self.verhicleTableView.reloadData()
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -205,7 +204,8 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
             
             let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
             addForm.Verhicle = vehicleSelected
-            let navi = self.navigationController
+            addForm.delegate = self
+            let navi = self.parent?.navigationController
             navi?.pushViewController(addForm, animated: true)
             addForm.isUpdate = true
         }else if bikeDictionary.count == 0 {
@@ -213,7 +213,8 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
             
             let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
             addForm.Verhicle = vehicleSelected
-            let navi = self.navigationController
+            addForm.delegate = self
+            let navi = self.parent?.navigationController
             navi?.pushViewController(addForm, animated: true)
             addForm.isUpdate = true
         }else {
@@ -222,7 +223,8 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
                 
                 let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
                 addForm.Verhicle = vehicleSelected
-                let navi = self.navigationController
+                addForm.delegate = self
+                let navi = self.parent?.navigationController
                 navi?.pushViewController(addForm, animated: true)
                 addForm.isUpdate = true
                 
@@ -231,7 +233,8 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
                 
                 let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
                 addForm.Verhicle = vehicleSelected
-                let navi = self.navigationController
+                addForm.delegate = self
+                let navi = self.parent?.navigationController
                 navi?.pushViewController(addForm, animated: true)
                 addForm.isUpdate = true
                 
@@ -239,4 +242,11 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
         }
 
     }
+}
+
+extension VerhicleViewController : VerhicleViewDelegate{
+    func reloadCellList(){
+        self.presenter?.loadVerhicle()
+    }
+    
 }

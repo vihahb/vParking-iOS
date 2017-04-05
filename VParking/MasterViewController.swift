@@ -35,6 +35,8 @@ class MasterViewController: UIPageViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         let current:FrontViewPosition = self.revealViewController().frontViewPosition
         if current != FrontViewPosition.left {
             self.revealViewController().revealToggle(animated: true)

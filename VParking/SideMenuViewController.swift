@@ -118,6 +118,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.HOME_VIEW)
                 mView.updateAcionButton(false)
+                mView.setTitleNavi("Tìm bãi đỗ xe")
             }
         case 1:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
