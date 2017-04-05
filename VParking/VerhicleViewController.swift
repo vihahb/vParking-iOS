@@ -199,25 +199,44 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0{
-
-            vehicleSelected = carDictionary[indexPath.row]
-    
-            let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
-            addForm.Verhicle = vehicleSelected
-            let navi = self.navigationController
-            navi?.pushViewController(addForm, animated: true)
-            addForm.isUpdate = true
-            
-        }else{
+        
+        if carDictionary.count == 0 {
             vehicleSelected = bikeDictionary[indexPath.row]
-
+            
             let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
             addForm.Verhicle = vehicleSelected
             let navi = self.navigationController
             navi?.pushViewController(addForm, animated: true)
             addForm.isUpdate = true
-
+        }else if bikeDictionary.count == 0 {
+            vehicleSelected = carDictionary[indexPath.row]
+            
+            let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+            addForm.Verhicle = vehicleSelected
+            let navi = self.navigationController
+            navi?.pushViewController(addForm, animated: true)
+            addForm.isUpdate = true
+        }else {
+            if indexPath.section == 0{
+                vehicleSelected = carDictionary[indexPath.row]
+                
+                let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+                addForm.Verhicle = vehicleSelected
+                let navi = self.navigationController
+                navi?.pushViewController(addForm, animated: true)
+                addForm.isUpdate = true
+                
+            }else{
+                vehicleSelected = bikeDictionary[indexPath.row]
+                
+                let addForm = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController") as! AddVerhicleViewController
+                addForm.Verhicle = vehicleSelected
+                let navi = self.navigationController
+                navi?.pushViewController(addForm, animated: true)
+                addForm.isUpdate = true
+                
+            }
         }
+
     }
 }
