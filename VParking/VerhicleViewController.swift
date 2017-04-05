@@ -247,6 +247,7 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
 extension VerhicleViewController : VerhicleViewDelegate{
     func reloadCellList(){
         self.presenter?.loadVerhicle()
+        self.verhicleTableView.reloadData()
     }
     
 }
