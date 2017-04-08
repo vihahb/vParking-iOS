@@ -1130,11 +1130,11 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="vcj-mY-M0N">
-                                                                        <rect key="frame" x="105" y="9" width="12" height="12"/>
+                                                                        <rect key="frame" x="94" y="8" width="12" height="12"/>
                                                                         <gestureRecognizers/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="12" id="5U3-Ba-lb0"/>
-                                                                            <constraint firstAttribute="width" constant="12" id="DZO-wd-oXi"/>
+                                                                            <constraint firstAttribute="width" constant="12" id="SYE-DR-QAB"/>
+                                                                            <constraint firstAttribute="height" constant="12" id="nHU-ik-iFk"/>
                                                                         </constraints>
                                                                         <connections>
                                                                             <outletCollection property="gestureRecognizers" destination="dg8-bl-uhx" appends="YES" id="lAz-Y2-UP3"/>
@@ -1143,9 +1143,9 @@
                                                                 </subviews>
                                                                 <gestureRecognizers/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="vcj-mY-M0N" secondAttribute="trailing" id="CFv-LS-sqt"/>
                                                                     <constraint firstAttribute="height" constant="30" id="ExS-cA-Vao"/>
-                                                                    <constraint firstItem="vcj-mY-M0N" firstAttribute="top" secondItem="4FL-2m-GH5" secondAttribute="top" constant="9" id="YiG-0w-6vr"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="vcj-mY-M0N" secondAttribute="trailing" constant="11" id="V8A-aM-1mq"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="vcj-mY-M0N" secondAttribute="bottom" constant="10" id="zML-YV-DjW"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>

@@ -9,7 +9,6 @@
 import UIKit
 
 class VerhicleViewController: UIViewController {
-    let localData:UserDefaults = UserDefaults.init()
     @IBOutlet weak var verhicleTableView: UITableView!
     var lblSections: [String] = ["Ô Tô", "Xe Máy"]
     var imgSections: [UIImage] = [#imageLiteral(resourceName: "ic_action_car"), #imageLiteral(resourceName: "ic_action_moto-1")]
@@ -19,21 +18,17 @@ class VerhicleViewController: UIViewController {
     var bikeDictionary = [VerhicleEntity]()
     var bikeBrandName = [BrandNameEntity]()
     var vehicleSelected:VerhicleEntity?
-    
-    
-    
+
     @IBOutlet weak var imgWhenEmpty: UIImageView!
     @IBOutlet weak var lblWhenEmpty: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Initialization()
         
     }
     
     func whenDicEmpty(){
-        
         if self.carDictionary.count != 0 || bikeDictionary.count != 0{
             self.verhicleTableView.isHidden = false
             imgWhenEmpty.isHidden = true
@@ -43,19 +38,9 @@ class VerhicleViewController: UIViewController {
             imgWhenEmpty.isHidden = false
             lblWhenEmpty.isHidden = false
         }
-        
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        Initialization()
-        self.verhicleTableView.reloadData()
-        
-        
-    }
-    
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,13 +56,15 @@ extension VerhicleViewController: IVerhicleView{
         presenter = VerhiclePresenter(self)
         self.verhicleTableView.dataSource = self
         self.verhicleTableView.delegate = self
-        verhicleTableView.tableFooterView = UIView()
+        self.verhicleTableView.tableFooterView = UIView()
         presenter?.loadVerhicle()
         
     }
     func getVerhicle(didResult data: [VerhicleEntity]?, error: NIPError?) {
         self.carDictionary.removeAll()
         self.bikeDictionary.removeAll()
+        self.carBrandName.removeAll()
+        self.bikeBrandName.removeAll()
         if let v = data {
             
             for i in v {
@@ -95,7 +82,6 @@ extension VerhicleViewController: IVerhicleView{
             }
         }
        whenDicEmpty()
-        
     }
     func showError(_ message: String) {
         print(message)
@@ -122,7 +108,6 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
         }else{
             sec = section
         }
-        
         
         let view = UIView()
         view.backgroundColor = UIColor.init(red: 230/255, green: 231/255, blue: 232/255, alpha: 1)
@@ -184,7 +169,9 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.lblBrandName.text = carBrandName[indexPath.row].name
                 if carDictionary[indexPath.row].flag_default == 1{
                     cell.imgDefault.image = #imageLiteral(resourceName: "ic_action_green_dot")
+                   
                 }
+                 print(carBrandName[indexPath.row].name)
                 return cell
             } else{
                 cell.lblVerhicleName.text = bikeDictionary[indexPath.row].name
@@ -196,6 +183,7 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
                 return cell
             }
         }
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -247,7 +235,6 @@ extension VerhicleViewController: UITableViewDelegate, UITableViewDataSource{
 extension VerhicleViewController : VerhicleViewDelegate{
     func reloadCellList(){
         self.presenter?.loadVerhicle()
-        self.verhicleTableView.reloadData()
     }
     
 }

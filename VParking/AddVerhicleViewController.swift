@@ -10,7 +10,6 @@ import UIKit
 import DropDown
 
 class AddVerhicleViewController: UIViewController, UITextFieldDelegate {
-    
     var presenter:AddVerhiclePresenter?
     var dropDown:DropDown = DropDown()
     var brandName = [String]()

@@ -20,7 +20,7 @@ class VerhiclePresenter: PresenterBase {
             self.view.closeProgress()
             if result != nil && error == nil {
                 let v:VerhicleResult = VerhicleResult(json: result)
-                
+                print(v.data)
                 if v.error != nil {
                     if let errorCode = v.error?.code{
                         switch (errorCode){

@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var imageActionUpload: UIImageView!
+    
     var urlAvatar:String?
     private var _user:UserProfileEntity?
     var User:UserProfileEntity?{
@@ -211,6 +212,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         dt.fullname = txtUserName.text
         dt.gender = typeGender
         dt.avatar = self.urlAvatar
+//        dt.phone = txtPhoneNumber.text
         presenter?.putProfile(dt)
         
     }

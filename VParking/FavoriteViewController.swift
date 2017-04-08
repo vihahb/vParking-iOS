@@ -10,33 +10,22 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteTableView: UITableView!
-    private let refreshControl = UIRefreshControl()
-    
     @IBOutlet weak var imgWhenEmpty: UIImageView!
     @IBOutlet weak var lblWhenEmpty: UILabel!
     
     var presenter:FavoritePresenter?
     var favoriteDictonary = [FavoriteEntity]()
-
     var p:ParkingInfoEntity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
-//        favoriteTableView.refreshControl = refreshControl
-//        refreshControl.addTarget(self, action: #selector(FavoriteViewController.refreshData(sender:)), for: .valueChanged)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         Initialization()
         self.favoriteTableView.reloadData()
     }
-    
-//    func refreshData(sender: UIRefreshControl) {
-//        refreshControl.endRefreshing()
-//        Initialization()
-//    }
     
     func whenDicEmpty(){
         if self.favoriteDictonary.count != 0 {
@@ -54,9 +43,9 @@ extension FavoriteViewController:IFavoriteView {
     func Initialization() {
        
         presenter = FavoritePresenter(self)
-        favoriteTableView.delegate = self
-        favoriteTableView.dataSource = self
-        favoriteTableView.tableFooterView = UIView()
+        self.favoriteTableView.delegate = self
+        self.favoriteTableView.dataSource = self
+        self.favoriteTableView.tableFooterView = UIView()
         presenter?.loadFavorite()
         
         

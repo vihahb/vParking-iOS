@@ -15,4 +15,5 @@ class ProfileRequest:EVObject{
     var email:String?
     var address:String?
     var avatar:String?
+    var phone:String?
 }

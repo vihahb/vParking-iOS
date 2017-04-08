@@ -153,6 +153,7 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
         self.present(alert, animated: true, completion: nil)
         
     }
+    
     func checkInSuccess() {
         let alert = UIAlertController(title: "Thông báo", message: "Bạn đã checkin thành công tại bãi gửi xe \(dataVerhicles[index].name!)", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (ac) in
@@ -161,6 +162,7 @@ extension QRCodeScannerViewController : IQRCodeScannerView{
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
     func setUpDropDown(){
         dropDown.anchorView = vDropdown
         dropDown.dataSource = dataSource
