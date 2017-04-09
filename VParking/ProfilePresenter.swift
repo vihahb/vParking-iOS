@@ -30,7 +30,6 @@ class ProfilePresenter: PresenterBase {
                 return
             }
             let result: ResultBase = ResultBase(json: result)
-            print(result)
             if result.error != nil {
                 self.view?.profile(error: error!)
                 return
@@ -38,4 +37,5 @@ class ProfilePresenter: PresenterBase {
             self.view?.profile()
         }
     }
+    
 }

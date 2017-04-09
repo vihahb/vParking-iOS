@@ -77,7 +77,11 @@ extension TicketViewController : ITicketView {
         // init ticket
         if let c = checkInInfo {
             lblTicketTime.text = c.checkin_time
-            lblTicketVehicle.text = "\(c.vehicle.name!):\(c.vehicle.plate_number!)"
+            if c.vehicle.name == nil || c.vehicle.plate_number == nil {
+                lblTicketVehicle.text = c.ticket_code
+            } else {
+                lblTicketVehicle.text = "\(c.vehicle.name!):\(c.vehicle.plate_number!)"
+            }
             presenter.retParkingInfo(c.parking.id)
         }
     }

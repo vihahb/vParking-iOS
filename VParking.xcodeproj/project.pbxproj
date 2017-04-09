@@ -105,6 +105,7 @@
 		AA5A1B831E82307F001B6296 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1B821E82307F001B6296 /* ProfileRequest.swift */; };
 		AA5A1B851E823145001B6296 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1B841E823145001B6296 /* ProfilePresenter.swift */; };
 		AA7BFD701E7B8098009C97D0 /* VerhicleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */; };
+		AA98816B1E99622500199518 /* PhoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98816A1E99622500199518 /* PhoneRequest.swift */; };
 		AAB334111E779BBE00571FFA /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */; };
 		AAB334131E779D8700571FFA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334121E779D8700571FFA /* FavoriteTableViewCell.swift */; };
 		AAB334151E779EFA00571FFA /* FavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334141E779EFA00571FFA /* FavoriteEntity.swift */; };
@@ -237,6 +238,7 @@
 		AA5A1B821E82307F001B6296 /* ProfileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		AA5A1B841E823145001B6296 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleRequest.swift; sourceTree = "<group>"; };
+		AA98816A1E99622500199518 /* PhoneRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneRequest.swift; sourceTree = "<group>"; };
 		AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		AAB334121E779D8700571FFA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		AAB334141E779EFA00571FFA /* FavoriteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEntity.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */,
 				AA5A1B821E82307F001B6296 /* ProfileRequest.swift */,
 				AA2B8F8D1E84200000536CDF /* AvatarEntity.swift */,
+				AA98816A1E99622500199518 /* PhoneRequest.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				73ADC8AA1E56EBB4001D6B4F /* HttpRequestManager.swift in Sources */,
 				73C87FE81E5A038F00EAA842 /* MenuTableViewCell.swift in Sources */,
 				AAB334191E77A15600571FFA /* FavoritePresenter.swift in Sources */,
+				AA98816B1E99622500199518 /* PhoneRequest.swift in Sources */,
 				AA1312601E7A450B0088ACD7 /* IAddVerhicleView.swift in Sources */,
 				739D40E21E713DBA0046CD60 /* CheckInList.swift in Sources */,
 				730A716B1E719EBC00BA099A /* TicketViewController.swift in Sources */,
@@ -993,7 +997,7 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = VParking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1024,7 +1028,7 @@
 					"\"${PODS_ROOT}/Headers\"",
 				);
 				INFOPLIST_FILE = VParking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";

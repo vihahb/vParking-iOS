@@ -60,6 +60,7 @@ class LoginPresenter: PresenterBase, AKFViewControllerDelegate {
     func viewController(_ viewController: UIViewController!, didCompleteLoginWithAuthorizationCode code: String!, state: String!) {
         self.view?.onLoginError(messageError: code)
         loginWithPhoneNumber(authozation_key: code)
+       
     }
     func viewController(_ viewController: UIViewController!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
         self.view?.onLoginError(messageError: accessToken.tokenString)

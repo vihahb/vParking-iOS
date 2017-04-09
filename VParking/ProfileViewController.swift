@@ -33,15 +33,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         Initialization()
-        self.txtEmail.delegate = self
-        self.txtUserName.delegate = self
-        self.txtPhoneNumber.delegate = self
-       
+        
         
     }
-    
- 
-    
+       
     //Update Avatar
     
     @IBAction func btnChangeAvatar(_ sender: Any) {
@@ -199,6 +194,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
 
 
     @IBAction func updateInfo(_ sender: Any) {
+        lblUserName.text = txtUserName.text
         if lblGender.text == "Nam"{
             typeGender = 1
         } else if lblGender.text == "Nữ"{
@@ -223,6 +219,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
 
 extension ProfileViewController:IProfileView {
     func Initialization() {
+        self.txtEmail.delegate = self
+        self.txtUserName.delegate = self
+        self.txtPhoneNumber.delegate = self
         picker.allowsEditing = true
         picker.delegate = self
         self.imageAvatar.layer.cornerRadius = self.imageAvatar.frame.height/2

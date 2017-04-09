@@ -61,7 +61,12 @@ extension CheckInViewController : UITableViewDelegate,UITableViewDataSource {
         let c:CheckInInfo = data[indexPath.row]
         cell.lblParkingName.text = c.parking.parking_name
         cell.lblTime.text = c.checkin_time
-        cell.lblPlateNumber.text = c.vehicle.plate_number
+        if c.vehicle.plate_number == nil {
+            cell.lblPlateNumber.text = c.ticket_code
+        }else {
+            cell.lblPlateNumber.text = c.vehicle.plate_number
+        }
+        
         switch c.checkin_type {
         case 1:
             cell.imgVehicleType.image = #imageLiteral(resourceName: "ic_action_car")
