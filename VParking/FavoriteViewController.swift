@@ -42,10 +42,10 @@ class FavoriteViewController: UIViewController {
 extension FavoriteViewController:IFavoriteView {
     func Initialization() {
        
-        presenter = FavoritePresenter(self)
-        self.favoriteTableView.delegate = self
-        self.favoriteTableView.dataSource = self
-        self.favoriteTableView.tableFooterView = UIView()
+        presenter                               = FavoritePresenter(self)
+        self.favoriteTableView.delegate         = self
+        self.favoriteTableView.dataSource       = self
+        self.favoriteTableView.tableFooterView  = UIView()
         presenter?.loadFavorite()
         
         
@@ -79,16 +79,17 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         return  self.favoriteDictonary.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:FavoriteTableViewCell = Bundle.main.loadNibNamed("FavoriteTableViewCell", owner: self, options: nil)?.first as! FavoriteTableViewCell
-        var url:URL = URL(string: favoriteDictonary[indexPath.row].image!)!
-        var dt = try? Data(contentsOf: url)
-        var img:UIImage = UIImage(data: dt!)!
+        let cell:FavoriteTableViewCell  = Bundle.main.loadNibNamed("FavoriteTableViewCell", owner: self, options: nil)?.first as! FavoriteTableViewCell
+        var url:URL                     = URL(string: favoriteDictonary[indexPath.row].image!)!
+        var dt                          = try? Data(contentsOf: url)
+        var img:UIImage                 = UIImage(data: dt!)!
         
-        cell.lblParkingAddress.text = favoriteDictonary[indexPath.row].address
-        cell.lblParkingName.text = favoriteDictonary[indexPath.row].parking_name
-        cell.lblParkingTime.text = favoriteDictonary[indexPath.row].end
-        cell.lblParkingMoney.text = String(favoriteDictonary[indexPath.row].price)
-        cell.imgParking.image = img
+        cell.lblParkingAddress.text     = favoriteDictonary[indexPath.row].address
+        cell.lblParkingName.text        = favoriteDictonary[indexPath.row].parking_name
+        cell.lblParkingTime.text        = favoriteDictonary[indexPath.row].end
+        cell.lblParkingMoney.text       = String(favoriteDictonary[indexPath.row].price)
+        cell.imgParking.image           = img
+        
         return cell
     }
     
@@ -103,12 +104,12 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             if let pk = self.p {
                 if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ParkingDetails") as? HomeViewController{
                     let f:FindParkingEntity = FindParkingEntity()
-                    f.id = pk.id
-                    f.lng = pk.lng
-                    f.lat = pk.lat
+                    f.id            = pk.id
+                    f.lng           = pk.lng
+                    f.lat           = pk.lat
                     vc.FixedParking = f
-                    vc.mode = .TICKET
-                    if let navi = self.navigationController{
+                    vc.mode         = .TICKET
+                    if let navi     = self.navigationController{
                         navi.pushViewController(vc, animated: true)
                     }
                 }
@@ -117,19 +118,17 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let xoa = UITableViewRowAction(style: .destructive, title: "Xoá") { (action, indexPath) in
             
-            var myAlert = UIAlertController(title: "Thông báo", message: "Xóa bãi đỗ khỏi danh sách yêu thích ?", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "Đồng ý", style: UIAlertActionStyle.destructive, handler: { (ACTION) in
-                var id:Int = self.favoriteDictonary[indexPath.row].id
+            var myAlert     = UIAlertController(title: "Thông báo", message: "Xóa bãi đỗ khỏi danh sách yêu thích ?", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction    = UIAlertAction(title: "Đồng ý", style: UIAlertActionStyle.destructive, handler: { (ACTION) in
+                var id:Int              = self.favoriteDictonary[indexPath.row].id
                 let data:ParkingRequest = ParkingRequest()
-                data.parking_id = id
+                data.parking_id         = id
                 ParkingManager.instance.favorite(data, completion: { (result, error) in
-                    print("ok")
                 })
                 self.favoriteDictonary.remove(at: indexPath.row)
                 self.favoriteTableView.deleteRows(at: [indexPath], with: .automatic)
             })
-            let  cancelAction = UIAlertAction(title: "Hủy bỏ", style: UIAlertActionStyle.cancel, handler: { (ACTION) in
-                print("cancel")
+            let cancelAction = UIAlertAction(title: "Hủy bỏ", style: UIAlertActionStyle.cancel, handler: { (ACTION) in
             })
             
             myAlert.addAction(okAction)
@@ -147,9 +146,6 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     }
-    
-    
-    
 
     
 }

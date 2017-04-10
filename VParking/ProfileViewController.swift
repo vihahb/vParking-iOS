@@ -77,8 +77,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
             return
         }
         
-        imgCover.image = image
-        imageAvatar.image = image
+        imgCover.image      = image
+        imageAvatar.image   = image
         let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
         
         let imageName = "temp.jpg"
@@ -132,14 +132,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         datePiker.datePickerMode = .date
         
         let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255,alpha: 1)
+        toolBar.barStyle        = .default
+        toolBar.isTranslucent   = true
+        toolBar.tintColor       = UIColor(red: 92/255, green: 216/255, blue: 255/255,alpha: 1)
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Xong", style: .plain, target: self, action: #selector(ProfileViewController.doneClick))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Thoát", style: .plain, target: self, action: #selector(ProfileViewController.cancelClick))
+        let doneButton      = UIBarButtonItem(title: "Xong", style: .plain, target: self, action: #selector(ProfileViewController.doneClick))
+        let spaceButton     = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton    = UIBarButtonItem(title: "Thoát", style: .plain, target: self, action: #selector(ProfileViewController.cancelClick))
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         txtFBirthday.inputView = datePiker
@@ -187,8 +187,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         dropDown.selectionAction = {(index, item) in
             self.imgDropDown.image = #imageLiteral(resourceName: "ic_action_arrow_down")
             self.lblGender.text = item
-            
-            
+  
         }
     }
 
@@ -202,31 +201,28 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         }else {
             typeGender = 3
         }
-        var dt:ProfileRequest = ProfileRequest()
-        dt.birthday = txtFBirthday.text
-        dt.email = txtEmail.text
-        dt.fullname = txtUserName.text
-        dt.gender = typeGender
-        dt.avatar = self.urlAvatar
-//        dt.phone = txtPhoneNumber.text
+        var dt:ProfileRequest   = ProfileRequest()
+        dt.birthday             = txtFBirthday.text
+        dt.email                = txtEmail.text
+        dt.fullname             = txtUserName.text
+        dt.gender               = typeGender
+        dt.avatar               = self.urlAvatar
         presenter?.putProfile(dt)
         
     }
-    
-    
- 
+
 }
 
 extension ProfileViewController:IProfileView {
     func Initialization() {
-        self.txtEmail.delegate = self
-        self.txtUserName.delegate = self
-        self.txtPhoneNumber.delegate = self
-        picker.allowsEditing = true
-        picker.delegate = self
-        self.imageAvatar.layer.cornerRadius = self.imageAvatar.frame.height/2
-        self.imageActionUpload.layer.cornerRadius = self.imageActionUpload.frame.height/2
-        presenter = ProfilePresenter(self)
+        self.txtEmail.delegate                      = self
+        self.txtUserName.delegate                   = self
+        self.txtPhoneNumber.delegate                = self
+        picker.allowsEditing                        = true
+        picker.delegate                             = self
+        self.imageAvatar.layer.cornerRadius         = self.imageAvatar.frame.height/2
+        self.imageActionUpload.layer.cornerRadius   = self.imageActionUpload.frame.height/2
+        presenter                                   = ProfilePresenter(self)
         fillInfo()
         setupDatePicker()
         setupDropDown()
@@ -237,7 +233,7 @@ extension ProfileViewController:IProfileView {
             if let av = u.avatar {
                 imageAvatar.downloadedFrom(link: av)
                 imgCover.downloadedFrom(link: av)
-                imgCover.contentMode = .scaleToFill
+                imgCover.contentMode    = .scaleToFill
                 imageAvatar.contentMode = .scaleToFill
                 
             }
@@ -249,15 +245,15 @@ extension ProfileViewController:IProfileView {
            typeGender = (u.gender)
             switch typeGender {
             case 1:
-               lblGender.text = "Nam"
+               lblGender.text   = "Nam"
             case 2:
-               lblGender.text = "Nữ"
+               lblGender.text   = "Nữ"
             default:
-                lblGender.text = "Khác"
+                lblGender.text  = "Khác"
             }
-            txtFBirthday.text = u.birthday
-            txtEmail.text = u.email
-            txtUserName.text = u.fullname
+            txtFBirthday.text   = u.birthday
+            txtEmail.text       = u.email
+            txtUserName.text    = u.fullname
             txtPhoneNumber.text = u.phone
         }
     }
