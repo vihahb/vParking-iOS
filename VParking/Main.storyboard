@@ -1147,6 +1147,9 @@
                                                                     <constraint firstAttribute="trailing" secondItem="vcj-mY-M0N" secondAttribute="trailing" constant="11" id="V8A-aM-1mq"/>
                                                                     <constraint firstAttribute="bottom" secondItem="vcj-mY-M0N" secondAttribute="bottom" constant="10" id="zML-YV-DjW"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="1dQ-KW-lV8" appends="YES" id="vz3-Fd-NKK"/>
+                                                                </connections>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1315,6 +1318,11 @@
                 <tapGestureRecognizer id="dg8-bl-uhx">
                     <connections>
                         <action selector="btnGender:" destination="Imb-Qp-PRO" id="jb9-w0-Bhx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1dQ-KW-lV8">
+                    <connections>
+                        <action selector="btnGenders:" destination="Imb-Qp-PRO" id="m6u-4p-MYW"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -2435,7 +2443,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XyK-sS-YTP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BiH-ta-feC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BiH-ta-feC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

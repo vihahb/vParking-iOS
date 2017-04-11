@@ -164,6 +164,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var dropDownView: UIView!
     @IBOutlet weak var lblGender: UILabel!
     @IBOutlet weak var imgDropDown: UIImageView!
+    @IBAction func btnGenders(_ sender: Any) {
+        dropDown.show()
+    }
     @IBAction func btnGender(_ sender: Any) {
         dropDown.show()
         
