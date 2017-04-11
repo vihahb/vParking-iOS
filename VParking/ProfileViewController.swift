@@ -14,7 +14,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     let picker = UIImagePickerController()
     var localPath: String?
     var presenter:ProfilePresenter?
-    @IBOutlet weak var imgCover: UIImageView!
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var txtUserName: UITextField!
@@ -81,7 +80,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
             return
         }
         
-        imgCover.image      = image
         imageAvatar.image   = image
         let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
         
@@ -265,8 +263,6 @@ extension ProfileViewController:IProfileView {
         if let u = self.User {
             if let av = u.avatar {
                 imageAvatar.downloadedFrom(link: av)
-                imgCover.downloadedFrom(link: av)
-                imgCover.contentMode    = .scaleToFill
                 imageAvatar.contentMode = .scaleToFill
             }
             if let fName = u.fullname {

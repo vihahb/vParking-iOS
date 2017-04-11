@@ -15,7 +15,6 @@ struct MenuData {
 
 class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var imgCover: UIImageView!
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var tableMenu: UITableView!
@@ -81,8 +80,6 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
         }
         if (info.avatar != nil){
             imgAvatar.downloadedFrom(link: info.avatar!)
-            imgCover.downloadedFrom(link: info.avatar!)
-            imgCover.contentMode = .scaleToFill
             imgAvatar.contentMode = .scaleToFill
         }
     }

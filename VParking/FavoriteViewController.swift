@@ -89,7 +89,6 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         cell.lblParkingTime.text        = favoriteDictonary[indexPath.row].end
         cell.lblParkingMoney.text       = String(favoriteDictonary[indexPath.row].price)
         cell.imgParking.image           = img
-        cell.selectionStyle             = .none
         
         return cell
     }
@@ -146,6 +145,21 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+        var id:Int = self.favoriteDictonary[indexPath.row].id
+        self.presenter?.retParkingInfo(id)
+        if let pk = self.p {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ParkingDetails") as? HomeViewController{
+                let f:FindParkingEntity = FindParkingEntity()
+                f.id            = pk.id
+                f.lng           = pk.lng
+                f.lat           = pk.lat
+                vc.FixedParking = f
+                vc.mode         = .TICKET
+                if let navi     = self.navigationController{
+                    navi.pushViewController(vc, animated: true)
+                }
+            }
+        }
     }
 
     
