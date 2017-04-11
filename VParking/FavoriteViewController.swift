@@ -80,15 +80,16 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FavoriteTableViewCell  = Bundle.main.loadNibNamed("FavoriteTableViewCell", owner: self, options: nil)?.first as! FavoriteTableViewCell
-        var url:URL                     = URL(string: favoriteDictonary[indexPath.row].image!)!
-        var dt                          = try? Data(contentsOf: url)
-        var img:UIImage                 = UIImage(data: dt!)!
+//        var url:URL                     = URL(string: favoriteDictonary[indexPath.row].image!)!
+//        var dt                          = try? Data(contentsOf: url)
+//        var img:UIImage                 = UIImage(data: dt!)!
+//        cell.imgParking.image           = img 
         
         cell.lblParkingAddress.text     = favoriteDictonary[indexPath.row].address
         cell.lblParkingName.text        = favoriteDictonary[indexPath.row].parking_name
         cell.lblParkingTime.text        = favoriteDictonary[indexPath.row].end
         cell.lblParkingMoney.text       = String(favoriteDictonary[indexPath.row].price)
-        cell.imgParking.image           = img
+        cell.imgParking.downloadedFrom(link: favoriteDictonary[indexPath.row].image!)
         
         return cell
     }
