@@ -16,6 +16,8 @@ class SideMenuPresenter: PresenterBase {
     }
     
     func loadProfile() {
+        clearUserLocal()
+        
         let profile:UserProfileEntity? = getLocalUserProfile()
         
         if profile == nil {

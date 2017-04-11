@@ -36,6 +36,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Initialization()
+    }
        
     //Update Avatar
     
@@ -153,6 +157,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         txtFBirthday.text = dateFormatter.string(from: datePiker.date)
         txtFBirthday.resignFirstResponder()
     }
+    
     func cancelClick() {
         txtFBirthday.resignFirstResponder()
     }
@@ -263,7 +268,6 @@ extension ProfileViewController:IProfileView {
                 imgCover.downloadedFrom(link: av)
                 imgCover.contentMode    = .scaleToFill
                 imageAvatar.contentMode = .scaleToFill
-                
             }
             if let fName = u.fullname {
                 lblUserName.text = fName
