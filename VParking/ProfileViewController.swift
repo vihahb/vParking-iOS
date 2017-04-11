@@ -149,7 +149,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     func doneClick() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         txtFBirthday.text = dateFormatter.string(from: datePiker.date)
         txtFBirthday.resignFirstResponder()
     }
@@ -205,13 +205,38 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
             typeGender = 3
         }
         var dt:ProfileRequest   = ProfileRequest()
-        dt.birthday             = txtFBirthday.text
+//        dt.birthday             = txtFBirthday.text
+        dt.birthday             = convertToPut(txtFBirthday.text!)
         dt.email                = txtEmail.text
         dt.fullname             = txtUserName.text
         dt.gender               = typeGender
         dt.avatar               = self.urlAvatar
         presenter?.putProfile(dt)
         
+    }
+    
+    func convertDate(_ date: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.locale = Locale.init(identifier: "en_GB")
+        
+        let dateObj = dateFormatter.date(from: date)
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        var a = dateFormatter.string(from: dateObj!)
+        return a
+    }
+    
+    func convertToPut(_ date: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale.init(identifier: "en_GB")
+        
+        let dateObj = dateFormatter.date(from: date)
+        
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        var a = dateFormatter.string(from: dateObj!)
+        return a
     }
 
 }
@@ -254,10 +279,13 @@ extension ProfileViewController:IProfileView {
             default:
                 lblGender.text  = "Khác"
             }
-            txtFBirthday.text   = u.birthday
+//            txtFBirthday.text   = u.birthday
             txtEmail.text       = u.email
             txtUserName.text    = u.fullname
+            txtFBirthday.text   = convertDate(u.birthday!)
             txtPhoneNumber.text = u.phone
+            
+            
         }
     }
     func profile() {
