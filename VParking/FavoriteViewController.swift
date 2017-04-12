@@ -90,6 +90,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         cell.lblParkingTime.text        = favoriteDictonary[indexPath.row].end
         cell.lblParkingMoney.text       = String(favoriteDictonary[indexPath.row].price)
         cell.imgParking.downloadedFrom(link: favoriteDictonary[indexPath.row].image!)
+        cell.imgParking.contentMode = .scaleToFill
         
         return cell
     }
