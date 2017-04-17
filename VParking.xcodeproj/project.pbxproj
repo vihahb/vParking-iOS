@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C8BAC84360897F563B6D4A5 /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1A9A3FF82C33C2B7343EDC /* Pods_VParking.framework */; };
 		730A716B1E719EBC00BA099A /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A716A1E719EBC00BA099A /* TicketViewController.swift */; };
 		730A716D1E719FB800BA099A /* ITicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A716C1E719FB800BA099A /* ITicketView.swift */; };
 		730A716F1E71AC3900BA099A /* TicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730A716E1E71AC3900BA099A /* TicketPresenter.swift */; };
@@ -26,14 +25,16 @@
 		7321F84A1E6D607300519B15 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F8491E6D607300519B15 /* CheckInViewController.swift */; };
 		7321F84C1E6DB03F00519B15 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */; };
 		7321F84E1E6DB08000519B15 /* IQRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321F84D1E6DB08000519B15 /* IQRCodeScannerView.swift */; };
+		7337B34B1EA52BBE00102FF0 /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7337B34A1EA52BBE00102FF0 /* Pods_VParking.framework */; };
+		7337B3511EA52C1E00102FF0 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7337B34C1EA52C1E00102FF0 /* AccountKit.framework */; };
+		7337B3521EA52C1E00102FF0 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7337B34D1EA52C1E00102FF0 /* AccountKitStrings.bundle */; };
+		7337B3531EA52C1E00102FF0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7337B34E1EA52C1E00102FF0 /* Bolts.framework */; };
+		7337B3541EA52C1E00102FF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7337B34F1EA52C1E00102FF0 /* FBSDKCoreKit.framework */; };
+		7337B3551EA52C1E00102FF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7337B3501EA52C1E00102FF0 /* FBSDKLoginKit.framework */; };
 		7338A8441E763949004C9030 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7338A8431E763949004C9030 /* ProfileViewController.swift */; };
 		7338A8461E7650E5004C9030 /* IProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7338A8451E7650E5004C9030 /* IProfileView.swift */; };
 		733A26C11E6D14A10091AF73 /* AuthenticateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A26C01E6D14A10091AF73 /* AuthenticateEntity.swift */; };
 		73677A9D1E60180C001D37F8 /* FindCodition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73677A9C1E60180C001D37F8 /* FindCodition.swift */; };
-		737A5BB41E6FF50F00E9E76C /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BAF1E6FF50F00E9E76C /* AccountKit.framework */; };
-		737A5BB61E6FF50F00E9E76C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB11E6FF50F00E9E76C /* Bolts.framework */; };
-		737A5BB71E6FF50F00E9E76C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB21E6FF50F00E9E76C /* FBSDKCoreKit.framework */; };
-		737A5BB81E6FF50F00E9E76C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A5BB31E6FF50F00E9E76C /* FBSDKLoginKit.framework */; };
 		739D40D21E70E7800046CD60 /* VerhicleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D11E70E7800046CD60 /* VerhicleEntity.swift */; };
 		739D40D41E70E8340046CD60 /* QRCodeScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D31E70E8340046CD60 /* QRCodeScannerPresenter.swift */; };
 		739D40D61E70E9880046CD60 /* VerhicleSortResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D40D51E70E9880046CD60 /* VerhicleSortResult.swift */; };
@@ -93,6 +94,7 @@
 		73DC70CD1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */; };
 		73DC70CF1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */; };
 		73DC70D11E6874DF00AEBBA5 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */; };
+		75F797CB9576A805DF7F1C11 /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BF056401FA1114925C80F4 /* Pods_VParking.framework */; };
 		AA1312601E7A450B0088ACD7 /* IAddVerhicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */; };
 		AA1312621E7A45710088ACD7 /* AddVerhiclePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */; };
 		AA21FF721E78E7EB002D5A82 /* VerhicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */; };
@@ -151,6 +153,12 @@
 		7321F8491E6D607300519B15 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		7321F84B1E6DB03F00519B15 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		7321F84D1E6DB08000519B15 /* IQRCodeScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQRCodeScannerView.swift; sourceTree = "<group>"; };
+		7337B34A1EA52BBE00102FF0 /* Pods_VParking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_VParking.framework; path = "../../../../../../../../Users/td/Library/Developer/Xcode/DerivedData/VParking-fglgitidjjupluevgezrnifxzsqv/Build/Products/Debug-iphonesimulator/Pods_VParking.framework"; sourceTree = "<group>"; };
+		7337B34C1EA52C1E00102FF0 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = ../../../FACEBOOKSDK/AccountKit.framework; sourceTree = "<group>"; };
+		7337B34D1EA52C1E00102FF0 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AccountKitStrings.bundle; path = ../../../FACEBOOKSDK/AccountKitStrings.bundle; sourceTree = "<group>"; };
+		7337B34E1EA52C1E00102FF0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FACEBOOKSDK/Bolts.framework; sourceTree = "<group>"; };
+		7337B34F1EA52C1E00102FF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FACEBOOKSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		7337B3501EA52C1E00102FF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../FACEBOOKSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		7338A8431E763949004C9030 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7338A8451E7650E5004C9030 /* IProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IProfileView.swift; sourceTree = "<group>"; };
 		733A26C01E6D14A10091AF73 /* AuthenticateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateEntity.swift; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 		73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IParkingInfoBottomSheet.swift; sourceTree = "<group>"; };
 		73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoBottomSheetExtensionView.swift; sourceTree = "<group>"; };
 		73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		78BF056401FA1114925C80F4 /* Pods_VParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAddVerhicleView.swift; sourceTree = "<group>"; };
 		AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerhiclePresenter.swift; sourceTree = "<group>"; };
 		AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerhicleTableViewCell.xib; sourceTree = "<group>"; };
@@ -247,7 +256,6 @@
 		AAB334161E77A0C300571FFA /* IFavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFavoriteView.swift; sourceTree = "<group>"; };
 		AAB334181E77A15600571FFA /* FavoritePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		DBAD8365917799AEE4C6A400 /* Pods-VParking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VParking.release.xcconfig"; path = "Pods/Target Support Files/Pods-VParking/Pods-VParking.release.xcconfig"; sourceTree = "<group>"; };
-		FE1A9A3FF82C33C2B7343EDC /* Pods_VParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,11 +263,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				737A5BB61E6FF50F00E9E76C /* Bolts.framework in Frameworks */,
-				737A5BB71E6FF50F00E9E76C /* FBSDKCoreKit.framework in Frameworks */,
-				737A5BB81E6FF50F00E9E76C /* FBSDKLoginKit.framework in Frameworks */,
-				2C8BAC84360897F563B6D4A5 /* Pods_VParking.framework in Frameworks */,
-				737A5BB41E6FF50F00E9E76C /* AccountKit.framework in Frameworks */,
+				7337B3531EA52C1E00102FF0 /* Bolts.framework in Frameworks */,
+				7337B3541EA52C1E00102FF0 /* FBSDKCoreKit.framework in Frameworks */,
+				7337B3551EA52C1E00102FF0 /* FBSDKLoginKit.framework in Frameworks */,
+				7337B34B1EA52BBE00102FF0 /* Pods_VParking.framework in Frameworks */,
+				7337B3511EA52C1E00102FF0 /* AccountKit.framework in Frameworks */,
+				75F797CB9576A805DF7F1C11 /* Pods_VParking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +550,13 @@
 		DF51B373BF59C7BED4C04E73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE1A9A3FF82C33C2B7343EDC /* Pods_VParking.framework */,
+				7337B34C1EA52C1E00102FF0 /* AccountKit.framework */,
+				7337B34D1EA52C1E00102FF0 /* AccountKitStrings.bundle */,
+				7337B34E1EA52C1E00102FF0 /* Bolts.framework */,
+				7337B34F1EA52C1E00102FF0 /* FBSDKCoreKit.framework */,
+				7337B3501EA52C1E00102FF0 /* FBSDKLoginKit.framework */,
+				7337B34A1EA52BBE00102FF0 /* Pods_VParking.framework */,
+				78BF056401FA1114925C80F4 /* Pods_VParking.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -671,6 +686,7 @@
 				73C87FE91E5A038F00EAA842 /* MenuTableViewCell.xib in Resources */,
 				AAB334111E779BBE00571FFA /* FavoriteTableViewCell.xib in Resources */,
 				AA21FF721E78E7EB002D5A82 /* VerhicleTableViewCell.xib in Resources */,
+				7337B3521EA52C1E00102FF0 /* AccountKitStrings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,7 +1012,7 @@
 				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Main/Documents/FacebookSDK,
+					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1010,6 +1026,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VParking/VParking-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1027,7 +1044,7 @@
 				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Main/Documents/FacebookSDK,
+					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1041,6 +1058,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtel.VParking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VParking/VParking-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
