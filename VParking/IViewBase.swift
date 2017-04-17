@@ -12,4 +12,5 @@ protocol IViewBase {
     func showProgress(title:String?)
     func closeProgress()
     func showLoginForm()
+    func showUpdateDialog(_ id:String)
 }

@@ -23,6 +23,9 @@ class TicketPresenter: PresenterBase {
                 let r:ParkingInfoEntity = ParkingInfoEntity(json: result)
                 
                 if r.error != nil {
+                    if self.showUpdateStore(r.error,view: self.view) {
+                        return
+                    }
                     if let errorCode = r.error?.code, errorCode == 2 { // session ko hợp lệ
                         self.getNewSession(completion: {
                             self.retParkingInfo(id)
@@ -51,6 +54,9 @@ class TicketPresenter: PresenterBase {
             if result != nil && error == nil{
                 let r:ParkingInfoEntity = ParkingInfoEntity(json: result)
                 if let e = r.error{
+                    if self.showUpdateStore(e,view: self.view) {
+                        return
+                    }
                     switch(e.code){
                     case 2:
                         self.getNewSession(completion: {

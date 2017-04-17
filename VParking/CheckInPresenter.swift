@@ -23,6 +23,9 @@ class CheckInPresenter: PresenterBase {
                 let v:CheckInList = CheckInList(json: result)
                 
                 if v.error != nil {
+                    if self.showUpdateStore(v.error,view: self.view) {
+                        return
+                    }
                     if let errorCode = v.error?.code { // session ko hợp lệ
                         switch(errorCode){
                         case 2:

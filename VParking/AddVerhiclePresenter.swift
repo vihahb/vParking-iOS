@@ -20,6 +20,9 @@ class AddVerhiclePresenter: PresenterBase {
         ParkingManager.instance.verhicle(data: data) { (result, error) in
             self.view?.closeProgress()
             if error != nil {
+                if self.showUpdateStore(error,view: self.view!) {
+                    return
+                }
                 if let errorCode = error?.code, errorCode == 2{
                     self.getNewSession(completion: { 
                         self.verhicle(data)
@@ -46,6 +49,9 @@ class AddVerhiclePresenter: PresenterBase {
         ParkingManager.instance.editVerhicle(data: data) { (result, error) in
             self.view?.closeProgress()
             if error != nil {
+                if self.showUpdateStore(error,view: self.view!) {
+                    return
+                }
                 if let errorCode = error?.code, errorCode == 2{
                     self.getNewSession(completion: { 
                         self.putVerhicle(data)

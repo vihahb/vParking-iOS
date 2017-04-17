@@ -120,9 +120,11 @@ class ParkingManager {
         }
         let headers:HTTPHeaders = [
             "Accept": "application/json;charset=utf-8",
-            "session": "\(session)"
+            "session": "\(session)",
+            "device-type":  "2",
+            "version-number": "1"
         ]
-        
+        print(headers)
         return headers
     }
     

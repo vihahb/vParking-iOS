@@ -22,6 +22,9 @@ class VerhiclePresenter: PresenterBase {
                 let v:VerhicleResult = VerhicleResult(json: result)
                 print(v.data)
                 if v.error != nil {
+                    if self.showUpdateStore(v.error,view: self.view) {
+                        return
+                    }
                     if let errorCode = v.error?.code{
                         switch (errorCode){
                         case 2:

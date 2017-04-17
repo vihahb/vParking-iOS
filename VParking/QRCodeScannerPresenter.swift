@@ -23,6 +23,9 @@ class QRCodeScannerPresenter: PresenterBase {
                 let v:VerhicleSortResult = VerhicleSortResult(json: result)
                 
                 if v.error != nil {
+                    if self.showUpdateStore(v.error,view: self.view) {
+                        return
+                    }
                     if let errorCode = v.error?.code, errorCode == 2 { // session ko hợp lệ
                         self.getNewSession(completion: {
                             self.getVerhicle()
@@ -62,6 +65,9 @@ class QRCodeScannerPresenter: PresenterBase {
                 if v.error != nil {
                     if let errorCode = v.error?.code { // session ko hợp lệ
                     switch(errorCode){
+                        case 5:
+                            self.showUpdateStore(v.error,view: self.view)
+                            return
                         case 2:
                             self.getNewSession(completion: {
                                 self.checkIn(code: code, verhicle_id: verhicle_id, verhicle_type: verhicle_id, name: name)

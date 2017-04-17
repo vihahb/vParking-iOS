@@ -29,4 +29,13 @@ class PresenterBase: NSObject {
             }
         }
     }
+    
+    
+    func showUpdateStore(_ error:NIPError?,view:IViewBase)->Bool{
+        if let e = error, e.code == 5 {
+            view.showUpdateDialog(e.type!)
+            return true
+        }
+        return false
+    }
 }

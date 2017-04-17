@@ -24,6 +24,9 @@ class ParkingInfoPresenter: PresenterBase {
             (result,error) in
             self.view!.closeProgress()
             if error != nil {
+                if self.showUpdateStore(error,view: self.view!) {
+                    return
+                }
                 // truong ho het session
                 if let errorCode = error?.code, errorCode == 2 { // session ko hợp lệ
                     self.getNewSession(completion: {

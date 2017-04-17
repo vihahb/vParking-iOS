@@ -31,6 +31,9 @@ class FavoritePresenter: PresenterBase {
                 
                 if f.error != nil {
                     if let errorCode = f.error?.code {
+                        if self.showUpdateStore(f.error,view: self.view) {
+                            return
+                        }
                         switch (errorCode) {
                         case 2:
                             self.getNewSession(completion: { 

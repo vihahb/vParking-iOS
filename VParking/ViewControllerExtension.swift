@@ -39,4 +39,19 @@ extension UIViewController{
             self.dismiss(animated: true, completion: completion)
         }
     }
+    
+    func showUpdateDialog(_ id:String){
+        let alert = UIAlertController(title: "Thông báo", message: "Đã có bản cập nhập mới. Vui lòng cập nhập để sử dụng.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cập nhập", style: .default, handler: { (a) in
+            let url  = URL(string: "itms-apps://itunes.apple.com/app/id\(id)")
+            if UIApplication.shared.canOpenURL(url!) {
+                UIApplication.shared.openURL(url!)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Đóng", style: .default, handler: { (a) in
+            exit(0)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }

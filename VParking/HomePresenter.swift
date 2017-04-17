@@ -25,12 +25,14 @@ class HomePresenter: PresenterBase {
     func findParking(lat:Double,lng:Double){
         let codition:FindCondition = getCondition(lat:lat,lng:lng)
         self.view.showToast("Đang tìm kiếm bãi đỗ xe...!")
-        ParkingManager.instance.findParking(condition: codition){
-            (result,error) in
+        ParkingManager.instance.findParking(condition: codition){(result,error) in
             if result != nil && error == nil{
                 let r:FindParkingResult = FindParkingResult(json: result)
                 
                 if r.error != nil {
+                    if self.showUpdateStore(r.error,view: self.view) {
+                        return
+                    }
                     if let errorCode = r.error?.code, errorCode == 2 { // session ko hợp lệ
                         self.getNewSession(completion: { 
                             self.findParking(lat: lat, lng: lng)
@@ -39,6 +41,7 @@ class HomePresenter: PresenterBase {
                         })
                         return
                     }
+                    
                     self.view.findParking(didError: error, didLoaded: nil)
                 }else{
                     self.view.findParking(didError: error, didLoaded: r.data)
