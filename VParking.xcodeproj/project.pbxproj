@@ -102,6 +102,7 @@
 		AA21FF7A1E792778002D5A82 /* VerhiclePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF791E792778002D5A82 /* VerhiclePresenter.swift */; };
 		AA21FF7C1E793AF8002D5A82 /* AddVerhicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */; };
 		AA2B8F8E1E84200000536CDF /* AvatarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B8F8D1E84200000536CDF /* AvatarEntity.swift */; };
+		AA52E2EB1E9DC99F00678E50 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA52E2EA1E9DC99F00678E50 /* InfoViewController.swift */; };
 		AA5A1B831E82307F001B6296 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1B821E82307F001B6296 /* ProfileRequest.swift */; };
 		AA5A1B851E823145001B6296 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1B841E823145001B6296 /* ProfilePresenter.swift */; };
 		AA7BFD701E7B8098009C97D0 /* VerhicleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */; };
@@ -235,6 +236,7 @@
 		AA21FF791E792778002D5A82 /* VerhiclePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhiclePresenter.swift; sourceTree = "<group>"; };
 		AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerhicleViewController.swift; sourceTree = "<group>"; };
 		AA2B8F8D1E84200000536CDF /* AvatarEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarEntity.swift; sourceTree = "<group>"; };
+		AA52E2EA1E9DC99F00678E50 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AA5A1B821E82307F001B6296 /* ProfileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		AA5A1B841E823145001B6296 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleRequest.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				7338A8431E763949004C9030 /* ProfileViewController.swift */,
 				7321F8471E6D606600519B15 /* VerhicleViewController.swift */,
 				AA21FF7B1E793AF8002D5A82 /* AddVerhicleViewController.swift */,
+				AA52E2EA1E9DC99F00678E50 /* InfoViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -615,9 +618,14 @@
 				TargetAttributes = {
 					73D38D051E55505E005B9E9F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = PXSCCME364;
+						DevelopmentTeam = 88XZ7KT632;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					73D38D191E55505E005B9E9F = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -835,6 +843,7 @@
 				73D38DA11E55E598005B9E9F /* LoginViewController.swift in Sources */,
 				73ADC8A41E56E545001D6B4F /* SessionManager.swift in Sources */,
 				739D40D61E70E9880046CD60 /* VerhicleSortResult.swift in Sources */,
+				AA52E2EB1E9DC99F00678E50 /* InfoViewController.swift in Sources */,
 				AAB334171E77A0C300571FFA /* IFavoriteView.swift in Sources */,
 				73D05FF11E5B3DB300D8E371 /* LaunchScreenViewController.swift in Sources */,
 				73ADC8A81E56E980001D6B4F /* NIPError.swift in Sources */,
@@ -984,7 +993,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PXSCCME364;
+				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Main/Documents/FacebookSDK,
@@ -1015,7 +1024,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PXSCCME364;
+				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Main/Documents/FacebookSDK,

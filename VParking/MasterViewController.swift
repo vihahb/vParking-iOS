@@ -13,6 +13,7 @@ enum PARKING_VIEW{
     case FAVORITE_VIEW
     case VERHICLE_VIEW
     case CHECKIN_VIEW
+    case INFO_VIEW
 }
 
 class MasterViewController: UIPageViewController {
@@ -25,7 +26,8 @@ class MasterViewController: UIPageViewController {
     
     var _VIEWS = [PARKING_VIEW:UIViewController]()
     
-    var isAdd:Bool = false
+//    var isAdd:Bool = false
+    var rightButton:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,28 +54,54 @@ class MasterViewController: UIPageViewController {
     }
 
     @IBAction func checkInClicked(_ sender: Any) {
-        if !isAdd {
+//        if !isAdd {
+//            let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "QRCodeScannerViewController")
+//            if let nav = self.navigationController {
+//                nav.pushViewController(qrVC!, animated: true)
+//            }
+//        }else{
+//            let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController")
+//            if let nav = self.navigationController {
+//                nav.pushViewController(qrVC!, animated: true)
+//            }
+//        }
+        if rightButton == 0 {
             let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "QRCodeScannerViewController")
-            if let nav = self.navigationController {
-                nav.pushViewController(qrVC!, animated: true)
-            }
-        }else{
+                        if let nav = self.navigationController {
+                            nav.pushViewController(qrVC!, animated: true)
+                        }
+
+        } else if rightButton == 1 {
             let qrVC = self.storyboard?.instantiateViewController(withIdentifier: "AddVerhicleViewController")
-            if let nav = self.navigationController {
-                nav.pushViewController(qrVC!, animated: true)
-            }
+                        if let nav = self.navigationController {
+                            nav.pushViewController(qrVC!, animated: true)
+                        }
         }
     }
     
-    func updateAcionButton(_ isAdd:Bool){
-        self.isAdd = isAdd
-        if isAdd {
+//    func updateAcionButton(_ isAdd:Bool){
+//        self.isAdd = isAdd
+//        if isAdd {
+//            self.btnCheckIn.image = #imageLiteral(resourceName: "Plus Math_32")
+//            self.btnCheckIn.title = nil
+//        }else{
+//           self.btnCheckIn.image = nil
+//            self.btnCheckIn.title = "Check-In"
+//            
+//        }
+//    }
+    
+    func updateRightButton(_ rightButton:Int){
+        self.rightButton = rightButton
+        if rightButton == 0{
+            self.btnCheckIn.image = nil
+            self.btnCheckIn.title = "Check-In"
+        } else if rightButton == 1{
             self.btnCheckIn.image = #imageLiteral(resourceName: "Plus Math_32")
             self.btnCheckIn.title = nil
-        }else{
-           self.btnCheckIn.image = nil
-            self.btnCheckIn.title = "Check-In"
-            
+        }else if rightButton == 2{
+            self.btnCheckIn.image = nil
+            self.btnCheckIn.title = nil
         }
     }
     
@@ -110,6 +138,11 @@ extension MasterViewController:IMasterView{
         
         if let checkinVC = self.storyboard?.instantiateViewController(withIdentifier: "CheckInViewController"){
             _VIEWS[PARKING_VIEW.CHECKIN_VIEW] = checkinVC
+        }
+        
+        if let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "InfoViewController"){
+            _VIEWS[PARKING_VIEW.INFO_VIEW] = infoVC
+            
         }
         
         setViewController(PARKING_VIEW.HOME_VIEW)

@@ -62,6 +62,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
                     MenuData(title:"Yêu thích",icon:UIImage(named: "ic_favorite_border_white_48dp.png")),
                     MenuData(title:"Phương tiện",icon:UIImage(named: "ic_directions_transit_white_48dp.png")),
                     MenuData(title:"Xe đang đỗ",icon:UIImage(named: "ic_check_in.png")),
+                    MenuData(title:"Thông tin",icon:UIImage(named: "ic_info_parking.png")),
                     MenuData(title:"Đăng xuất",icon:UIImage(named: "ic_logout.png"))]
         tableMenu.delegate = self
         tableMenu.dataSource = self
@@ -89,7 +90,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 48.0
+        return 50.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,28 +115,40 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
         case 0:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.HOME_VIEW)
-                mView.updateAcionButton(false)
+//                mView.updateAcionButton(false)
+                mView.updateRightButton(0)
                 mView.setTitleNavi("Tìm bãi đỗ xe")
             }
         case 1:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.FAVORITE_VIEW)
-                mView.updateAcionButton(false)
+//                mView.updateAcionButton(false)
+                mView.updateRightButton(2)
                 mView.setTitleNavi("Bãi đỗ yêu thích")
             }
         case 2:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.VERHICLE_VIEW)
-                mView.updateAcionButton(true)
+//                mView.updateAcionButton(true)
+                mView.updateRightButton(1)
                 mView.setTitleNavi("Phương tiện")
             }
         case 3:
             if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
                 mView.setViewController(PARKING_VIEW.CHECKIN_VIEW)
-                mView.updateAcionButton(false)
+//                mView.updateAcionButton(false)
+                mView.updateRightButton(2)
                 mView.setTitleNavi("Xe đang đỗ")
             }
         case 4:
+            if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
+                mView.setViewController(PARKING_VIEW.INFO_VIEW)
+//                mView.updateAcionButton(false)
+                mView.updateRightButton(2)
+                mView.setTitleNavi("Thông tin và điều khoản")
+            }
+    
+        case 5:
             presenter?.logout()
         default:
             print("not define")
