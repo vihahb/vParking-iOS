@@ -25,7 +25,8 @@ class LoginPresenter: PresenterBase, AKFViewControllerDelegate {
             if error == nil {
                 self.loginFacebook(access_token_key: FBSDKAccessToken.current().tokenString)
             }else{
-                self.view?.onLoginError(messageError: "Đăng nhập facebook không thành công \(error)")
+                self.view?.onLoginError(messageError: "Đăng nhập facebook không thành công \(String(describing: error))")
+                print(String(describing: error))
             }
         }}
     
