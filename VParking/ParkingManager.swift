@@ -115,14 +115,18 @@ class ParkingManager {
     
     func getHeader() -> HTTPHeaders?{
         var session:String = ""
+        var device_type:Int = 2
+        var version_number:Int = 1
         if SessionManager.getCurrentSession() != nil {
             session = SessionManager.getCurrentSession()!
         }
         let headers:HTTPHeaders = [
             "Accept": "application/json;charset=utf-8",
-            "session": "\(session)"
+            "session": "\(session)",
+            "device-type":  "\(device_type)",
+            "version-number": "\(version_number)"
         ]
-        
+        print(headers)
         return headers
     }
     
