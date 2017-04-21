@@ -105,6 +105,14 @@ class AddVerhicleViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var btnAddVerhicle: UIButton!
     @IBOutlet weak var btnUpdateVerhicle: UIButton!
 
+    @IBAction func brandTapss(_ sender: Any) {
+        dropDown.show()
+    }
+    
+    @IBAction func brandTaps(_ sender: Any) {
+        dropDown.show()
+    }
+    
     @IBAction func brandTap(_ sender: Any) {
         dropDown.show()
     }

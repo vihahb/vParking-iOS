@@ -580,6 +580,12 @@ class ParkingInfoBottomsheetViewController: UIViewController {
             return "Khác"
         }
     }
+    
+    @IBAction func showFulls(_ sender: Any) {
+        
+        showFullView(duration: 0.3)
+    }
+    
 
 }
 

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -496,8 +495,8 @@
                                                     <constraint firstItem="CYE-iS-pE8" firstAttribute="top" secondItem="wLu-rZ-9ek" secondAttribute="top" id="xPF-6u-1rL"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngõ 15 - Duy Tân - Dịch Vọng Hậu - Cầu Giấy - Hà Nội" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm5-qh-jv8">
-                                                <rect key="frame" x="40" y="74" width="335" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ngõ 15 - Duy Tân - Dịch Vọng Hậu - Cầu Giấy - Hà Nội" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm5-qh-jv8">
+                                                <rect key="frame" x="40" y="72" width="335" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="wjP-kp-elD"/>
                                                 </constraints>
@@ -519,6 +518,9 @@
                                             <constraint firstAttribute="height" constant="104" id="v3k-Qf-pJQ"/>
                                             <constraint firstItem="aXU-Tu-APL" firstAttribute="top" secondItem="wLu-rZ-9ek" secondAttribute="bottom" constant="8" id="vcZ-c6-XL2"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vLz-W7-AhG" appends="YES" id="fJk-q5-Oct"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iE1-X1-rie">
                                         <rect key="frame" x="0.0" y="104" width="375" height="667"/>
@@ -526,13 +528,6 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5D-te-wIS">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icC-iQ-iX9" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
-                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="170" id="CUk-ja-Jtn"/>
-                                                        </constraints>
-                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-PX-MR7">
                                                         <rect key="frame" x="16" y="150" width="343" height="40"/>
                                                         <subviews>
@@ -745,6 +740,13 @@
                                                             <action selector="directions:" destination="o7h-Bs-9ir" eventType="touchUpInside" id="OXV-Tf-D41"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icC-iQ-iX9" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="170" id="CUk-ja-Jtn"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
@@ -832,6 +834,11 @@
                 <tapGestureRecognizer id="jVQ-Gd-Xwb">
                     <connections>
                         <action selector="favoriteClick:" destination="o7h-Bs-9ir" id="2n0-Zu-Ra5"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="vLz-W7-AhG">
+                    <connections>
+                        <action selector="showFulls:" destination="o7h-Bs-9ir" id="ufD-Jt-dwj"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1863,12 +1870,17 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXz-yf-W7L">
                                                         <rect key="frame" x="0.0" y="26" width="123" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hãng Xe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vt-Bo-ZSG">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hãng Xe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vt-Bo-ZSG">
                                                                 <rect key="frame" x="8" y="5" width="104" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="dcu-87-Yb8" appends="YES" id="Pda-pX-G1H"/>
+                                                                    <outletCollection property="gestureRecognizers" destination="rXN-Z7-s70" appends="YES" id="eDb-Fq-hnn"/>
+                                                                </connections>
                                                             </label>
                                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_action_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="tGk-Bo-8HC">
                                                                 <rect key="frame" x="100" y="9" width="12" height="12"/>
@@ -2081,6 +2093,16 @@
                         <action selector="defaultTap:" destination="rXg-nS-ad7" id="VrD-xG-WVO"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="dcu-87-Yb8">
+                    <connections>
+                        <action selector="brandTaps:" destination="rXg-nS-ad7" id="o5V-yQ-LQU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rXN-Z7-s70">
+                    <connections>
+                        <action selector="brandTapss:" destination="rXg-nS-ad7" id="fxq-GR-Rnx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3488.8000000000002" y="652.62368815592208"/>
         </scene>
@@ -2129,13 +2151,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPH-r1-VPN">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPH-r1-VPN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HPH-r1-VPN" secondAttribute="trailing" id="6yt-Hv-890"/>
+                            <constraint firstItem="HPH-r1-VPN" firstAttribute="leading" secondItem="0mD-eB-Pnt" secondAttribute="leading" id="9fb-Bs-OZX"/>
+                            <constraint firstItem="HPH-r1-VPN" firstAttribute="top" secondItem="0mD-eB-Pnt" secondAttribute="top" id="gn9-5B-FL7"/>
+                            <constraint firstItem="rdf-g6-qPB" firstAttribute="top" secondItem="HPH-r1-VPN" secondAttribute="bottom" id="m2h-XB-lEK"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="xtelWebView" destination="HPH-r1-VPN" id="Mb1-Mv-vgQ"/>
@@ -2461,7 +2488,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XyK-sS-YTP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BiH-ta-feC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BiH-ta-feC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
