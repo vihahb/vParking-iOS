@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var imageActionUpload: UIImageView!
+    @IBOutlet weak var navHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollview: UIScrollView!
     
     var urlAvatar:String?
     private var _user:UserProfileEntity?
@@ -31,8 +33,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        Initialization()
-        
         
     }
     
@@ -246,6 +246,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
 
 extension ProfileViewController:IProfileView {
     func Initialization() {
+        
+//        if let nav = self.navigationController {
+//            navHeight.constant = nav.navigationBar.frame.size.height
+//        }
+        
         self.txtEmail.delegate                      = self
         self.txtUserName.delegate                   = self
         self.txtPhoneNumber.delegate                = self
@@ -265,7 +270,7 @@ extension ProfileViewController:IProfileView {
                 imageAvatar.downloadedFrom(link: av)
                 imageAvatar.contentMode = .scaleToFill
             }
-            if let fName = u.fullname {
+            if let fName = u.fullname , fName.characters.count > 0 {
                 lblUserName.text = fName
             }else{
                 lblUserName.text = u.phone!
@@ -279,10 +284,11 @@ extension ProfileViewController:IProfileView {
             default:
                 lblGender.text  = "Khác"
             }
-//            txtFBirthday.text   = u.birthday
             txtEmail.text       = u.email
             txtUserName.text    = u.fullname
-            txtFBirthday.text   = convertDate(u.birthday!)
+            if let b = u.birthday {
+                txtFBirthday.text   = convertDate(b)
+            }
             txtPhoneNumber.text = u.phone
             
             

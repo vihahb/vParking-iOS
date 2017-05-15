@@ -44,6 +44,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var mode:HOME_MODE = .HOME
     
+    var markerSelected:GMSMarker?
+    var markerSelectedOriginImage:UIImage?
+    
     // bar status
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
@@ -148,10 +151,24 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
-        if mode == .HOME {
-            mapView.camera = GMSCameraPosition.camera(withTarget: locations[0].coordinate, zoom: 14.0)
+        if mode == .HOME { sỏ
+            moveCamara(locations[0].coordinate)
         }
         myLocation = locations[0].coordinate
+    }
+    
+    func moveCamara(_ coordinates:CLLocationCoordinate2D){
+        mapView.animate(with: GMSCameraUpdate.setTarget(coordinates))
+    }
+    
+    func selectedMarker(_ marker:GMSMarker){
+        if let m = self.markerSelected {
+            m.icon = self.markerSelectedOriginImage
+        }
+        self.markerSelected = marker
+        self.markerSelectedOriginImage = marker.icon
+        marker.icon = #imageLiteral(resourceName: "ic_marker_red")
+        moveCamara(marker.position)
     }
     
     
@@ -161,7 +178,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 extension HomeViewController:IHomeView{
     func findParking(didError error: NIPError?, didLoaded result: [FindParkingEntity]?) {
         if error != nil {
-            print("\(error)")
+            print("\(String(describing: error))")
         }
         
         if result != nil{
@@ -189,7 +206,7 @@ extension HomeViewController:IHomeView{
     
     func retParkingDetails(didError error: NIPError?, didLoaded result: ParkingInfoEntity?) {
         if error != nil {
-            self.view.makeToast("\(error?.message)")
+            self.view.makeToast("\(String(describing: error?.message))")
             return
         }
         bottomSheet?.setInfo(parking: result)
@@ -282,7 +299,8 @@ extension HomeViewController: GMSMapViewDelegate{
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if !isDirection {
             isLoadData = false
-            mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 14.0)
+//            mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 14.0)
+            selectedMarker(marker)
             self.presenter?.retParkingDetails(id: marker.userData as! Int)
         }
         return true

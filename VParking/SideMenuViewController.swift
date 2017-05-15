@@ -62,7 +62,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
                     MenuData(title:"Yêu thích",icon:UIImage(named: "ic_favorite_border_white_48dp.png")),
                     MenuData(title:"Phương tiện",icon:UIImage(named: "ic_directions_transit_white_48dp.png")),
                     MenuData(title:"Xe đang đỗ",icon:UIImage(named: "ic_check_in.png")),
-                    MenuData(title:"Thông tin",icon:UIImage(named: "ic_info_parking.png")),
+//                    MenuData(title:"Thông tin",icon:UIImage(named: "ic_info_parking.png")),
                     MenuData(title:"Đăng xuất",icon:UIImage(named: "ic_logout.png"))]
         tableMenu.delegate = self
         tableMenu.dataSource = self
@@ -140,15 +140,15 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
                 mView.updateRightButton(2)
                 mView.setTitleNavi("Xe đang đỗ")
             }
-        case 4:
-            if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
-                mView.setViewController(PARKING_VIEW.INFO_VIEW)
-//                mView.updateAcionButton(false)
-                mView.updateRightButton(2)
-                mView.setTitleNavi("Thông tin và điều khoản")
-            }
+//        case 4:
+//            if let mView = (revealViewController().frontViewController as? UINavigationController)?.viewControllers.first as? MasterViewController{
+//                mView.setViewController(PARKING_VIEW.INFO_VIEW)
+////                mView.updateAcionButton(false)
+//                mView.updateRightButton(2)
+//                mView.setTitleNavi("Thông tin và điều khoản")
+//            }
     
-        case 5:
+        case 4:
             presenter?.logout()
         default:
             print("not define")

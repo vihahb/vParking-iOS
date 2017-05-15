@@ -44,8 +44,11 @@ class ParkingInfoBottomsheetViewController: UIViewController {
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    //btn direction
+    @IBOutlet weak var imgDirection: UIImageView!
+    
     // init
-    var fullView: CGFloat = 100
+    var fullView: CGFloat = 0
     
     var state:VCState = VCState.hidden
     
@@ -170,12 +173,13 @@ class ParkingInfoBottomsheetViewController: UIViewController {
                 }
             }
 
-        }else {
-            if let vc = self.parent as? HomeViewController {
-                vc.clearDirection()
-            }
-            hiddenBottomSheet()
         }
+//        else {
+//            if let vc = self.parent as? HomeViewController {
+//                vc.clearDirection()
+//            }
+//            hiddenBottomSheet()
+//        }
         
         
     }
@@ -196,8 +200,12 @@ class ParkingInfoBottomsheetViewController: UIViewController {
     func showPartialView(duration:Double){
         if !isDirection {
             imgSFavorite.image = favoriteIcon!
+            imgSFavorite.isHidden = true
+            imgDirection.isHidden = false
         }else{
             imgSFavorite.image = #imageLiteral(resourceName: "ic_close_black_36dp")
+            imgSFavorite.isHidden = false
+            imgDirection.isHidden = true
         }
         if self.state != .partial{
             UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
@@ -211,6 +219,10 @@ class ParkingInfoBottomsheetViewController: UIViewController {
     }
     
     func showFullView(duration:Double){
+        if isDirection {
+            return
+        }
+        
         if self.state != .full{
             UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
                 self.view.frame = CGRect(x: 0, y: self.fullView, width: self.width, height: self.height)
@@ -240,7 +252,13 @@ class ParkingInfoBottomsheetViewController: UIViewController {
         lblParkingTime.text = "\(parking!.begin_time!) - \(parking!.end_time!)"
         lblParkingTimeS.text = "\(parking!.begin_time!) - \(parking!.end_time!)"
         
-        lblParkingPhoneS.text = parking!.parking_phone
+        if let p = parking!.parking_phone, p.characters.count > 0 {
+            lblParkingPhoneS.text = p
+        }else{
+            lblParkingPhoneS.text = "Chưa cập nhập"
+        }
+        
+        
         
         if (parking?.prices.count)! > 0 {
             lblParkingPrice.text = "\(Int((parking?.prices[0].price)!))K/\(self.getPriceType(type: (parking?.prices[0].price_type)!))"
@@ -345,7 +363,7 @@ class ParkingInfoBottomsheetViewController: UIViewController {
             }
         }
         print("contentSize:\(contentSize)")
-        self.scrollView.contentSize = CGSize(width: self.width, height: contentSize + 10)
+        self.scrollView.contentSize = CGSize(width: self.width, height: contentSize)
     }
     
     func makePriceView(data:[PriceEntity]?,empty:String?){
@@ -583,7 +601,13 @@ class ParkingInfoBottomsheetViewController: UIViewController {
     
     @IBAction func showFulls(_ sender: Any) {
         
-        showFullView(duration: 0.3)
+        if !isDirection {
+            showFullView(duration: 0.3)
+        }
+    }
+    
+    @IBAction func direction(_ sender: Any) {
+        directions(sender)
     }
     
 

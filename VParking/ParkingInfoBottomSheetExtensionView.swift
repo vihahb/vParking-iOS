@@ -29,7 +29,7 @@ extension ParkingInfoBottomsheetViewController: IParkingInfoBottomSheet{
     
     func findRoute(_ pathEndcode: String?, error: NIPError?) {
         if let e = error {
-            self.view.makeToast(e.message!)
+            self.view.makeToast(e.message ?? "Hệ thống đang bận vui lòng thử lại.")
             return
         }
         if let parrentController = self.parent as? HomeViewController {
