@@ -151,7 +151,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
-        if mode == .HOME { sỏ
+        if mode == .HOME {
             moveCamara(locations[0].coordinate)
         }
         myLocation = locations[0].coordinate
@@ -162,13 +162,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func selectedMarker(_ marker:GMSMarker){
-        if let m = self.markerSelected {
-            m.icon = self.markerSelectedOriginImage
-        }
+        clearSelected()
+        
         self.markerSelected = marker
         self.markerSelectedOriginImage = marker.icon
         marker.icon = #imageLiteral(resourceName: "ic_marker_red")
         moveCamara(marker.position)
+    }
+    
+    func clearSelected(){
+        if let m = self.markerSelected {
+            m.icon = self.markerSelectedOriginImage
+        }
     }
     
     
@@ -194,11 +199,15 @@ extension HomeViewController:IHomeView{
         let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
         let m = GMSMarker(position: position)
         
-        if p.owner == 0 {
-            m.icon = #imageLiteral(resourceName: "ic_marker_blue")
-        }else{
-            m.icon = #imageLiteral(resourceName: "ic_marker_red")
-        }
+        // tam toi comment ko mo voi ban cho nguoi dung chi mo cho ban vip
+//        if p.owner == 0 {
+//            m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+//        }else{
+//            m.icon = #imageLiteral(resourceName: "ic_marker_red")
+//        }
+        
+        m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+        
         m.map = mapView
         m.userData = p.id
         parkingDictionary[p.id] = p
@@ -224,12 +233,14 @@ extension HomeViewController:IHomeView{
         if let p = parkingDictionary[id] {
             let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
             let m = GMSMarker(position: position)
+ // tam toi comment ko mo voi ban cho nguoi dung chi mo cho ban vip
+//            if p.owner == 0 {
+//                m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+//            }else{
+//                m.icon = #imageLiteral(resourceName: "ic_marker_red")
+//            }
+            m.icon = #imageLiteral(resourceName: "ic_marker_blue")
             
-            if p.owner == 0 {
-                m.icon = #imageLiteral(resourceName: "ic_marker_blue")
-            }else{
-                m.icon = #imageLiteral(resourceName: "ic_marker_red")
-            }
             m.map = mapView
             m.userData = p.id
         }
@@ -248,12 +259,13 @@ extension HomeViewController:IHomeView{
                 for (_,p) in parkingDictionary {
                     let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
                     let m = GMSMarker(position: position)
-                
-                    if p.owner == 0 {
-                        m.icon = #imageLiteral(resourceName: "ic_marker_blue")
-                    }else{
-                        m.icon = #imageLiteral(resourceName: "ic_marker_red")
-                    }
+               // tam toi comment ko mo voi ban cho nguoi dung chi mo cho ban vip
+//                    if p.owner == 0 {
+//                        m.icon = #imageLiteral(resourceName: "ic_marker_blue")
+//                    }else{
+//                        m.icon = #imageLiteral(resourceName: "ic_marker_red")
+//                    }
+                    m.icon = #imageLiteral(resourceName: "ic_marker_blue")
                     m.map = mapView
                     m.userData = p.id
                 }

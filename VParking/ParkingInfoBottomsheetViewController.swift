@@ -193,8 +193,13 @@ class ParkingInfoBottomsheetViewController: UIViewController {
                 self?.detailsView.frame = CGRect(x: 0, y: (self?.sortViewHeight)!, width: (self?.view.frame.width)!, height: (self?.height)! - (self?.sortViewHeight)!)
             })
             self.state = .hidden
+            
+            if let m = parent as? HomeViewController {
+                m.clearSelected()
+            }
         }
         isDirection = false
+        
     }
     
     func showPartialView(duration:Double){

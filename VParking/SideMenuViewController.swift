@@ -44,7 +44,6 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
             let rowToSelect:IndexPath = IndexPath(row: 0, section: 0)
             self.tableMenu.selectRow(at: rowToSelect, animated: true, scrollPosition: UITableViewScrollPosition.none)
         }
-        self.view.makeToast("viewWillAppear")
         
     }
 
@@ -74,8 +73,8 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     
     func onLoadProfileSuccess(info: UserProfileEntity) {
         self.user = info
-        if info.fullname != nil {
-            lblName.text = info.fullname
+        if let fName = info.fullname , fName.characters.count > 0 {
+            lblName.text = fName
         }else{
             lblName.text = info.phone
         }
@@ -107,6 +106,7 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectedIndex == indexPath.row {
+            revealViewController().revealToggle(animated: true)
             return
         }
         selectedIndex = indexPath.row

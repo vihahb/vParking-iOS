@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var navHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollview: UIScrollView!
     
+    var isKeyboardHidden:Bool = true
     var urlAvatar:String?
     private var _user:UserProfileEntity?
     var User:UserProfileEntity?{
@@ -207,7 +208,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         }else {
             typeGender = 3
         }
-        var dt:ProfileRequest   = ProfileRequest()
+        let dt:ProfileRequest   = ProfileRequest()
 //        dt.birthday             = txtFBirthday.text
         dt.birthday             = convertToPut(txtFBirthday.text!)
         dt.email                = txtEmail.text
@@ -226,7 +227,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         let dateObj = dateFormatter.date(from: date)
         
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        var a = dateFormatter.string(from: dateObj!)
+        let a = dateFormatter.string(from: dateObj!)
         return a
     }
     
@@ -238,19 +239,38 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         let dateObj = dateFormatter.date(from: date)
         
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        var a = dateFormatter.string(from: dateObj!)
+        let a = dateFormatter.string(from: dateObj!)
         return a
     }
+    
+    
+    func keyboardWillShow(_ notification:Notification){
+        adjustingHeight(true,notification: notification)
+        self.isKeyboardHidden = false
+    }
+    
+    func keyboardWillHidden(_ notification:Notification){
+        adjustingHeight(false,notification: notification)
+        self.isKeyboardHidden = true
+    }
+    
+    func adjustingHeight(_ show:Bool, notification:Notification) {
+        
+        if (show == self.isKeyboardHidden){
+            let userInfo = notification.userInfo!
+            let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+            let changeInHeight = (keyboardFrame.height) * (show ? 1 : -1)
+            self.scrollview.contentInset.bottom += changeInHeight
+            self.scrollview.scrollIndicatorInsets.bottom += changeInHeight
+        }
+        
+    }
+
 
 }
 
 extension ProfileViewController:IProfileView {
     func Initialization() {
-        
-//        if let nav = self.navigationController {
-//            navHeight.constant = nav.navigationBar.frame.size.height
-//        }
-        
         self.txtEmail.delegate                      = self
         self.txtUserName.delegate                   = self
         self.txtPhoneNumber.delegate                = self
@@ -259,6 +279,8 @@ extension ProfileViewController:IProfileView {
         self.imageAvatar.layer.cornerRadius         = self.imageAvatar.frame.height/2
         self.imageActionUpload.layer.cornerRadius   = self.imageActionUpload.frame.height/2
         presenter                                   = ProfilePresenter(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         fillInfo()
         setupDatePicker()
         setupDropDown()
@@ -295,7 +317,7 @@ extension ProfileViewController:IProfileView {
         }
     }
     func profile() {
-        print("ahihi")
+        view.makeToast("Cập nhập thông tin thành công")
     }
     func profile(error: NIPError?) {
         view.makeToast((error?.type!)!)
@@ -315,9 +337,6 @@ extension ProfileViewController : UITextFieldDelegate {
         textField.resignFirstResponder()
         return false
     }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
     
 }
 
