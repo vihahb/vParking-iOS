@@ -25,7 +25,7 @@ class LoginPresenter: PresenterBase, AKFViewControllerDelegate {
             if error == nil {
                 self.loginFacebook(access_token_key: FBSDKAccessToken.current().tokenString)
             }else{
-                self.view?.onLoginError(messageError: "Đăng nhập facebook không thành công \(error)")
+                self.view?.onLoginError(messageError: "Đăng nhập facebook không thành công \(String(describing: error))")
             }
         }}
     
@@ -58,12 +58,12 @@ class LoginPresenter: PresenterBase, AKFViewControllerDelegate {
     }
     
     func viewController(_ viewController: UIViewController!, didCompleteLoginWithAuthorizationCode code: String!, state: String!) {
-        self.view?.onLoginError(messageError: code)
+//        self.view?.onLoginError(messageError: code)
         loginWithPhoneNumber(authozation_key: code)
        
     }
     func viewController(_ viewController: UIViewController!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
-        self.view?.onLoginError(messageError: accessToken.tokenString)
+//        self.view?.onLoginError(messageError: accessToken.tokenString)
         
     }
     func viewControllerDidCancel(_ viewController: UIViewController!) {

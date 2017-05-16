@@ -46,6 +46,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var markerSelected:GMSMarker?
     var markerSelectedOriginImage:UIImage?
+    var isTapMarker:Bool = false
     
     // bar status
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -171,7 +172,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func clearSelected(){
-        if let m = self.markerSelected {
+        if let m = self.markerSelected,!self.isTapMarker {
             m.icon = self.markerSelectedOriginImage
         }
     }
@@ -304,6 +305,7 @@ extension HomeViewController: GMSMapViewDelegate{
         if mode == .HOME { // thuc hien tac vu nay khi no la man hinh home
             if !isDirection {
                 self.bottomSheet?.hiddenBottomSheet()
+                self.isTapMarker = false
             }
         }
     }
@@ -313,6 +315,7 @@ extension HomeViewController: GMSMapViewDelegate{
             isLoadData = false
 //            mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 14.0)
             selectedMarker(marker)
+            self.isTapMarker = true
             self.presenter?.retParkingDetails(id: marker.userData as! Int)
         }
         return true

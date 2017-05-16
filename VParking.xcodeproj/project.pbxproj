@@ -998,10 +998,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
-					"<Multiple",
-					"values>",
 					"$(inherited)",
-					"$(PROJECT_DIR)/VParking",
+					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1019,6 +1017,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "VParking/VParking-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1033,10 +1032,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
-					"<Multiple",
-					"values>",
 					"$(inherited)",
-					"$(PROJECT_DIR)/VParking",
+					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1053,6 +1050,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VParking/VParking-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
