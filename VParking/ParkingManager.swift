@@ -122,7 +122,7 @@ class ParkingManager {
             "Accept": "application/json;charset=utf-8",
             "session": "\(session)",
             "device-type":  "2",
-            "version-number": "1.2"
+            "version-number": "1.3"
         ]
         print(headers)
         return headers
