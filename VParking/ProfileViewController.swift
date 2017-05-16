@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import Alamofire
+import AlamofireImage
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     let picker = UIImagePickerController()
@@ -288,10 +289,17 @@ extension ProfileViewController:IProfileView {
     
     func fillInfo(){
         if let u = self.User {
-            if let av = u.avatar {
-                imageAvatar.downloadedFrom(link: av)
+            
+            if let url = URL.init(string: u.avatar!){
+                imageAvatar.af_setImage(withURL: url)
+                
                 imageAvatar.contentMode = .scaleToFill
             }
+            
+//            if let av = u.avatar {
+//                imageAvatar.downloadedFrom(link: av)
+//                imageAvatar.contentMode = .scaleToFill
+//            }
             if let fName = u.fullname , fName.characters.count > 0 {
                 lblUserName.text = fName
             }else{

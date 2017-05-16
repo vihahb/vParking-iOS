@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteTableView: UITableView!
@@ -80,16 +81,18 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:FavoriteTableViewCell  = Bundle.main.loadNibNamed("FavoriteTableViewCell", owner: self, options: nil)?.first as! FavoriteTableViewCell
-//        var url:URL                     = URL(string: favoriteDictonary[indexPath.row].image!)!
-//        var dt                          = try? Data(contentsOf: url)
-//        var img:UIImage                 = UIImage(data: dt!)!
-//        cell.imgParking.image           = img 
+
         
         cell.lblParkingAddress.text     = favoriteDictonary[indexPath.row].address
         cell.lblParkingName.text        = favoriteDictonary[indexPath.row].parking_name
         cell.lblParkingTime.text        = favoriteDictonary[indexPath.row].end
         cell.lblParkingMoney.text       = String(favoriteDictonary[indexPath.row].price)
-        cell.imgParking.downloadedFrom(link: favoriteDictonary[indexPath.row].image!)
+        
+        if let url = URL.init(string: favoriteDictonary[indexPath.row].image!){
+            cell.imgParking.af_setImage(withURL: url)
+        }
+        
+
         cell.imgParking.contentMode = .scaleToFill
         
         return cell

@@ -88,6 +88,24 @@
 		73DC70CD1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CC1E68660300AEBBA5 /* IParkingInfoBottomSheet.swift */; };
 		73DC70CF1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */; };
 		73DC70D11E6874DF00AEBBA5 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */; };
+		AA0F6D361ECAB1EB00BFE5BA /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D311ECAB1EB00BFE5BA /* AccountKit.framework */; };
+		AA0F6D371ECAB1EB00BFE5BA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D321ECAB1EB00BFE5BA /* Bolts.framework */; };
+		AA0F6D381ECAB1EB00BFE5BA /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA0F6D331ECAB1EB00BFE5BA /* FacebookSDKStrings.bundle */; };
+		AA0F6D391ECAB1EB00BFE5BA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D341ECAB1EB00BFE5BA /* FBSDKCoreKit.framework */; };
+		AA0F6D3A1ECAB1EB00BFE5BA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D351ECAB1EB00BFE5BA /* FBSDKLoginKit.framework */; };
+		AA0F6D3C1ECAB45200BFE5BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D3B1ECAB45200BFE5BA /* Alamofire.framework */; };
+		AA0F6D3E1ECAB46F00BFE5BA /* GoogleMapsDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D3D1ECAB46F00BFE5BA /* GoogleMapsDirections.framework */; };
+		AA0F6D401ECAB49800BFE5BA /* EVReflection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D3F1ECAB49800BFE5BA /* EVReflection.framework */; };
+		AA0F6D421ECAB49E00BFE5BA /* DatePickerDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D411ECAB49E00BFE5BA /* DatePickerDialog.framework */; };
+		AA0F6D441ECAB4A300BFE5BA /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D431ECAB4A300BFE5BA /* SVProgressHUD.framework */; };
+		AA0F6D461ECAB4CD00BFE5BA /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D451ECAB4CD00BFE5BA /* DropDown.framework */; };
+		AA0F6D481ECAB4D000BFE5BA /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D471ECAB4D000BFE5BA /* Moya.framework */; };
+		AA0F6D4A1ECAB4D900BFE5BA /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D491ECAB4D900BFE5BA /* AlamofireImage.framework */; };
+		AA0F6D4C1ECAB4DC00BFE5BA /* ImageSlideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D4B1ECAB4DC00BFE5BA /* ImageSlideshow.framework */; };
+		AA0F6D4E1ECAB4DE00BFE5BA /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D4D1ECAB4DE00BFE5BA /* ObjectMapper.framework */; };
+		AA0F6D501ECAB4E100BFE5BA /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D4F1ECAB4E100BFE5BA /* Pods_VParking.framework */; };
+		AA0F6D521ECAB4E500BFE5BA /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D511ECAB4E500BFE5BA /* Result.framework */; };
+		AA0F6D541ECAB4E900BFE5BA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0F6D531ECAB4E900BFE5BA /* RxSwift.framework */; };
 		AA1312601E7A450B0088ACD7 /* IAddVerhicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */; };
 		AA1312621E7A45710088ACD7 /* AddVerhiclePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */; };
 		AA21FF721E78E7EB002D5A82 /* VerhicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */; };
@@ -100,11 +118,6 @@
 		AA52E2EB1E9DC99F00678E50 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA52E2EA1E9DC99F00678E50 /* InfoViewController.swift */; };
 		AA5A1B831E82307F001B6296 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1B821E82307F001B6296 /* ProfileRequest.swift */; };
 		AA5A1B851E823145001B6296 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1B841E823145001B6296 /* ProfilePresenter.swift */; };
-		AA72F9DA1EA73F63007E5D55 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72F9D51EA73F63007E5D55 /* AccountKit.framework */; };
-		AA72F9DB1EA73F63007E5D55 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72F9D61EA73F63007E5D55 /* Bolts.framework */; };
-		AA72F9DC1EA73F63007E5D55 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA72F9D71EA73F63007E5D55 /* FacebookSDKStrings.bundle */; };
-		AA72F9DD1EA73F63007E5D55 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72F9D81EA73F63007E5D55 /* FBSDKCoreKit.framework */; };
-		AA72F9DE1EA73F63007E5D55 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72F9D91EA73F63007E5D55 /* FBSDKLoginKit.framework */; };
 		AA7BFD701E7B8098009C97D0 /* VerhicleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */; };
 		AA98816B1E99622500199518 /* PhoneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98816A1E99622500199518 /* PhoneRequest.swift */; };
 		AAB334111E779BBE00571FFA /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */; };
@@ -112,7 +125,6 @@
 		AAB334151E779EFA00571FFA /* FavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334141E779EFA00571FFA /* FavoriteEntity.swift */; };
 		AAB334171E77A0C300571FFA /* IFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334161E77A0C300571FFA /* IFavoriteView.swift */; };
 		AAB334191E77A15600571FFA /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334181E77A15600571FFA /* FavoritePresenter.swift */; };
-		C6482127D0AB2A890B01F224 /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BF056401FA1114925C80F4 /* Pods_VParking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +236,29 @@
 		73DC70CE1E6866A300AEBBA5 /* ParkingInfoBottomSheetExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingInfoBottomSheetExtensionView.swift; sourceTree = "<group>"; };
 		73DC70D01E6874DF00AEBBA5 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		78BF056401FA1114925C80F4 /* Pods_VParking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VParking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0F6D271ECAB17100BFE5BA /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = "../../vParking-iOS/VParking/AccountKit.framework"; sourceTree = "<group>"; };
+		AA0F6D281ECAB17100BFE5BA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../vParking-iOS/VParking/Bolts.framework"; sourceTree = "<group>"; };
+		AA0F6D291ECAB17100BFE5BA /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKStrings.bundle; path = "../../vParking-iOS/VParking/FacebookSDKStrings.bundle"; sourceTree = "<group>"; };
+		AA0F6D2A1ECAB17100BFE5BA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../vParking-iOS/VParking/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		AA0F6D2B1ECAB17100BFE5BA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../vParking-iOS/VParking/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		AA0F6D311ECAB1EB00BFE5BA /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
+		AA0F6D321ECAB1EB00BFE5BA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		AA0F6D331ECAB1EB00BFE5BA /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		AA0F6D341ECAB1EB00BFE5BA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		AA0F6D351ECAB1EB00BFE5BA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		AA0F6D3B1ECAB45200BFE5BA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		AA0F6D3D1ECAB46F00BFE5BA /* GoogleMapsDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsDirections.framework; path = "Pods/../build/Debug-iphoneos/GoogleMapsDirections/GoogleMapsDirections.framework"; sourceTree = "<group>"; };
+		AA0F6D3F1ECAB49800BFE5BA /* EVReflection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EVReflection.framework; path = "Pods/../build/Debug-iphoneos/EVReflection/EVReflection.framework"; sourceTree = "<group>"; };
+		AA0F6D411ECAB49E00BFE5BA /* DatePickerDialog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DatePickerDialog.framework; path = "Pods/../build/Debug-iphoneos/DatePickerDialog/DatePickerDialog.framework"; sourceTree = "<group>"; };
+		AA0F6D431ECAB4A300BFE5BA /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		AA0F6D451ECAB4CD00BFE5BA /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = "Pods/../build/Debug-iphoneos/DropDown/DropDown.framework"; sourceTree = "<group>"; };
+		AA0F6D471ECAB4D000BFE5BA /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = "../../../Library/Developer/Xcode/DerivedData/VParking-bwvtmhzwufadfegmiuptgswibqms/Build/Products/Debug-iphoneos/Moya/Moya.framework"; sourceTree = "<group>"; };
+		AA0F6D491ECAB4D900BFE5BA /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
+		AA0F6D4B1ECAB4DC00BFE5BA /* ImageSlideshow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageSlideshow.framework; path = "Pods/../build/Debug-iphoneos/ImageSlideshow/ImageSlideshow.framework"; sourceTree = "<group>"; };
+		AA0F6D4D1ECAB4DE00BFE5BA /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../Library/Developer/Xcode/DerivedData/VParking-bwvtmhzwufadfegmiuptgswibqms/Build/Products/Debug-iphoneos/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
+		AA0F6D4F1ECAB4E100BFE5BA /* Pods_VParking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_VParking.framework; path = "Pods/../build/Debug-iphoneos/Pods_VParking.framework"; sourceTree = "<group>"; };
+		AA0F6D511ECAB4E500BFE5BA /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../../Library/Developer/Xcode/DerivedData/VParking-bwvtmhzwufadfegmiuptgswibqms/Build/Products/Debug-iphoneos/Result/Result.framework"; sourceTree = "<group>"; };
+		AA0F6D531ECAB4E900BFE5BA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/VParking-bwvtmhzwufadfegmiuptgswibqms/Build/Products/Debug-iphoneos/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
 		AA13125F1E7A450B0088ACD7 /* IAddVerhicleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAddVerhicleView.swift; sourceTree = "<group>"; };
 		AA1312611E7A45710088ACD7 /* AddVerhiclePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerhiclePresenter.swift; sourceTree = "<group>"; };
 		AA21FF711E78E7EB002D5A82 /* VerhicleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerhicleTableViewCell.xib; sourceTree = "<group>"; };
@@ -236,11 +271,6 @@
 		AA52E2EA1E9DC99F00678E50 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AA5A1B821E82307F001B6296 /* ProfileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		AA5A1B841E823145001B6296 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		AA72F9D51EA73F63007E5D55 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
-		AA72F9D61EA73F63007E5D55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		AA72F9D71EA73F63007E5D55 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
-		AA72F9D81EA73F63007E5D55 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		AA72F9D91EA73F63007E5D55 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AA7BFD6F1E7B8098009C97D0 /* VerhicleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerhicleRequest.swift; sourceTree = "<group>"; };
 		AA98816A1E99622500199518 /* PhoneRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneRequest.swift; sourceTree = "<group>"; };
 		AAB334101E779BBE00571FFA /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
@@ -256,11 +286,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA72F9DB1EA73F63007E5D55 /* Bolts.framework in Frameworks */,
-				AA72F9DD1EA73F63007E5D55 /* FBSDKCoreKit.framework in Frameworks */,
-				AA72F9DE1EA73F63007E5D55 /* FBSDKLoginKit.framework in Frameworks */,
-				C6482127D0AB2A890B01F224 /* Pods_VParking.framework in Frameworks */,
-				AA72F9DA1EA73F63007E5D55 /* AccountKit.framework in Frameworks */,
+				AA0F6D541ECAB4E900BFE5BA /* RxSwift.framework in Frameworks */,
+				AA0F6D521ECAB4E500BFE5BA /* Result.framework in Frameworks */,
+				AA0F6D501ECAB4E100BFE5BA /* Pods_VParking.framework in Frameworks */,
+				AA0F6D4E1ECAB4DE00BFE5BA /* ObjectMapper.framework in Frameworks */,
+				AA0F6D4C1ECAB4DC00BFE5BA /* ImageSlideshow.framework in Frameworks */,
+				AA0F6D4A1ECAB4D900BFE5BA /* AlamofireImage.framework in Frameworks */,
+				AA0F6D481ECAB4D000BFE5BA /* Moya.framework in Frameworks */,
+				AA0F6D461ECAB4CD00BFE5BA /* DropDown.framework in Frameworks */,
+				AA0F6D441ECAB4A300BFE5BA /* SVProgressHUD.framework in Frameworks */,
+				AA0F6D421ECAB49E00BFE5BA /* DatePickerDialog.framework in Frameworks */,
+				AA0F6D401ECAB49800BFE5BA /* EVReflection.framework in Frameworks */,
+				AA0F6D3E1ECAB46F00BFE5BA /* GoogleMapsDirections.framework in Frameworks */,
+				AA0F6D3C1ECAB45200BFE5BA /* Alamofire.framework in Frameworks */,
+				AA0F6D361ECAB1EB00BFE5BA /* AccountKit.framework in Frameworks */,
+				AA0F6D391ECAB1EB00BFE5BA /* FBSDKCoreKit.framework in Frameworks */,
+				AA0F6D3A1ECAB1EB00BFE5BA /* FBSDKLoginKit.framework in Frameworks */,
+				AA0F6D371ECAB1EB00BFE5BA /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,11 +572,11 @@
 		73E3E3471E568E070098204B /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				AA72F9D51EA73F63007E5D55 /* AccountKit.framework */,
-				AA72F9D61EA73F63007E5D55 /* Bolts.framework */,
-				AA72F9D71EA73F63007E5D55 /* FacebookSDKStrings.bundle */,
-				AA72F9D81EA73F63007E5D55 /* FBSDKCoreKit.framework */,
-				AA72F9D91EA73F63007E5D55 /* FBSDKLoginKit.framework */,
+				AA0F6D311ECAB1EB00BFE5BA /* AccountKit.framework */,
+				AA0F6D321ECAB1EB00BFE5BA /* Bolts.framework */,
+				AA0F6D331ECAB1EB00BFE5BA /* FacebookSDKStrings.bundle */,
+				AA0F6D341ECAB1EB00BFE5BA /* FBSDKCoreKit.framework */,
+				AA0F6D351ECAB1EB00BFE5BA /* FBSDKLoginKit.framework */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -542,6 +584,24 @@
 		DF51B373BF59C7BED4C04E73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA0F6D531ECAB4E900BFE5BA /* RxSwift.framework */,
+				AA0F6D511ECAB4E500BFE5BA /* Result.framework */,
+				AA0F6D4F1ECAB4E100BFE5BA /* Pods_VParking.framework */,
+				AA0F6D4D1ECAB4DE00BFE5BA /* ObjectMapper.framework */,
+				AA0F6D4B1ECAB4DC00BFE5BA /* ImageSlideshow.framework */,
+				AA0F6D491ECAB4D900BFE5BA /* AlamofireImage.framework */,
+				AA0F6D471ECAB4D000BFE5BA /* Moya.framework */,
+				AA0F6D451ECAB4CD00BFE5BA /* DropDown.framework */,
+				AA0F6D431ECAB4A300BFE5BA /* SVProgressHUD.framework */,
+				AA0F6D411ECAB49E00BFE5BA /* DatePickerDialog.framework */,
+				AA0F6D3F1ECAB49800BFE5BA /* EVReflection.framework */,
+				AA0F6D3D1ECAB46F00BFE5BA /* GoogleMapsDirections.framework */,
+				AA0F6D3B1ECAB45200BFE5BA /* Alamofire.framework */,
+				AA0F6D271ECAB17100BFE5BA /* AccountKit.framework */,
+				AA0F6D281ECAB17100BFE5BA /* Bolts.framework */,
+				AA0F6D291ECAB17100BFE5BA /* FacebookSDKStrings.bundle */,
+				AA0F6D2A1ECAB17100BFE5BA /* FBSDKCoreKit.framework */,
+				AA0F6D2B1ECAB17100BFE5BA /* FBSDKLoginKit.framework */,
 				78BF056401FA1114925C80F4 /* Pods_VParking.framework */,
 			);
 			name = Frameworks;
@@ -672,7 +732,7 @@
 				73C87FE91E5A038F00EAA842 /* MenuTableViewCell.xib in Resources */,
 				AAB334111E779BBE00571FFA /* FavoriteTableViewCell.xib in Resources */,
 				AA21FF721E78E7EB002D5A82 /* VerhicleTableViewCell.xib in Resources */,
-				AA72F9DC1EA73F63007E5D55 /* FacebookSDKStrings.bundle in Resources */,
+				AA0F6D381ECAB1EB00BFE5BA /* FacebookSDKStrings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +793,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F93F9430D151C908811517F0 /* [CP] Embed Pods Frameworks */ = {
@@ -1000,6 +1060,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
+					"$(PROJECT_DIR)/VParking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/GoogleMapsDirections",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/EVReflection",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DatePickerDialog",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DropDown",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ImageSlideshow",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1034,6 +1104,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/DATA/WORK/XTEL/WORKING/FACEBOOKSDK,
+					"$(PROJECT_DIR)/VParking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/GoogleMapsDirections",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/EVReflection",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DatePickerDialog",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DropDown",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ImageSlideshow",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

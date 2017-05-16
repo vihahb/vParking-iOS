@@ -26,6 +26,16 @@ class VerhicleViewController: UIViewController {
         Initialization()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Initialization()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Initialization()
+    }
+    
     func whenDicEmpty(){
         if self.carDictionary.count != 0 || bikeDictionary.count != 0{
             self.verhicleTableView.isHidden = false

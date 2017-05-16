@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 struct MenuData {
     var title:String!
@@ -79,7 +80,10 @@ class SideMenuViewController: UIViewController,ISideMenuView,UITableViewDelegate
             lblName.text = info.phone
         }
         if (info.avatar != nil){
-            imgAvatar.downloadedFrom(link: info.avatar!)
+            if let url = URL.init(string: info.avatar!){
+                imgAvatar.af_setImage(withURL: url)
+            }
+//            imgAvatar.downloadedFrom(link: info.avatar!)
             imgAvatar.contentMode = .scaleToFill
         }
     }
