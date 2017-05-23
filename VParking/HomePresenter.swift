@@ -24,35 +24,35 @@ class HomePresenter: PresenterBase {
     
     func findParking(lat:Double,lng:Double){
         let codition:FindCondition = getCondition(lat:lat,lng:lng)
-        self.view.showToast("Đang tìm kiếm bãi đỗ xe...!")
-        ParkingManager.instance.findParking(condition: codition){(result,error) in
-            if result != nil && error == nil{
-                let r:FindParkingResult = FindParkingResult(json: result)
-                
-                if r.error != nil {
-                    if self.showUpdateStore(r.error,view: self.view) {
-                        return
-                    }
-                    if let errorCode = r.error?.code, errorCode == 2 { // session ko hợp lệ
-                        self.getNewSession(completion: { 
-                            self.findParking(lat: lat, lng: lng)
-                        }, didError: { 
-                            self.view.showLoginForm()
-                        })
-                        return
-                    }
+        DispatchQueue.main.async {
+            self.view.showToast("Đang tìm kiếm bãi đỗ xe...!")
+            ParkingManager.instance.findParking(condition: codition){(result,error) in
+                if result != nil && error == nil{
+                    let r:FindParkingResult = FindParkingResult(json: result)
                     
-                    self.view.findParking(didError: error, didLoaded: nil)
+                    if r.error != nil {
+                        if self.showUpdateStore(r.error,view: self.view) {
+                            return
+                        }
+                        if let errorCode = r.error?.code, errorCode == 2 { // session ko hợp lệ
+                            self.getNewSession(completion: {
+                                self.findParking(lat: lat, lng: lng)
+                            }, didError: {
+                                self.view.showLoginForm()
+                            })
+                            return
+                        }
+                        
+                        self.view.findParking(didError: error, didLoaded: nil)
+                    }else{
+                        self.view.findParking(didError: error, didLoaded: r.data)
+                    }
                 }else{
-                    self.view.findParking(didError: error, didLoaded: r.data)
+                    self.view.findParking(didError: error, didLoaded: nil)
                 }
-            }else{
-                self.view.findParking(didError: error, didLoaded: nil)
+                
             }
-            
         }
-        
-        
     }
     
     func retParkingDetails(id:Int){

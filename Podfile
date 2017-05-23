@@ -14,6 +14,7 @@ target 'VParking' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'DatePickerDialog'
+    pod 'Polyline', '~> 4.0'
 end
 
 pod 'EVReflection/MoyaRxSwift'

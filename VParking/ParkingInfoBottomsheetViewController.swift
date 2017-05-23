@@ -249,7 +249,7 @@ class ParkingInfoBottomsheetViewController: UIViewController {
         
         // set info
         lblParkingAddress.text = parking!.address
-        lblParkingNameS.text = parking!.address
+        lblParkingAddressS.text = parking!.address
         
         lblParkingName.text = parking!.parking_name
         lblParkingNameS.text = parking!.parking_name
@@ -327,8 +327,8 @@ class ParkingInfoBottomsheetViewController: UIViewController {
             imgMoto.image = #imageLiteral(resourceName: "ic_action_moto")
             imgBike.image = #imageLiteral(resourceName: "ic_action_bike_black")
         case 2:
-            imgCar.image = #imageLiteral(resourceName: "ic_action_car")
-            imgMoto.image = #imageLiteral(resourceName: "ic_action_car_black")
+            imgCar.image = #imageLiteral(resourceName: "ic_action_car_black")
+            imgMoto.image = #imageLiteral(resourceName: "ic_action_moto")
             imgBike.image = #imageLiteral(resourceName: "ic_action_bike")
         case 3:
             imgCar.image = #imageLiteral(resourceName: "ic_action_car")

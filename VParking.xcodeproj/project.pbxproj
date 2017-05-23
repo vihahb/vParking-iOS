@@ -125,6 +125,7 @@
 		AAB334151E779EFA00571FFA /* FavoriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334141E779EFA00571FFA /* FavoriteEntity.swift */; };
 		AAB334171E77A0C300571FFA /* IFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334161E77A0C300571FFA /* IFavoriteView.swift */; };
 		AAB334191E77A15600571FFA /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB334181E77A15600571FFA /* FavoritePresenter.swift */; };
+		ADA31D96128F25539496E2D4 /* Pods_VParking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BF056401FA1114925C80F4 /* Pods_VParking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +304,7 @@
 				AA0F6D391ECAB1EB00BFE5BA /* FBSDKCoreKit.framework in Frameworks */,
 				AA0F6D3A1ECAB1EB00BFE5BA /* FBSDKLoginKit.framework in Frameworks */,
 				AA0F6D371ECAB1EB00BFE5BA /* Bolts.framework in Frameworks */,
+				ADA31D96128F25539496E2D4 /* Pods_VParking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1058,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 88XZ7KT632;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

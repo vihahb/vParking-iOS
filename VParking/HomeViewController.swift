@@ -10,13 +10,13 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import SVProgressHUD
+import Polyline
 
 enum HOME_MODE{
     case HOME
     case TICKET
     case FAVORITE
 }
-
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: GMSMapView!
     var presenter:HomePresenter?
@@ -186,14 +186,16 @@ extension HomeViewController:IHomeView{
         if error != nil {
             print("\(String(describing: error))")
         }
-        
-        if result != nil{
-            result?.forEach({ p in
-                if parkingDictionary[p.id] == nil {
-                    pinParkingOnMap(p: p)
-                }
-            })
+        DispatchQueue.main.async {
+            if result != nil{
+                result?.forEach({ p in
+                    if self.parkingDictionary[p.id] == nil {
+                        self.pinParkingOnMap(p: p)
+                    }
+                })
+            }
         }
+        
     }
     
     func pinParkingOnMap(p:FindParkingEntity){
@@ -246,10 +248,32 @@ extension HomeViewController:IHomeView{
             m.userData = p.id
         }
         
-        let pl:GMSPolyline  = GMSPolyline(path: GMSPath(fromEncodedPath: pathEncode))
-        pl.strokeWidth = 8
-        pl.strokeColor = ColorUtils.hexStringToUIColor(hex: "#62B1F6")
-        pl.map = mapView
+        DispatchQueue.main.async() {
+            let path  = GMSPath(fromEncodedPath: pathEncode)
+            let pl:GMSPolyline  = GMSPolyline(path: path)
+            pl.strokeWidth = 8
+            pl.strokeColor = ColorUtils.hexStringToUIColor(hex: "#62B1F6")
+            pl.map = self.mapView
+            
+//            let po:Polyline = Polyline(encodedPolyline: pathEncode)
+//            
+//            if let a = po.coordinates {
+//                
+            var bounds = GMSCoordinateBounds()
+//
+//          
+//            for index in 0...path?.count() {
+                bounds = bounds.includingPath(GMSPath(fromEncodedPath: pathEncode)!)
+//                bounds.inc
+//            }
+            
+            
+            self.mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 70))
+//            }
+            
+        }
+        
+       
         
     }
     
@@ -290,13 +314,15 @@ extension HomeViewController: GMSMapViewDelegate{
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         if mode == .HOME {
             if !isDirection {
-                let lat:Double = position.target.latitude
-                let lng:Double = position.target.longitude
-                if isLoadData {
-                    presenter?.findParking(lat: lat, lng: lng)
-                }
-        
-                isLoadData = true
+//                DispatchQueue.main.async {
+                    let lat:Double = position.target.latitude
+                    let lng:Double = position.target.longitude
+                    if self.isLoadData {
+                        self.presenter?.findParking(lat: lat, lng: lng)
+                    }
+                    
+                    self.isLoadData = true
+//                }
             }
         }
     }
